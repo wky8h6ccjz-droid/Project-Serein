@@ -4,45 +4,44 @@ Updated: 2026-10-03. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
-Product definition and feasibility. SER-005's working-process and cloud-handoff deliverables are verified and published for review; **owner acceptance is pending**.
+Product definition and feasibility. SER-005's working agreement and cloud handoff are accepted under DEC-018. **SER-006 is in progress: identify the first standalone CDJ test target.**
 
-The assistant is CTO **and project manager**. The human is the project owner, approving consequential decisions and final acceptance. Use the owner's ten-guideline rhythm. Ask one focused question at a time.
+The assistant is CTO and project manager. The human is project owner, approving consequential decisions and final acceptance. Follow the ten-guideline rhythm; ask one focused question at a time.
 
 ## Product and approved direction
 
-A standalone pocket music player for phone-free listening and carrying an owned DJ library. Device first; genre/remix discovery and DJ set/transition software are later. Noctis is separate.
+A standalone pocket music player for phone-free listening and carrying an owned DJ library. Device first; genre/remix discovery and DJ set/transition software later. Noctis is separate.
 
-Upright credit-card silhouette, flat front/back/sides, full-front touchscreen, side volume up/down, top power. Bluetooth primary plus 3.5 mm jack. USB-C charging and CDJ data connection; USB-C at bottom-left and jack at bottom-right. At least 64 GB storage target plus microSD. Solid premium feel. Jet black, very dark matte purple, forest green, and blue.
+Upright credit-card silhouette, flat front/back/sides, full-front touchscreen, side volume up/down, top power. Bluetooth primary plus 3.5 mm jack. USB-C charging and CDJ data connection; USB-C bottom-left and jack bottom-right. At least 64 GB storage target plus microSD. Solid premium feel. Jet black, very dark matte purple, forest green, and blue.
 
-Spotify is required in the first working version; the normal official Android app is acceptable initially. Direct connection to supported CDJs in place of a flash drive is a core requirement. Keep Spotify listening and the owned exportable DJ library distinct.
+Spotify is required in the first working version; the normal official Android app is acceptable initially. Direct connection to supported CDJs in place of a flash drive is core. Keep Spotify listening and exportable owned DJ files distinct.
 
 ## Work already done
 
-- Named the project and collected the requirements.
-- Iterated renders: reduced apparent thickness, flattened the body, separated bottom ports, darkened the palette, and made the gray finish jet black.
-- Stored the latest render at assets/serein-finish-study.png.
-- Researched official Spotify playback and CDJ/reckordbox storage/library requirements; sources in feasibility.md.
-- Published the public GitHub project and connected the local Git checkout.
-- Verified a real GitHub publication followed by local fetch/fast-forward.
-- Recorded the working agreement, stable task/decision IDs, acceptance states, and full cloud handoff.
-- Continued in the cloud: fetched current main, read the project records, and visually inspected the finish study. SER-005 owner acceptance remains pending.
+- Naming and requirements; iterative form, ports, thickness, and dark-finish renders.
+- Latest concept: assets/serein-finish-study.png; final whole-render acceptance remains pending.
+- Initial official-source Spotify/CDJ/reckordbox storage research in feasibility.md.
+- Public GitHub repository, local Git connection, and verified publication/fetch workflow.
+- Working agreement, tracker, decision log, continuation, and cloud handoff.
+- Cloud session read the records and inspected the finish study; owner accepted the handoff and instructed continuation.
+- Recorded current setup and verified its role from official documentation: DDJ-FLX4 with laptop rekordbox, not a standalone storage playback test target.
 
-## Untested and unresolved
+## Current test access and unresolved work
 
-No selected/purchased electronics, firmware/app, mechanical CAD, or working device. CDJ target models and firmware unknown. Spotify on candidate hardware, USB storage, library metadata, battery life, audio, and component fit remain untested.
+Owner says standalone CDJ/XDJ access is “Possibly, but I need to check.” Model and access are unconfirmed. See dj-test-targets.md. The laptop may prepare a baseline library; no export or deck test has occurred. Do not expand scope into Serein hosting rekordbox for the FLX4.
 
-24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant rendering assumption. Storage allocation and microSD placement are open. The owner has a 3D printer; details unknown. Budget remains deferred.
+No selected/purchased electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
 
-Public task-completion uploads are authorized within Serein scope. The prior local session lacked direct CLI push authentication and used connected GitHub tools for publication; the cloud session uses the existing Git proxy and its push dry run passed. Local Git tracks origin/main. No background watcher exists. Cloud continuation, repository access, and image inspection are now observed; account-level cloud environment publication remains unverified. The cloud task uses its existing checkout, currently on branch work at published main; no additional worktree is needed.
+24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant render assumption. Storage allocation/microSD placement and printer details are open. Budget remains deferred.
 
-## Single next task
+## Shared-workflow status
 
-**SER-005 owner acceptance:** review this cloud session's readback of roles, requirements, untested gates, and next action. Confirm accuracy or reopen with corrections. Do not infer acceptance.
+Public Serein task-completion uploads are authorized. Local Git tracks origin/main; local CLI push lacks authentication, so connected GitHub tools publish and local Git fetches/fast-forwards. No background watcher exists.
 
-After that confirmation, activate SER-006 to identify accessible CDJ test models. Its first question is already recorded in the tracker.
+A prior cloud session verified repository/image access and a Git-proxy push dry run. Account-level cloud environment publication remains unverified: owner said they would click Save and publish; no completion confirmation is recorded. Inspect actual branch and changes in each session rather than assuming a cloud checkout's state persists.
 
-## Current verification and owner input
+## Single next action
 
-Document links/IDs, role consistency, whitespace, and published/local Git state checked. Assistant reviewed coverage against the conversation and owner guidelines. Cloud records and image access are verified; owner acceptance of the readback is pending.
+**SER-006:** owner checks possible standalone CDJ or USB-reading XDJ access and reports the model. Keep the item in progress until a real target and access are confirmed; then give the owner a short record check before accepting it.
 
-Needed now: owner reviews the cloud readback and accepts or corrects the handoff. Later: accessible CDJ models. No budget or purchase input requested now.
+Current verification: primary-source review and documentation checks; no physical tests. No budget or purchase input requested.

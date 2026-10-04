@@ -6,9 +6,9 @@ Updated: 2026-10-03. Assistant manages execution; owner approves consequential d
 
 **Phase:** product definition and feasibility; in progress.
 
-**Active item:** SER-005, working agreement and cloud handoff. Implementation and verification are complete; owner acceptance is pending.
+**Active item:** SER-006, identify the first CDJ test target. Current setup is recorded; standalone deck access awaits owner confirmation.
 
-**Single next task/action:** review the cloud-session readback for SER-005 and accept or report a discrepancy. The cloud session has read the project records and inspected the finish study. SER-006 becomes active only after owner acceptance.
+**Single next task/action:** owner checks whether a standalone CDJ or USB-reading XDJ is accessible and reports its model. Access is possible but unconfirmed; no purchase or rental is requested.
 
 ## Status rules
 
@@ -66,25 +66,26 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Purpose:** make the requested working rhythm and existing Serein context portable.
 - **Dependencies:** SER-001, SER-003, SER-004, and the owner's ten guidelines.
 - **Deliverable:** working-agreement.md, this tracker, decision-log.md, continuation.md, cloud-handoff.md, and consistent existing documents.
-- **Status:** Awaiting owner acceptance.
+- **Status:** Accepted for the working agreement and cloud handoff.
 - **Completion criteria:** every task has the requested fields; approvals and proposals are distinguished; one next action is identified; roles agree everywhere; copy-paste cloud instructions preserve prior work; reviewed documents are published and local/GitHub state matches.
 - **Automated verification:** local document links, referenced task/decision IDs, stale-role scan, whitespace checks, and published/local Git comparison.
 - **Assistant hands-on verification:** read the handoff as a new session; checked it covers the working agreement, current design, work completed, unresolved evidence, and acceptance gate.
 - **Owner test:** start a cloud session using cloud-handoff.md. Ask it to read back its roles, the approved device requirements, the untested gates, and the single next action. Confirm accuracy or identify a correction.
 - **Cloud-session verification (2026-10-03):** fetched and fast-forwarded the clean cloud checkout to published main; read AGENTS.md, the working agreement, continuation, tracker, decision log, handoff, requirements, product brief, feasibility, and sync/setup records; visually inspected assets/serein-finish-study.png. Documentation access and image inspection work. No device tests were performed, and account-level environment publication is unverified.
-- **Owner acceptance:** pending; owner review of the cloud readback is the remaining gate.
+- **Owner acceptance (2026-10-03):** after reviewing the cloud readback, the owner said “okay sounds good ill click that - lets continue to project workflow now.” Recorded as acceptance of the handoff and instruction to advance to SER-006; does not accept the final render or prove environment publication.
 - **Reopen trigger:** missing or inaccurate context, contradictory role/approval rules, or inability to follow the handoff.
 
 ## SER-006 — Identify the first CDJ test target
 
 - **Purpose:** define compatibility against real accessible equipment.
 - **Dependencies:** SER-005 acceptance and owner input.
-- **Deliverable:** a short test-target record listing model, firmware if known, access, prepared-library workflow, and baseline flash drive.
-- **Status:** Proposed; queued after SER-005 acceptance.
+- **Deliverable:** [DJ test-target record](dj-test-targets.md), listing model, firmware if known, access, prepared-library workflow, and baseline flash drive.
+- **Status:** In progress; awaiting owner input on standalone deck access.
 - **Completion criteria:** owner confirms the first model and how it can be tested; unknown firmware details are assigned a check.
-- **Verification/owner test:** compare the record with the deck the owner can access.
-- **Needed from owner:** which CDJ models they use or can borrow/test.
-- **First question once active:** “Which CDJ models do you use or have access to for testing?”
+- **Assistant verification:** checked official DDJ-FLX4 documentation. Its software-host workflow cannot validate standalone USB-storage playback. No hardware test performed.
+- **Owner input:** DDJ-FLX4 with rekordbox; owner confirmed laptop dependence and answered “Possibly, but I need to check” about standalone CDJ/XDJ access.
+- **Owner test/acceptance:** once a standalone target is recorded, confirm its model and practical test access. Not yet accepted.
+- **Needed from owner:** check possible standalone deck access and report the model; firmware can be inspected later.
 
 ## SER-007 — Recommend a bounded prototype architecture
 

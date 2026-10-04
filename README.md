@@ -25,7 +25,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-SER-005's process and handoff documents are ready for owner acceptance. The cloud session has read the records and inspected the concept image; review its readback and accept or correct the handoff. After acceptance, SER-006 identifies the CDJ model available for testing.
+SER-005's cloud handoff is accepted. SER-006 is active: the owner uses a DDJ-FLX4 with rekordbox on a laptop; standalone CDJ/XDJ access is possible but needs checking. The next action is to confirm an accessible standalone model. See [DJ test targets](docs/dj-test-targets.md). No deck compatibility has been tested.
 
 The assistant handles CTO and project-management work. The human is the project owner and retains consequential decisions and final acceptance.
 

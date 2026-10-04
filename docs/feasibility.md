@@ -26,6 +26,12 @@ Linux has a USB mass-storage gadget implementation that can expose a file or blo
 
 [Linux mass-storage gadget documentation](https://docs.kernel.org/usb/mass-storage.html)
 
+### Current equipment and test access
+
+The owner reports DDJ-FLX4 with rekordbox on a laptop. Pioneer documents FLX4 as a controller connected to DJ software on a PC/Mac or supported mobile device. It does not provide the standalone USB-library playback needed for the proposed flash-drive replacement test. The conclusion for Serein is that FLX4 playback cannot establish CDJ storage compatibility. The laptop's rekordbox installation may help prepare a baseline export, subject to its version and owned-file availability.
+
+[Official DDJ-FLX4 product documentation](https://www.pioneerdj.com/en/product/dj-controllers/ddj-flx4/), checked 2026-10-03. Standalone deck access is possible but unconfirmed. See [DJ test targets](dj-test-targets.md). No equipment tests have been run.
+
 ### Proposed first test
 
 1. Identify an accessible CDJ and record its model and firmware.
@@ -56,7 +62,8 @@ Test wired playback and connector access as well. Manufacturer headline playback
 ## Evidence status
 
 - Architecture: open.
-- CDJ test model: awaiting owner input.
+- Current setup: DDJ-FLX4 and laptop rekordbox; software-host controller, not a standalone storage test target.
+- CDJ/XDJ test model: unselected; owner checking possible access.
 - Spotify device test: not performed.
 - USB mass-storage test: not performed.
 - Library metadata test: not performed.

@@ -23,6 +23,7 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 | DEC-015 | Publish completed changes after each task — approved workflow | Owner selected that option over file-edit background uploading. Assistant may routinely publish approved Serein work within scope. |
 | DEC-016 | Assistant is CTO and project manager; human is owner/approver — approved current role split | Latest owner instructions explicitly request both roles and retain consequential decisions and final product acceptance. Supersedes the earlier role assignment. |
 | DEC-017 | Ten-guideline working rhythm and owner acceptance gate — approved process | Latest owner instructions; authoritative text is working-agreement.md. Task completion must distinguish checks, assistant verification, and owner confirmation. |
+| DEC-018 | Cloud handoff accepted; advance to SER-006 — accepted task scope | Following the cloud readback, owner said “okay sounds good ill click that - lets continue to project workflow now.” Acceptance covers the handoff and continuation only; environment publication, final render, hardware, and whole-phase acceptance remain unverified or pending. |
 
 ## Open proposals
 
@@ -36,6 +37,8 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 
 ## Acceptance versus publication
 
-SER-003/SER-004 setup was acknowledged by the owner. SER-002 latest-render acceptance and SER-005 handoff acceptance remain pending. Neither an approved aesthetic preference nor a GitHub upload proves an engineered device or accepts a whole phase.
+SER-003/SER-004 setup was acknowledged by the owner. SER-005 handoff is accepted under DEC-018. SER-002 latest-render acceptance remains pending. Neither an approved aesthetic preference nor a GitHub upload proves an engineered device or accepts a whole phase.
 
-Cloud continuation evidence (2026-10-03): the cloud assistant read the current published records and inspected the finish-study image. This confirms documentation/image access, not owner acceptance or account-level environment publication. No new product, architecture, cost, or visual decision was made; SER-005 remains Awaiting owner acceptance and SER-006 remains Proposed.
+Cloud continuation evidence (2026-10-03): the cloud assistant read the published records and inspected the finish-study image. Owner subsequently accepted the handoff under DEC-018. Documentation/image access is verified; account-level environment publication remains unverified.
+
+SER-006 equipment observation (2026-10-03): owner uses a Pioneer DDJ-FLX4 with rekordbox on a laptop. Standalone CDJ/XDJ access is “Possibly, but I need to check.” This records available equipment, not a platform choice. See dj-test-targets.md. Hosting rekordbox on Serein to operate the FLX4 would be a separate scope/architecture proposal and is not approved.

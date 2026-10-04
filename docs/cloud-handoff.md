@@ -29,7 +29,7 @@ Completed work includes naming, requirements, iterative renders, initial technic
 
 Public Serein repository publication and uploads after completed tasks are explicitly authorized within that scope. Announce publication, run appropriate checks, publish reviewed work, and report the result. Paid requests, deployment, unrelated disclosure, invitations, and destructive actions need their own approval. Publishing a deliverable does not close owner acceptance.
 
-Begin with a short readback of your roles, current phase, approved requirements, untested gates, and the single next task. SER-005 handoff acceptance is pending: ask me to accept or correct that readback. After I accept, activate SER-006 and ask which CDJ models I use or can access for testing. Preserve the tracker and continuation document at closeout and give a copy-paste assistant update.
+Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018; do not repeat its acceptance gate. SER-006 is active. I use DDJ-FLX4 with laptop rekordbox, which cannot validate standalone CDJ storage playback. I may have access to a standalone CDJ/XDJ but need to check. Read docs/dj-test-targets.md. The single next action is for me to check possible access and report its model; if I have not answered, preserve that pending input rather than selecting hardware or spending. Update records and give a copy-paste assistant update at closeout.
 ```
 
 ## Independent owner check for SER-005
@@ -40,21 +40,21 @@ The cloud readback should correctly identify:
 - The agreed shape, controls, ports, storage, and dark finish direction.
 - Battery, fit, architecture, and real CDJ compatibility as untested.
 - Budget deferred; hardware unselected; no completed physical prototype.
-- SER-005 acceptance as the immediate gate, followed by SER-006 after confirmation.
+- SER-005 handoff accepted; SER-006 active with standalone test access awaiting confirmation.
 
-Reply with acceptance if accurate, or specify the correction. A missing image capability alone does not prove the visual direction; request a usable visual review before accepting SER-002.
+This owner check was completed and accepted under DEC-018. Reopen if context is missing or inaccurate. SER-002's separate render acceptance remains pending.
 
 ## Cloud continuation evidence
 
-On 2026-10-03 the cloud session fetched current main, read the requested records, and inspected the finish study. Documentation and image access work; owner acceptance of the readback remains pending. Account-level environment publication and physical-device feasibility remain unverified.
+On 2026-10-03 the cloud session fetched current main, read the requested records, and inspected the finish study. Documentation and image access work; the owner subsequently accepted the readback and instructed continuation under DEC-018. Account-level environment publication and physical-device feasibility remain unverified.
 
 ## Copy-paste update for the owner's assistant
 
 ```text
-Phase/status: Serein is in product definition and feasibility. Working-process/cloud-handoff task SER-005 is ready for owner acceptance.
-Completed: requirements and design renders, initial Spotify/CDJ research, public GitHub repository, local Git connection, publication-after-task workflow, task tracker, decision log, and continuation/handoff documents.
-Decisions: device first; upright flat body; touchscreen and side/top buttons; Bluetooth plus headphone jack; USB-C; 64 GB storage target plus microSD; 24-hour listening target; dark finishes; Spotify first version; CDJ flash-drive replacement core. Assistant handles CTO and project management; owner approves consequential choices and acceptance.
-Open: no selected hardware or working device; battery/fit/Spotify/CDJ flows untested; final-render acceptance pending; account-level cloud environment publication unverified; budget deferred. Cloud documentation and image access verified.
-Next task: SER-005 owner test—review the cloud readback and accept or correct the handoff.
-Needed from owner: accept the handoff or report corrections. After acceptance, identify accessible CDJ models for SER-006.
+Phase/status: Product definition and feasibility; SER-006 in progress.
+Completed: Working agreement/cloud handoff accepted; current DDJ-FLX4/laptop rekordbox setup recorded; official documentation checked.
+Decisions: Existing device requirements remain; no platform, purchase, or scope expansion approved.
+Open: Standalone deck model/access unconfirmed; device, battery, fit, Spotify and CDJ workflows untested; final-render acceptance pending; budget deferred.
+Next task: SER-006—confirm one accessible standalone CDJ or USB-reading XDJ.
+Needed from owner: Check possible access and report the model.
 ```

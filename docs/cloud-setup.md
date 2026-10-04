@@ -27,6 +27,7 @@ Account availability and repository authorization must be verified in your own e
 - Configure internet access for current technical research if needed. Allowed network destinations and service credentials are separate settings.
 - No Spotify credentials or OpenAI API keys are needed to read these project documents. Do not add credentials to Git.
 - Store meaningful decisions and findings in the repository and commit them; new chats should not depend on unsaved chat history.
+- The approved [sync workflow](sync-workflow.md) publishes completed project changes after each task. Existing cloud tasks keep their own workspace; fetch the latest GitHub changes before continuing when appropriate.
 - Cloud work can cover research, documentation, software, and supported design-file generation. Physical fit, battery, audio, and real CDJ tests need local hardware.
 - Local personal skills are not automatically synced to cloud tasks. Check available cloud capabilities before assuming image generation, CAD tools, or any other local tool is available.
 

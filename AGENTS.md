@@ -36,3 +36,17 @@ The human is the project manager and approves major decisions. The assistant act
 Record approved changes in docs/decisions.md and material research/test findings in docs/feasibility.md. Keep README.md's stage and immediate priorities current. Preserve the latest approved concept direction without treating it as mechanical CAD.
 
 Run checks appropriate to the change. Documentation-only work does not require a fabricated application, package manifest, or test suite.
+
+## Publish completed work
+
+The project manager authorized publishing this project publicly and chose to publish completed changes after each task. Follow this workflow in local and cloud sessions:
+
+- At the start of a task, check the current branch, working tree, and GitHub history. Fetch and fast-forward when the checkout is clean; preserve existing work when it is not.
+- Before finishing a task that changes project files, update relevant context documents, review the task's diff, run appropriate checks, and commit and publish the completed work to GitHub. Routine publication within the approved project scope does not require another confirmation.
+- Stage only files belonging to the completed task. Leave unrelated work, credentials, and ignored scratch files out of the commit. Use a feature branch and pull request when the change needs review; publishing a branch does not authorize merging an unapproved change.
+- Use authenticated Git when available. If command-line push authentication is unavailable, use the connected GitHub tools to publish the reviewed changes and then reconcile local Git metadata with the published commit while preserving files and history.
+- Preserve concurrent cloud or local changes. Never force-push over them; resolve conflicts explicitly.
+- Report whether the changes were published and identify any actual blocker. Do not describe local-only work as synced.
+- This is an assistant workflow at task completion. There is no background watcher uploading every file save, and open cloud tasks may need to fetch the latest GitHub changes.
+
+See docs/sync-workflow.md for the shared workflow and current local setup.

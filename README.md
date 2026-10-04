@@ -14,6 +14,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 - [Requirements and decisions](docs/decisions.md): agreed direction, provisional targets, and open questions.
 - [Feasibility work](docs/feasibility.md): Spotify, CDJ storage, battery, and physical fit.
 - [Cloud setup](docs/cloud-setup.md): continue from this repository in Codex Cloud.
+- [Sync workflow](docs/sync-workflow.md): publish completed tasks and pick up changes across local and cloud sessions.
 - [Agent instructions](AGENTS.md): how future sessions should work with the project manager.
 
 ## Immediate priorities

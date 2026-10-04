@@ -2,7 +2,7 @@
 
 Approved: 2026-10-03.
 
-The project manager chose **publish completed changes after each task**. GitHub is the shared project record. The assistant performs publication as part of completing project work; there is no file-save watcher or scheduled background uploader.
+The owner chose **publish completed changes after each task**. GitHub is the shared project record. The assistant performs publication as part of completing project work; there is no file-save watcher or scheduled background uploader.
 
 ## Local setup
 
@@ -24,10 +24,10 @@ Command-line Git can fetch the public repository. Direct command-line push authe
 
 1. Record approved decisions and material findings in the relevant documents.
 2. Review the task's changes and perform appropriate checks.
-3. Commit only the completed task's files and publish its branch to GitHub. Use a pull request when review is needed.
+3. Commit only the reviewed task's files and publish within the existing Serein authorization. State publication purpose and impact. Use a pull request when review is needed; preserve pending owner acceptance in the records.
 4. Confirm publication succeeded and report the result. If access or a conflict blocks publication, explain the specific blocker and preserve the work locally.
 
-Publication permission applies to the approved public Serein project. Major hardware, budget, scope, and commercial decisions still require the project manager's decision.
+Publication permission applies to the approved public Serein project. Consequential product, visual, architecture, cost, privacy, and scope decisions require owner approval. Paid requests, deployments, invitations, private disclosure, and destructive actions need their own scoped approval. See [working-agreement.md](working-agreement.md). Owner acceptance remains a separate gate; publication of a reviewable deliverable does not close it.
 
 ## Moving between local and cloud
 

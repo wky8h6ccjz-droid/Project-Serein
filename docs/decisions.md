@@ -2,6 +2,8 @@
 
 Updated: 2026-10-03.
 
+Stable approvals and their scope are in [decision-log.md](decision-log.md). Requirements below distinguish owner direction from unverified engineering targets.
+
 ## Agreed direction
 
 | Area | Current requirement or preference |
@@ -15,12 +17,12 @@ Updated: 2026-10-03.
 | Wireless audio | Bluetooth is the primary listening path |
 | Wired audio | 3.5 mm headphone jack |
 | USB | USB-C charging; data capability is needed for the CDJ workflow |
-| Storage | At least 64 GB of usable storage is the target; allocation and advertised capacity need confirmation |
-| Expansion | microSD required; externally accessible slot preferred, exact placement undecided |
+| Storage | At least 64 GB storage target; internal/usable allocation needs owner confirmation |
+| Expansion | microSD required; external access is an assistant proposal, exact placement undecided |
 | First Spotify prototype | Official Spotify app on compatible Android hardware; normal app interface is acceptable |
 | DJ use | Direct connection to supported CDJs as a flash-drive replacement is a core requirement |
 | Finish palette | Jet black, very dark matte purple, very dark matte forest green, very dark matte blue |
-| Collaboration | Assistant is CTO; human is project manager and approves major decisions |
+| Collaboration | Assistant is CTO and project manager; human is owner, decision approver, and final acceptor |
 | Prototyping | A 3D printer is available |
 | Budget | Deferred; no approved amount or purchases |
 

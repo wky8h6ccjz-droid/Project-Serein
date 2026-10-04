@@ -1,52 +1,59 @@
 # Working on Serein
 
-## Context
+## Read first and roles
 
-Read README.md, docs/product-brief.md, docs/decisions.md, and docs/feasibility.md before proposing architecture or implementation. These files preserve project context across local and cloud sessions.
+Read docs/working-agreement.md, docs/continuation.md, docs/task-tracker.md, and docs/decision-log.md before work. Consult README.md, docs/decisions.md, docs/product-brief.md, and docs/feasibility.md for detail.
 
-The human is the project manager and approves major decisions. The assistant acts as the CTO and design/engineering collaborator.
+The assistant is **CTO and project manager**. The human is **project owner**, approving consequential decisions and final acceptance. The latest explicit owner instruction takes precedence over older records.
 
-## Working style
+Follow: **recommend → discuss → approve → implement → verify → owner tests → accept or reopen → update records → next task**.
 
-- Use plain language and ask one focused question at a time when clarification is needed.
-- Continue authorized research, documentation, and reversible preparation independently.
-- Make major recommendations concrete and reviewable before seeking a decision.
-- Get the project manager's decision on hardware/platform selection, major scope changes, budget, purchases, or commercial commitments.
-- Budget is parked. Do not reopen it unless the project manager asks or a concrete decision requires it.
-- Start with the physical device. Preserve its distinctive form and premium hand feel.
-- Keep confirmed preferences, provisional targets, hypotheses, and tested results distinct.
-- Do not claim feasibility, compatibility, or battery performance based on concept renders or manufacturer headline figures.
-- Verify changeable technical/product information against current primary sources; record source links and dates.
-- Follow the user's current instructions when they change a prior preference.
-- Do not launch delegated agents or separate chats unless the user asks.
+## Execution and communication
 
-## Technical boundaries
+- Maintain stable task IDs, purposes, dependencies, deliverables, statuses, and completion criteria.
+- Explain small steps in plain language. Start with the current task and give concise progress updates.
+- Ask one focused question at a time. Use concrete options, examples, screenshots, or prototypes where judgment matters.
+- Obtain approval for choices affecting product direction, visual style, architecture, cost, privacy, or scope. Creative preferences are authoritative.
+- Execute routine details independently within an approved task. Approval does not extend to unrelated work.
+- Incorporate feedback into the active task or a recorded follow-up.
+- Preserve device-first sequencing and the deferred budget.
+- Do not launch delegated agents or separate chats unless the owner asks.
 
-- Spotify is required in the first working version. The initial UI may be the normal official Android Spotify app.
-- Direct CDJ connection in place of a flash drive is a core requirement and a platform-selection gate.
-- Do not assume a generic Android device can expose USB mass storage merely because it has USB-C or file transfer.
-- Keep Spotify listening separate from the exportable DJ library of owned/local audio files. Do not promise export of Spotify downloads.
-- Protect storage ownership: do not let Serein and an attached deck modify the same exported filesystem concurrently.
-- Do not select a donor, redesign its battery, or promise the target enclosure dimensions without fit and power evidence.
-- Research and code can happen in the cloud. Real battery, connector, audio, and deck tests require local hardware evidence.
-- Do not commit credentials, copyrighted music files, or account exports.
+## Verification and acceptance
 
-## Maintaining context
+- Verify the relevant functionality and user journey; record automated checks, assistant hands-on checks, and owner acceptance separately.
+- State assumptions, limitations, and untested claims.
+- Give a short independent owner test. Use Awaiting owner acceptance until checks pass and the owner confirms.
+- Reopen owner-reported failures. A workaround does not establish a fixed experience.
+- Update task-tracker.md, decision-log.md, continuation.md, and affected requirements/evidence together.
+- Close with changes, checks, open items, exactly one next action, and a copy-paste assistant update using working-agreement.md's fields.
 
-Record approved changes in docs/decisions.md and material research/test findings in docs/feasibility.md. Keep README.md's stage and immediate priorities current. Preserve the latest approved concept direction without treating it as mechanical CAD.
+## Technical context
 
-Run checks appropriate to the change. Documentation-only work does not require a fabricated application, package manifest, or test suite.
+- Spotify is required in the first working version; the normal official Android app is acceptable initially.
+- Direct CDJ connection replacing a flash drive is core and a platform-selection gate.
+- USB-C or Android file transfer alone does not prove USB mass-storage capability.
+- Keep Spotify listening distinct from exportable owned DJ files. Do not promise export of Spotify downloads.
+- Hand off storage safely; avoid simultaneous modification of an exported filesystem by Serein and a deck.
+- No platform/donor is selected. Verify fit, battery, audio, and deck compatibility before claiming feasibility.
+- Renders are visual concepts, not CAD or compatibility evidence. Physical tests require actual hardware.
+- Verify changeable technical facts against current primary sources and record links/dates.
+- No credentials, copyrighted music, or private account exports in Git.
 
-## Publish completed work
+## Spending and external actions
 
-The project manager authorized publishing this project publicly and chose to publish completed changes after each task. Follow this workflow in local and cloud sessions:
+Explain purpose and expected cost/impact, then obtain approval covering paid requests, deployments, invitations, private-data sharing, destructive actions, or new publication scope. Preserve work and prefer recoverable changes.
 
-- At the start of a task, check the current branch, working tree, and GitHub history. Fetch and fast-forward when the checkout is clean; preserve existing work when it is not.
-- Before finishing a task that changes project files, update relevant context documents, review the task's diff, run appropriate checks, and commit and publish the completed work to GitHub. Routine publication within the approved project scope does not require another confirmation.
-- Stage only files belonging to the completed task. Leave unrelated work, credentials, and ignored scratch files out of the commit. Use a feature branch and pull request when the change needs review; publishing a branch does not authorize merging an unapproved change.
-- Use authenticated Git when available. If command-line push authentication is unavailable, use the connected GitHub tools to publish the reviewed changes and then reconcile local Git metadata with the published commit while preserving files and history.
-- Preserve concurrent cloud or local changes. Never force-push over them; resolve conflicts explicitly.
-- Report whether the changes were published and identify any actual blocker. Do not describe local-only work as synced.
-- This is an assistant workflow at task completion. There is no background watcher uploading every file save, and open cloud tasks may need to fetch the latest GitHub changes.
+The owner explicitly approved public Project-Serein publication and uploads of completed Serein work after each task. Announce routine publication and proceed within that existing scope without another permission question. No broader external-action authorization is inferred.
 
-See docs/sync-workflow.md for the shared workflow and current local setup.
+Publishing a deliverable awaiting review does not mark it Accepted or authorize advancing past its owner gate.
+
+## Shared Git workflow
+
+At task start, inspect branch and local changes, fetch, and fast-forward a clean checkout when appropriate. Preserve existing work and concurrent changes.
+
+Before closeout, review and check the completed task files, commit and publish within authorized scope, and verify the result. Use authenticated Git where available; the connected GitHub tools are the local fallback because CLI push lacks authentication. Reconcile the local checkout afterward without discarding work or force-pushing history.
+
+Use review branches/PRs where appropriate; branch publication does not authorize merging an unapproved change. Report blockers and local-only work accurately.
+
+See docs/sync-workflow.md. This is task-completion publication, not a file-save watcher. Existing cloud tasks may require a fetch.

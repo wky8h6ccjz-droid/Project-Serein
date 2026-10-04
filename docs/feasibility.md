@@ -56,7 +56,7 @@ Test wired playback and connector access as well. Manufacturer headline playback
 ## Evidence status
 
 - Architecture: open.
-- CDJ test model: awaiting project manager input.
+- CDJ test model: awaiting owner input.
 - Spotify device test: not performed.
 - USB mass-storage test: not performed.
 - Library metadata test: not performed.

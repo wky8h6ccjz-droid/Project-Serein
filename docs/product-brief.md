@@ -10,17 +10,17 @@ Serein should also carry an owned DJ music library and connect directly to suppo
 
 ## Device first
 
-The project manager chose to start with the physical device because that work is more engaging. The assistant acts as CTO; the project manager approves major decisions.
+The owner chose to start with the physical device because that work is more engaging. The assistant acts as both CTO and project manager; the owner approves consequential decisions and final acceptance. See working-agreement.md.
 
 The desired object has an upright credit-card footprint, flat front and rear, flat metal-looking sides with small comfortable edge bevels, a full-front touchscreen, side volume buttons, and a top power button. Premium hand feel, battery life, Bluetooth, and a wired headphone jack matter more than extreme thinness.
 
-The project manager has a 3D printer available for enclosure and size prototypes. Its model, supported materials, and practical tolerances have not been established.
+The owner has a 3D printer available for enclosure and size prototypes. Its model, supported materials, and practical tolerances have not been established.
 
 ## Two music workflows
 
 ### Personal listening
 
-Spotify is required in the first working version. The project manager accepted the normal official Android Spotify app for that prototype. Standalone offline listening is desired; supported downloads, account requirements, and renewal/online behavior must be verified on the candidate hardware.
+Spotify is required in the first working version. The owner accepted the normal official Android Spotify app for that prototype. Standalone offline listening is desired; supported downloads, account requirements, and renewal/online behavior must be verified on the candidate hardware.
 
 Bluetooth is the main listening path. A 3.5 mm headphone jack is also required. Local files belong in the broader listening experience.
 
@@ -41,5 +41,8 @@ The longer-term companion experience includes:
 These are future workstreams. They do not require building the full companion product before the device prototype. Noctis is a separate project.
 
 ## Current status
+
+Current task state and acceptance gates are maintained in task-tracker.md and continuation.md. Stable approvals are recorded in decision-log.md.
+
 
 No hardware has been chosen or purchased. No firmware, app, or mechanical CAD exists yet. Rendered finishes and dimensions are concept directions. Budget is deferred; no budget ceiling or spending authorization has been approved.

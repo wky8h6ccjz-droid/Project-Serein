@@ -20,7 +20,7 @@ Account availability and repository authorization must be verified in your own e
 
 ## First continuation prompt
 
-> Continue Project Serein as my CTO. I am the project manager and approve major decisions. Read AGENTS.md, README.md, docs/product-brief.md, docs/decisions.md, and docs/feasibility.md first, and inspect assets/serein-finish-study.png. We are defining the physical device before choosing hardware. Spotify and direct CDJ connection as a flash-drive replacement are core requirements. Budget is deferred. Ask one focused question at a time and begin by establishing which CDJ models we can test.
+Use the full copy-paste prompt in [cloud-handoff.md](cloud-handoff.md). It covers the current CTO/project-manager role, owner approvals and acceptance, prior work, requirements, open issues, and the single next action. Read [continuation.md](continuation.md) for the compact current state.
 
 ## Access and workflow
 

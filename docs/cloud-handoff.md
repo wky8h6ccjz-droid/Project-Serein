@@ -44,13 +44,17 @@ The cloud readback should correctly identify:
 
 Reply with acceptance if accurate, or specify the correction. A missing image capability alone does not prove the visual direction; request a usable visual review before accepting SER-002.
 
+## Cloud continuation evidence
+
+On 2026-10-03 the cloud session fetched current main, read the requested records, and inspected the finish study. Documentation and image access work; owner acceptance of the readback remains pending. Account-level environment publication and physical-device feasibility remain unverified.
+
 ## Copy-paste update for the owner's assistant
 
 ```text
 Phase/status: Serein is in product definition and feasibility. Working-process/cloud-handoff task SER-005 is ready for owner acceptance.
 Completed: requirements and design renders, initial Spotify/CDJ research, public GitHub repository, local Git connection, publication-after-task workflow, task tracker, decision log, and continuation/handoff documents.
 Decisions: device first; upright flat body; touchscreen and side/top buttons; Bluetooth plus headphone jack; USB-C; 64 GB storage target plus microSD; 24-hour listening target; dark finishes; Spotify first version; CDJ flash-drive replacement core. Assistant handles CTO and project management; owner approves consequential choices and acceptance.
-Open: no selected hardware or working device; battery/fit/Spotify/CDJ flows untested; final-render acceptance pending; cloud environment not yet verified; budget deferred.
-Next task: SER-005 owner test—paste the handoff into a cloud session and review its readback.
+Open: no selected hardware or working device; battery/fit/Spotify/CDJ flows untested; final-render acceptance pending; account-level cloud environment publication unverified; budget deferred. Cloud documentation and image access verified.
+Next task: SER-005 owner test—review the cloud readback and accept or correct the handoff.
 Needed from owner: accept the handoff or report corrections. After acceptance, identify accessible CDJ models for SER-006.
 ```

@@ -25,7 +25,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-SER-005's process and handoff documents are ready for owner acceptance. Paste the prompt in [cloud-handoff.md](docs/cloud-handoff.md) into a cloud session and check its readback. After acceptance, SER-006 identifies the CDJ model available for testing.
+SER-005's process and handoff documents are ready for owner acceptance. The cloud session has read the records and inspected the concept image; review its readback and accept or correct the handoff. After acceptance, SER-006 identifies the CDJ model available for testing.
 
 The assistant handles CTO and project-management work. The human is the project owner and retains consequential decisions and final acceptance.
 

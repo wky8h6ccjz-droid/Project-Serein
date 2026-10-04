@@ -35,4 +35,4 @@ Use the full copy-paste prompt in [cloud-handoff.md](cloud-handoff.md). It cover
 
 ## Setup status
 
-The repository bootstrap is separate from account-level cloud setup. A cloud environment has not been verified or published by this repository change.
+The repository bootstrap is separate from account-level cloud setup. The cloud continuation on 2026-10-03 verified repository/document access and finish-study image inspection. Account-level environment publication has not been verified; repository changes do not themselves publish an environment.

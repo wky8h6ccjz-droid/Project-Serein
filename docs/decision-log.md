@@ -37,3 +37,5 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 ## Acceptance versus publication
 
 SER-003/SER-004 setup was acknowledged by the owner. SER-002 latest-render acceptance and SER-005 handoff acceptance remain pending. Neither an approved aesthetic preference nor a GitHub upload proves an engineered device or accepts a whole phase.
+
+Cloud continuation evidence (2026-10-03): the cloud assistant read the current published records and inspected the finish-study image. This confirms documentation/image access, not owner acceptance or account-level environment publication. No new product, architecture, cost, or visual decision was made; SER-005 remains Awaiting owner acceptance and SER-006 remains Proposed.

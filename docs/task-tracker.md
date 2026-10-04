@@ -8,7 +8,7 @@ Updated: 2026-10-03. Assistant manages execution; owner approves consequential d
 
 **Active item:** SER-005, working agreement and cloud handoff. Implementation and verification are complete; owner acceptance is pending.
 
-**Single next task/action:** complete SER-005's owner test: paste the handoff into a cloud session, review its readback, and accept or report a discrepancy. SER-006 becomes active only after this gate closes.
+**Single next task/action:** review the cloud-session readback for SER-005 and accept or report a discrepancy. The cloud session has read the project records and inspected the finish study. SER-006 becomes active only after owner acceptance.
 
 ## Status rules
 
@@ -71,7 +71,8 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Automated verification:** local document links, referenced task/decision IDs, stale-role scan, whitespace checks, and published/local Git comparison.
 - **Assistant hands-on verification:** read the handoff as a new session; checked it covers the working agreement, current design, work completed, unresolved evidence, and acceptance gate.
 - **Owner test:** start a cloud session using cloud-handoff.md. Ask it to read back its roles, the approved device requirements, the untested gates, and the single next action. Confirm accuracy or identify a correction.
-- **Owner acceptance:** pending. Cloud-session execution has not been observed.
+- **Cloud-session verification (2026-10-03):** fetched and fast-forwarded the clean cloud checkout to published main; read AGENTS.md, the working agreement, continuation, tracker, decision log, handoff, requirements, product brief, feasibility, and sync/setup records; visually inspected assets/serein-finish-study.png. Documentation access and image inspection work. No device tests were performed, and account-level environment publication is unverified.
+- **Owner acceptance:** pending; owner review of the cloud readback is the remaining gate.
 - **Reopen trigger:** missing or inaccurate context, contradictory role/approval rules, or inability to follow the handoff.
 
 ## SER-006 — Identify the first CDJ test target
@@ -126,4 +127,4 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 
 ## Unresolved items
 
-Untested Spotify/CDJ integration, no selected hardware, unmeasured battery life, unverified size/fit, unresolved storage allocation/microSD placement, final-render acceptance pending, cloud environment unverified, CLI push authentication unavailable, and budget deferred.
+Untested Spotify/CDJ integration, no selected hardware, unmeasured battery life, unverified size/fit, unresolved storage allocation/microSD placement, final-render acceptance pending, account-level cloud environment publication unverified, local-session CLI push authentication unavailable, and budget deferred. Cloud documentation access and image inspection are verified.

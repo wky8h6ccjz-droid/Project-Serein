@@ -25,6 +25,7 @@ Spotify is required in the first working version; the normal official Android ap
 - Published the public GitHub project and connected the local Git checkout.
 - Verified a real GitHub publication followed by local fetch/fast-forward.
 - Recorded the working agreement, stable task/decision IDs, acceptance states, and full cloud handoff.
+- Continued in the cloud: fetched current main, read the project records, and visually inspected the finish study. SER-005 owner acceptance remains pending.
 
 ## Untested and unresolved
 
@@ -32,16 +33,16 @@ No selected/purchased electronics, firmware/app, mechanical CAD, or working devi
 
 24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant rendering assumption. Storage allocation and microSD placement are open. The owner has a 3D printer; details unknown. Budget remains deferred.
 
-Public task-completion uploads are authorized within Serein scope. Direct local CLI push lacks authentication; connected GitHub tools handle publication. Local Git tracks origin/main. No background watcher exists. Account-level cloud environment publication and a cloud continuation have not been observed.
+Public task-completion uploads are authorized within Serein scope. The prior local session lacked direct CLI push authentication and used connected GitHub tools for publication; the cloud session uses the existing Git proxy and its push dry run passed. Local Git tracks origin/main. No background watcher exists. Cloud continuation, repository access, and image inspection are now observed; account-level cloud environment publication remains unverified. The cloud task uses its existing checkout, currently on branch work at published main; no additional worktree is needed.
 
 ## Single next task
 
-**SER-005 owner acceptance:** paste cloud-handoff.md's prompt into the cloud session and check its readback of roles, requirements, untested gates, and next action. Confirm accuracy or reopen with corrections. Do not infer acceptance.
+**SER-005 owner acceptance:** review this cloud session's readback of roles, requirements, untested gates, and next action. Confirm accuracy or reopen with corrections. Do not infer acceptance.
 
 After that confirmation, activate SER-006 to identify accessible CDJ test models. Its first question is already recorded in the tracker.
 
 ## Current verification and owner input
 
-Document links/IDs, role consistency, whitespace, and published/local Git state checked. Assistant reviewed coverage against the conversation and owner guidelines. Owner cloud-session test is pending.
+Document links/IDs, role consistency, whitespace, and published/local Git state checked. Assistant reviewed coverage against the conversation and owner guidelines. Cloud records and image access are verified; owner acceptance of the readback is pending.
 
 Needed now: owner reviews the cloud readback and accepts or corrects the handoff. Later: accessible CDJ models. No budget or purchase input requested now.

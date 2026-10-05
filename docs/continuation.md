@@ -32,6 +32,8 @@ Owner says standalone CDJ/XDJ access is “Possibly, but I need to check.” Mod
 
 Owner asked for the cheapest personal test purchase and explicitly rejected used options. Purchase recommendations are new-only. Proposed XDJ-700: $829 new/in stock at Sweetwater and B&H, checked 2026-10-04; tax/delivery/accessories and local availability unconfirmed. Official capabilities reviewed; no model or spending approved. Broad deck compatibility remains untested. Earlier used-deck recommendations are superseded; details in dj-test-targets.md.
 
+Owner challenged the price and requested very basic options across the market. Gemini MDJ-500 is listed new at $229.95 by its official store and Musician’s Friend, checked 2026-10-04. It supports standalone USB audio; official preparation software is V-CASE, and native Pioneer rekordbox library/cue support is unverified. It could be a preliminary USB/storage experiment, not acceptance of the CDJ/Pioneer compatibility gate. The earlier $829 figure was limited to Pioneer/AlphaTheta. No purchase or experimental-scope change is approved.
+
 No selected/purchased electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
 
 24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant render assumption. Storage allocation/microSD placement and printer details are open. Budget remains deferred.
@@ -44,6 +46,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-006:** owner reviews the proposed new XDJ-700 test target and price, or confirms a borrowed standalone model. Keep the item in progress until a real target and access are confirmed; then give the owner a short record check before accepting it.
+**SER-006:** owner decides whether the $229.95 Gemini is useful for a separate preliminary experiment/personal purchase, or confirms actual CDJ/XDJ access. Keep SER-006 in progress until a real CDJ/XDJ target and access are confirmed; then give the owner a short record check before accepting it.
 
 Current verification: primary-source review and documentation checks; no physical tests. No budget or purchase input requested.

@@ -27,6 +27,8 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 
 ## Open proposals
 
+- SER-006 broader-market follow-up (2026-10-04): owner challenged the $829 price and asked about very basic new players. Gemini MDJ-500 ($229.95 advertised new) is a proposed preliminary USB/audio experiment option; the Pioneer/CDJ requirement remains unchanged. Owner has not approved a purchase, model, budget, or separate experimental scope. Native Pioneer library/cue support is unverified; details in dj-test-targets.md.
+
 - SER-006 ownership research (2026-10-04): owner asked for the cheapest personal test purchase, then explicitly rejected used options. **New-only purchase preference is authoritative.** Proposed new XDJ-700 at $829 advertised US price; supporting retailer/official sources in dj-test-targets.md. Earlier used recommendations are superseded. Model selection, budget, and spending remain unapproved. DEC-013 still applies to the overall device budget.
 
 - Approximately 86 × 54 mm footprint translates the credit-card preference; fit is unverified.

@@ -36,6 +36,8 @@ The owner reports DDJ-FLX4 with rekordbox on a laptop. Pioneer documents FLX4 as
 
 New-only test-deck ownership research checked 2026-10-04 is recorded in [DJ test targets](dj-test-targets.md). Owner rejected used options. Proposed XDJ-700 ($829 new advertised US price) covers standalone USB/library and supported cue/waveform testing. No deck is selected or tested; success on this model cannot establish compatibility with other generations or library formats.
 
+Broader-market follow-up found Gemini MDJ-500 advertised new at $229.95. Official USB playback/file/filesystem specifications support considering a preliminary storage experiment on that model; its library workflow uses V-CASE and native Pioneer rekordbox metadata support is unverified. It cannot establish CDJ compatibility or close the Pioneer test gate. No model, separate experiment, or spending is approved. Sources and practical limits are in dj-test-targets.md.
+
 1. Identify an accessible CDJ and record its model and firmware.
 2. Establish a baseline using a known-good flash drive and a small rekordbox export of owned files.
 3. Present the same export from the candidate Serein storage architecture.

@@ -8,7 +8,7 @@ Updated: 2026-10-04. Assistant manages execution; owner approves consequential d
 
 **Active item:** SER-006, identify the first CDJ test target. Current setup is recorded; standalone deck access awaits owner confirmation.
 
-**Single next task/action:** owner reviews the proposed new XDJ-700 test target ($829 advertised US price), or confirms a borrowed standalone model. New-only purchase preference recorded; model/access and spending remain unapproved.
+**Single next task/action:** owner weighs a basic new Gemini MDJ-500 ($229.95 advertised US price) for a separate preliminary experiment/personal purchase, or confirms actual CDJ/XDJ access. This option does not close the Pioneer compatibility gate; model/access, experimental scope, and spending remain unapproved.
 
 ## Status rules
 
@@ -85,8 +85,9 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Assistant verification:** checked official DDJ-FLX4 documentation. Its software-host workflow cannot validate standalone USB-storage playback. No hardware test performed.
 - **Owner input:** DDJ-FLX4 with rekordbox; owner confirmed laptop dependence and answered “Possibly, but I need to check” about standalone CDJ/XDJ access.
 - **Research update (2026-10-04):** owner requested the cheapest personal test purchase and rejected used options. New-only recommendation: XDJ-700, advertised new/in stock at $829 by Sweetwater and B&H, excluding tax and any delivery/accessories. Official capabilities reviewed; no model, budget, purchase, or physical result confirmed. Earlier used comparisons are superseded. Evidence and limits in dj-test-targets.md.
+- **Broader-market follow-up (2026-10-04):** owner challenged the price and asked for very basic new options. Gemini MDJ-500 is listed new at $229.95; official standalone USB/audio capability checked. It could support an early experiment, but native Pioneer library/cue support is unverified and it cannot establish CDJ compatibility. Earlier $829 research applied to Pioneer/AlphaTheta only. No test or purchase occurred.
 - **Owner test/acceptance:** once a standalone target is recorded, confirm its model and practical test access. Not yet accepted.
-- **Needed from owner:** review the proposed new XDJ-700 target and price, or confirm a borrowed standalone model; firmware can be inspected later.
+- **Needed from owner:** weigh the basic Gemini option for a separate experiment/personal purchase, or confirm actual CDJ/XDJ access; firmware can be inspected later.
 
 ## SER-007 — Recommend a bounded prototype architecture
 

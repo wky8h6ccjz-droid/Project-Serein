@@ -42,10 +42,20 @@ One working player is sufficient for the initial single-deck storage/playback te
 
 Earlier used CDJ-350/XDJ-700 comparisons are superseded by the owner’s new-only preference. The new CDJ-350 offer found at [Samstores](https://www.samstores.com/product-pioneer-cdj350-digital-multi-player-white-multi-format-playback-21299.html) was $1,086.74 plus listed $42 shipping, so it does not improve the purchase recommendation. Search coverage is not an exhaustive guarantee of the cheapest worldwide offer.
 
+### Cheaper new basic players across brands
+
+The owner challenged the $829 cost and asked about very basic new options. The earlier search was limited to Pioneer/AlphaTheta; it was not the cheapest new USB player across the market.
+
+[Gemini MDJ-500 official store/specifications](https://www.geminisound.com/products/mdj-500), checked 2026-10-04, lists a new standalone single-channel USB player at **US $229.95** with an Add to cart option. [Musician’s Friend](https://www.musiciansfriend.com/pro-audio/gemini-mdj-500-professional-usb-dj-media-player/j51130000000000) also lists it new at $229.95. Delivered price/availability are unconfirmed. Gemini documents USB-A playback, MP3/WAV/AAC/AIFF files, FAT/FAT32/HFS+/NTFS filesystems, waveform display, and RCA output; library preparation uses Gemini V-CASE. Native reading of Pioneer rekordbox databases/cues is not established by this documentation.
+
+Engineering implication: a Gemini could support a low-cost preliminary experiment with USB-storage recognition, supported file browsing, playback, and reconnect/eject behavior on that Gemini. This does not close the CDJ test-target or Pioneer compatibility gate. Keep the CDJ requirement; identify a real CDJ/XDJ for the definitive test later. A second player/mixer is unnecessary for this bounded experiment, but an appropriate RCA audio-monitoring path is needed. No prototype, Gemini playback, or Serein storage test has occurred.
+
+Recommendation: MDJ-500 is a cheaper new option to consider if the owner also wants a basic personal player. For spending solely to establish Pioneer compatibility, prioritize borrowed/rented access to the actual target rather than assuming a Gemini test is equivalent. Rental costs/availability are unresearched; no purchase, rental, test-scope change, or model selection is approved.
+
 ## Owner acceptance
 
 Done means the owner confirms one standalone model and practical test access. Unknown firmware is assigned an inspection step. Then the owner independently checks this record against the available equipment before accepting SER-006.
 
 ## Single next action
 
-Owner reviews the proposed new XDJ-700 target and price, or confirms a borrowed standalone model. No purchase, rental, or hardware selection is approved.
+Owner decides whether a $229.95 basic Gemini player is useful enough for a separate preliminary experiment/personal purchase, or confirms access to an actual CDJ/XDJ target. No purchase, rental, or hardware selection is approved.

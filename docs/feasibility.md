@@ -51,7 +51,7 @@ While the deck owns the exported storage, Serein must not concurrently modify th
 
 ## SER-007 architecture recommendation
 
-Owner approved the preliminary Gemini choice and continuing planning under DEC-020, then challenged the separate Spotify proof under DEC-021. The [revised assessment](prototype-architecture.md) prioritizes Android USB disk export. MSD supplies a source-backed privileged/configfs/kernel-dependent mechanism; ZERO 3W is a compact Android/OTG lead, not a verified mass-storage platform. Exact image/kernel support is the next evidence task. Separate USB-storage hardware is a fallback; battery, enclosure and power/port routing are unresolved. No firmware, USB enumeration or deck test occurred.
+Owner approved the preliminary Gemini choice and continuing planning under DEC-020, then challenged the separate Spotify proof under DEC-021. The [revised assessment](prototype-architecture.md) prioritizes Android USB disk export. MSD supplies a source-backed privileged/configfs/kernel-dependent mechanism. On 2026-10-05, [ZERO 3W release-linked source review](zero3w-usb-evidence.md) established the board kernel recipe, enabled mass-storage function, configfs startup and developer build option. Recommend a new 2 GB board with microSD boot for a bounded USB-storage bench experiment, awaiting owner review. Downloaded-image equivalence, live privilege/export and deck behavior are unverified; no ready-made stock mass-storage switch is established. Separate USB-storage hardware is a fallback; battery, enclosure and power/port routing are unresolved. No firmware, USB enumeration or deck test occurred.
 
 ## Gate 2: Physical fit
 
@@ -69,7 +69,7 @@ Test wired playback and connector access as well. Manufacturer headline playback
 
 ## Evidence status
 
-- Architecture: USB-storage-first candidate assessment in progress after DEC-021; exact hardware unselected, two-part route is a fallback.
+- Architecture: ZERO 3W one-board USB-storage bench recommendation awaiting owner review after DEC-021; release-linked sources checked, binary/live support unverified, final electronics unselected, two-part route a fallback.
 - Current setup: DDJ-FLX4 and laptop rekordbox; software-host controller, not a standalone storage test target.
 - Preliminary player: Gemini MDJ-500 chosen under DEC-020; purchase/access and tests unverified.
 - Pioneer CDJ/XDJ test model/access: still unconfirmed.

@@ -25,7 +25,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-SER-005's cloud handoff is accepted. Gemini MDJ-500 is chosen for preliminary basic testing; actual access and Pioneer compatibility remain unverified. Following owner feedback, SER-007's [USB-storage-first assessment](docs/prototype-architecture.md) focuses on verifying compact Android hardware's ability to export DJ storage as a real USB drive. Generic Spotify proof is deferred to routine candidate checks; no electronics, purchases or integrated architecture are selected. See [DJ test targets](docs/dj-test-targets.md).
+SER-005's cloud handoff is accepted. Gemini MDJ-500 is chosen for preliminary basic testing; actual access and Pioneer compatibility remain unverified. SER-007's [USB-storage-first assessment](docs/prototype-architecture.md) now recommends a ZERO 3W one-board bench experiment for owner review. [Release-linked source evidence](docs/zero3w-usb-evidence.md) supports the kernel/storage and developer-access path; downloaded-image behavior and physical USB/deck tests remain unverified. Generic Spotify proof is deferred to routine candidate checks; no electronics, purchases or integrated architecture are selected. See [DJ test targets](docs/dj-test-targets.md).
 
 The assistant handles CTO and project-management work. The human is the project owner and retains consequential decisions and final acceptance.
 

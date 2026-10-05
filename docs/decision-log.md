@@ -30,7 +30,7 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 
 ## Open proposals
 
-- SER-007: USB-storage-first candidate assessment in prototype-architecture.md supersedes the unaccepted two-part bench recommendation under DEC-021. Android disk export is documented by the MSD source project; Radxa ZERO 3W is a compact Android/OTG research lead, with exact kernel/export support unverified. Separate storage hardware remains a fallback. No selected electronics or approach acceptance.
+- SER-007 (2026-10-05): recommend a new 2 GB Radxa ZERO 3W with microSD boot for a one-board Android USB-storage bench experiment. Release-linked kernel, fragments, startup and developer-build source reviewed in zero3w-usb-evidence.md; binary/live behavior and deck tests remain unverified. Indicative new-board listing $39.99 excludes parts/delivery and is not a locked quote. Awaiting owner approach review; approval would cover preparing the exact parts/power/test plan, not purchase or flashing. No selected final electronics or architecture acceptance. Separate storage hardware remains a fallback under DEC-021.
 
 - SER-006 broader-market follow-up (2026-10-04): owner challenged the $829 price and asked about very basic new players. Gemini MDJ-500 ($229.95 advertised new) was proposed for preliminary USB/audio testing and then selected under DEC-020; the Pioneer/CDJ requirement remains unchanged. Ownership/access and purchase execution are unconfirmed; integrated architecture and total budget remain open. Native Pioneer library/cue support is unverified; details in dj-test-targets.md.
 

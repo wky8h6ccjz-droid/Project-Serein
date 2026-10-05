@@ -1,6 +1,6 @@
 # SER-007 — USB-storage-first architecture assessment
 
-Updated: 2026-10-04. Status: In progress; recommendation revised after owner feedback (DEC-021). Research only; no Serein electronics selected, purchased or tested.
+Updated: 2026-10-05. Status: Awaiting owner review of the ZERO 3W bench recommendation; research refocused under DEC-021. Research only; no Serein electronics selected, purchased or tested.
 
 ## Current focus
 
@@ -23,7 +23,7 @@ USB host support (reading a flash drive), ordinary Android file transfer, flashi
 
 [Linux mass-storage gadget documentation](https://docs.kernel.org/usb/mass-storage.html) explains file/block-device-backed export and exclusive ownership. The local system must flush and release the DJ volume before export and prevent background modifications while the host owns it. Read-only initial playback would not prove deck history/cue writes; writable export and power-loss recovery need later tests.
 
-## First hardware lead: Radxa ZERO 3W
+## Recommended bench candidate: Radxa ZERO 3W
 
 Primary documentation checked 2026-10-04:
 
@@ -31,7 +31,7 @@ Primary documentation checked 2026-10-04:
 - [Android resources](https://docs.radxa.com/en/zero/zero3/other-os/android/download): manufacturer links an Android 11 image.
 - [Android installation](https://docs.radxa.com/en/zero/zero3/other-os/android/install-os): documents Android boot and OTG connection for flashing; flashing is not evidence of runtime mass-storage support.
 
-This is a research lead, not a hardware recommendation to buy. The exact Android kernel configuration, privilege access, USB gadget service behavior, disk export, peripheral compatibility, app availability and power behavior are unverified. Documentation's image link was identified, but its binary was not fetched or inspected. Manufacturer mass-storage instructions for [E25 running Radxa OS](https://docs.radxa.com/en/rock3/e25/radxa-os/ums) apply to a different model/OS; do not transfer that result to ZERO 3W Android.
+Release-linked source review completed 2026-10-05: the ZERO 3 board recipe selects a kernel defconfig with mass storage enabled, relevant fragments do not explicitly disable it, Android startup creates the expected configfs gadget, and a userdebug build is offered. Recommend a new 2 GB ZERO 3W with microSD boot for a one-board USB-storage bench experiment. See [pinned evidence, cost indication and bounded test proposal](zero3w-usb-evidence.md). The downloaded binary, effective kernel configuration, live privilege/export behavior and deck compatibility remain untested. This is a bench recommendation awaiting owner review, not final hardware selection or purchase authorization. Manufacturer mass-storage instructions for [E25 running Radxa OS](https://docs.radxa.com/en/rock3/e25/radxa-os/ums) apply to a different model/OS; do not transfer that result to ZERO 3W Android.
 
 ## Required evidence before selection
 
@@ -53,6 +53,6 @@ Sources for established app behavior: [Spotify supported devices](https://suppor
 
 ## Verification and single next task
 
-Source/document review complete for the mechanism and first lead. No candidate kernel binary/configuration or live USB enumeration has been verified; no physical tests performed.
+Release-tag source trace and recommendation are complete; downloaded-image inspection, generated kernel configuration, live enumeration and physical tests are not. The build guide/download branch mismatch and exact pinned sources are recorded in zero3w-usb-evidence.md.
 
-**Single next task:** verify the exact Android build's USB-storage/privilege support for the compact candidate, then produce an evidence-based hardware recommendation for owner review. No repeated standalone Spotify proof or acceptance question for the superseded two-part plan.
+**Single next action:** owner review of the ZERO 3W one-board USB-storage bench approach. Approval would cover preparing the exact parts/power/test plan; purchases and firmware changes still need their reviewed scope. No generic Spotify proof or superseded two-part approval question.

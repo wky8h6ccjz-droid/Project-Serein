@@ -1,6 +1,6 @@
 # Cloud handoff for Serein
 
-Prepared: 2026-10-04. This handoff carries project records, not the full local chat transcript.
+Prepared: 2026-10-05. This handoff carries project records, not the full local chat transcript.
 
 ## Paste into the cloud session
 
@@ -29,7 +29,7 @@ Completed work includes naming, requirements, iterative renders, initial technic
 
 Public Serein repository publication and uploads after completed tasks are explicitly authorized within that scope. Announce publication, run appropriate checks, publish reviewed work, and report the result. Paid requests, deployment, unrelated disclosure, invitations, and destructive actions need their own approval. Publishing a deliverable does not close owner acceptance.
 
-Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018. New-only purchase preference is recorded under DEC-019. Gemini MDJ-500 preliminary basic player choice and continuing architecture planning are approved under DEC-020; no purchase/access or physical compatibility is verified. Actual Pioneer CDJ/XDJ access remains open and its compatibility gate still applies. Owner feedback under DEC-021 challenged the standalone Spotify proof. SER-007 now prioritizes compact Android USB disk export: read docs/prototype-architecture.md and docs/dj-test-targets.md. MSD documents a privileged configfs/kernel-dependent mechanism; Radxa ZERO 3W is a lead with Android/OTG documentation, but exact image/kernel export is unverified. The single next task is verify that support and prepare a capability-backed hardware recommendation. Do not repeat the accepted Gemini choice, generic Spotify proof, or approval question for the superseded two-part plan. Exact hardware, costs, integrated enclosure/power/USB-C routing and battery results remain open. Preserve acceptance states, update records and give a copy-paste assistant update at closeout.
+Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018. New-only purchase preference is recorded under DEC-019. Gemini MDJ-500 preliminary basic player choice and continuing architecture planning are approved under DEC-020; no purchase/access or physical compatibility is verified. Actual Pioneer CDJ/XDJ access remains open and its compatibility gate still applies. Owner feedback under DEC-021 challenged the standalone Spotify proof. SER-007 now prioritizes compact Android USB disk export: read docs/prototype-architecture.md and docs/dj-test-targets.md. Read docs/zero3w-usb-evidence.md: release-linked ZERO 3W sources enable the kernel storage function, create configfs gadget startup and offer a userdebug build route. Recommend a new 2 GB board with microSD boot for a bounded one-board storage bench; downloaded-image/live privilege/export and deck behavior remain untested. The single next action is owner review of this concrete bench recommendation, followed if approved by exact parts/power/test-plan preparation; no purchase or flashing approval exists. Do not repeat the accepted Gemini choice, generic Spotify proof, or approval question for the superseded two-part plan. Exact hardware, costs, integrated enclosure/power/USB-C routing and battery results remain open. Preserve acceptance states, update records and give a copy-paste assistant update at closeout.
 ```
 
 ## Independent owner check for SER-005
@@ -40,7 +40,7 @@ The cloud readback should correctly identify:
 - The agreed shape, controls, ports, storage, and dark finish direction.
 - Battery, fit, architecture, and real CDJ compatibility as untested.
 - Budget deferred; hardware unselected; no completed physical prototype.
-- SER-005 accepted; Gemini preliminary choice accepted; SER-007 USB-storage assessment in progress; actual Pioneer access and tests unverified.
+- SER-005 accepted; Gemini preliminary choice accepted; SER-007 ZERO 3W bench recommendation awaiting owner review; actual Pioneer access and tests unverified.
 
 This owner check was completed and accepted under DEC-018. Reopen if context is missing or inaccurate. SER-002's separate render acceptance remains pending.
 
@@ -51,10 +51,10 @@ On 2026-10-03 the cloud session fetched current main, read the requested records
 ## Copy-paste update for the owner's assistant
 
 ```text
-Phase/status: Feasibility; SER-007 USB-storage assessment in progress.
-Completed: Gemini choice recorded; architecture focus revised after feedback; Android storage mechanism and compact lead researched; records published.
-Decisions: New-only; MDJ-500 preliminary choice; prioritize USB storage. Separate storage board is a fallback, not selected.
-Open: Device hardware, integrated fit/power/battery, Gemini ownership/access and Pioneer target/access/testing unverified.
-Next task: Verify exact Android image/kernel/privilege support for USB disk export before a hardware recommendation.
-Needed from owner: No repeated Spotify proof or superseded approach approval; hardware/cost choice comes after evidence review.
+Phase/status: Feasibility; SER-007 ZERO 3W bench recommendation awaiting owner review.
+Completed: Traced Android release manifest, kernel/fragments, gadget startup and developer build route; research records published.
+Decisions: Existing new-only, Gemini preliminary choice and USB-first priorities retained; ZERO 3W bench approach proposed, not accepted.
+Open: Downloaded-image/root behavior, live export, power routing, deck compatibility, final fit and battery untested.
+Next task: Owner review of the ZERO 3W one-board USB-storage bench approach.
+Needed from owner: Approve or revise this bounded approach; no purchase authorization requested.
 ```

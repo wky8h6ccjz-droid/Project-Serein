@@ -1,6 +1,6 @@
 # Serein DJ test targets
 
-Updated: 2026-10-03. Deliverable for SER-006; in progress, not yet accepted.
+Updated: 2026-10-04. Deliverable for SER-006; in progress, not yet accepted.
 
 ## Owner's current setup
 
@@ -30,10 +30,22 @@ FLX4 playback cannot verify that a standalone CDJ recognizes Serein as compatibl
 
 Exact supported library formats and filesystems must be checked against the chosen model's documentation. Keep Spotify listening/cache separate from the exportable owned DJ files.
 
-## Completion and acceptance
+## New-only test-deck recommendation
+
+Checked 2026-10-04. The owner asked about a personal test purchase and then explicitly rejected used options. Apply a **new-only** preference to purchase recommendations. This is research, not approval of a model, budget, or purchase.
+
+The lowest-priced suitable new Pioneer/AlphaTheta standalone player confirmed in this search is the **XDJ-700 at US $829 per player**, advertised in stock by [Sweetwater](https://www.sweetwater.com/store/detail/XDJ700--pioneer-dj-xdj-700) and [B&H](https://www.bhphotovideo.com/c/product/1274176-REG/pioneer_xdj_700_rekordbox_compatible_compact.html). Final tax, delivery, local availability, and audio-monitoring accessories depend on the owner’s location/setup. Availability may change; no checkout was performed.
+
+[Official XDJ-700 product documentation](https://www.pioneerdj.com/en/product/dj-players-turntables/xdj-700/) confirms direct rekordbox USB playback, a touchscreen with waveform/library browsing, hot cues, quantize, and Pro DJ Link. These make it a useful proposed target for single-deck USB recognition, supported audio, prepared-library metadata, and reconnect/eject tests. Actual filesystem, library format, firmware, and Serein compatibility must still be checked and physically tested.
+
+One working player is sufficient for the initial single-deck storage/playback test; a second player/mixer is not required for that bounded test. Arrange an appropriate audio monitoring path from its RCA line output (powered speakers or an audio interface/mixer). It is a single player, not a complete two-deck mixing system. Later linked-player validation requires additional equipment access. Success here cannot establish compatibility with modern CDJ models or newer library formats.
+
+Earlier used CDJ-350/XDJ-700 comparisons are superseded by the owner’s new-only preference. The new CDJ-350 offer found at [Samstores](https://www.samstores.com/product-pioneer-cdj350-digital-multi-player-white-multi-format-playback-21299.html) was $1,086.74 plus listed $42 shipping, so it does not improve the purchase recommendation. Search coverage is not an exhaustive guarantee of the cheapest worldwide offer.
+
+## Owner acceptance
 
 Done means the owner confirms one standalone model and practical test access. Unknown firmware is assigned an inspection step. Then the owner independently checks this record against the available equipment before accepting SER-006.
 
 ## Single next action
 
-Owner checks possible standalone deck access through a friend, studio, or venue and reports the model. No purchase, rental, or hardware selection is requested or approved.
+Owner reviews the proposed new XDJ-700 target and price, or confirms a borrowed standalone model. No purchase, rental, or hardware selection is approved.

@@ -27,6 +27,8 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 
 ## Open proposals
 
+- SER-006 ownership research (2026-10-04): owner asked for the cheapest personal test purchase, then explicitly rejected used options. **New-only purchase preference is authoritative.** Proposed new XDJ-700 at $829 advertised US price; supporting retailer/official sources in dj-test-targets.md. Earlier used recommendations are superseded. Model selection, budget, and spending remain unapproved. DEC-013 still applies to the overall device budget.
+
 - Approximately 86 × 54 mm footprint translates the credit-card preference; fit is unverified.
 - Roughly 12–14 mm thickness was an assistant rendering target, not a fixed approved mechanical dimension.
 - Existing Android donor plus custom enclosure was proposed; no donor or architecture selected.

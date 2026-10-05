@@ -1,6 +1,6 @@
 # Serein continuation
 
-Updated: 2026-10-03. Read AGENTS.md and working-agreement.md first.
+Updated: 2026-10-04. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
@@ -30,6 +30,8 @@ Spotify is required in the first working version; the normal official Android ap
 
 Owner says standalone CDJ/XDJ access is “Possibly, but I need to check.” Model and access are unconfirmed. See dj-test-targets.md. The laptop may prepare a baseline library; no export or deck test has occurred. Do not expand scope into Serein hosting rekordbox for the FLX4.
 
+Owner asked for the cheapest personal test purchase and explicitly rejected used options. Purchase recommendations are new-only. Proposed XDJ-700: $829 new/in stock at Sweetwater and B&H, checked 2026-10-04; tax/delivery/accessories and local availability unconfirmed. Official capabilities reviewed; no model or spending approved. Broad deck compatibility remains untested. Earlier used-deck recommendations are superseded; details in dj-test-targets.md.
+
 No selected/purchased electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
 
 24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant render assumption. Storage allocation/microSD placement and printer details are open. Budget remains deferred.
@@ -42,6 +44,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-006:** owner checks possible standalone CDJ or USB-reading XDJ access and reports the model. Keep the item in progress until a real target and access are confirmed; then give the owner a short record check before accepting it.
+**SER-006:** owner reviews the proposed new XDJ-700 test target and price, or confirms a borrowed standalone model. Keep the item in progress until a real target and access are confirmed; then give the owner a short record check before accepting it.
 
 Current verification: primary-source review and documentation checks; no physical tests. No budget or purchase input requested.

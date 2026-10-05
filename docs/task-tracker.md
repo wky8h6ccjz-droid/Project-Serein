@@ -1,6 +1,6 @@
 # Serein task tracker
 
-Updated: 2026-10-03. Assistant manages execution; owner approves consequential decisions and acceptance.
+Updated: 2026-10-04. Assistant manages execution; owner approves consequential decisions and acceptance.
 
 ## Current phase and single next task
 
@@ -8,7 +8,7 @@ Updated: 2026-10-03. Assistant manages execution; owner approves consequential d
 
 **Active item:** SER-006, identify the first CDJ test target. Current setup is recorded; standalone deck access awaits owner confirmation.
 
-**Single next task/action:** owner checks whether a standalone CDJ or USB-reading XDJ is accessible and reports its model. Access is possible but unconfirmed; no purchase or rental is requested.
+**Single next task/action:** owner reviews the proposed new XDJ-700 test target ($829 advertised US price), or confirms a borrowed standalone model. New-only purchase preference recorded; model/access and spending remain unapproved.
 
 ## Status rules
 
@@ -84,8 +84,9 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Completion criteria:** owner confirms the first model and how it can be tested; unknown firmware details are assigned a check.
 - **Assistant verification:** checked official DDJ-FLX4 documentation. Its software-host workflow cannot validate standalone USB-storage playback. No hardware test performed.
 - **Owner input:** DDJ-FLX4 with rekordbox; owner confirmed laptop dependence and answered “Possibly, but I need to check” about standalone CDJ/XDJ access.
+- **Research update (2026-10-04):** owner requested the cheapest personal test purchase and rejected used options. New-only recommendation: XDJ-700, advertised new/in stock at $829 by Sweetwater and B&H, excluding tax and any delivery/accessories. Official capabilities reviewed; no model, budget, purchase, or physical result confirmed. Earlier used comparisons are superseded. Evidence and limits in dj-test-targets.md.
 - **Owner test/acceptance:** once a standalone target is recorded, confirm its model and practical test access. Not yet accepted.
-- **Needed from owner:** check possible standalone deck access and report the model; firmware can be inspected later.
+- **Needed from owner:** review the proposed new XDJ-700 target and price, or confirm a borrowed standalone model; firmware can be inspected later.
 
 ## SER-007 — Recommend a bounded prototype architecture
 

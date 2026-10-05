@@ -6,9 +6,9 @@ Updated: 2026-10-05. Assistant manages execution; owner approves consequential d
 
 **Phase:** product definition and feasibility; in progress.
 
-**Active item:** SER-007, integration comparison after the owner asked whether ZERO 3W is the best option. Bench proposal remains unaccepted; release-source research complete. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
+**Active item:** SER-007, display/power comparison delivered for review after DEC-022. Bench proposal remains unaccepted; release-source and integration research complete. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
 
-**Single next task/action:** compare compact touchscreen and power integration for ZERO 3W, ZERO 2 Pro and CM3 before advancing the hardware recommendation. ZERO 3W remains a proposed USB bench candidate; no hardware, purchase or flashing approved.
+**Single next task/action:** prepare a concrete ZERO 3W USB bench kit, documented power/data connection and bounded test plan for owner review. Resolve shared-port power before recommending purchases or wiring; no hardware, purchase or flashing approved.
 
 ## Status rules
 
@@ -87,21 +87,21 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Research update (2026-10-04):** owner requested the cheapest personal test purchase and rejected used options. New-only recommendation: XDJ-700, advertised new/in stock at $829 by Sweetwater and B&H, excluding tax and any delivery/accessories. Official capabilities reviewed; no model, budget, purchase, or physical result confirmed. Earlier used comparisons are superseded. Evidence and limits in dj-test-targets.md.
 - **Broader-market follow-up (2026-10-04):** owner challenged the price and asked for very basic new options. Gemini MDJ-500 is listed new at $229.95; official standalone USB/audio capability checked. It could support an early experiment, but native Pioneer library/cue support is unverified and it cannot establish CDJ compatibility. Earlier $829 research applied to Pioneer/AlphaTheta only. No test or purchase occurred.
 - **Owner test/acceptance:** Gemini preliminary choice accepted on 2026-10-04 under DEC-020. Actual Pioneer target/access and physical compatibility are not accepted or verified.
-- **Needed before physical tests:** actual Gemini/Pioneer access, firmware and baseline USB workflow. Do not repeat the accepted preliminary choice; single current action is SER-007 compact screen/power integration comparison.
+- **Needed before physical tests:** actual Gemini/Pioneer access, firmware and baseline USB workflow. Do not repeat the accepted preliminary choice; single current action is SER-007 concrete USB bench/power/test plan preparation.
 
 ## SER-007 — Recommend a bounded prototype architecture
 
 - **Purpose:** choose a credible path for official Spotify and CDJ-compatible USB storage.
 - **Dependencies:** SER-006 and current primary-source research. DEC-020 permits planning while actual CDJ access is unresolved; physical Pioneer validation still requires that access.
-- **Deliverable:** [USB-storage-first assessment](prototype-architecture.md), source-backed Android storage mechanism, compact hardware lead, evidence gaps, proposed proof and eventual owner decision.
-- **Status:** In progress for display/power integration comparison following owner best-option question; ZERO 3W bench proposal remains unaccepted. Source trace and bounded alternatives review complete; physical tests absent.
+- **Deliverable:** [USB-storage-first assessment](prototype-architecture.md), [display/power comparison](display-power-assessment.md), source-backed Android storage mechanism, compact hardware lead, evidence gaps, proposed proof and eventual owner decision.
+- **Status:** In progress for concrete bench-plan preparation; display/power comparison delivered for review. ZERO 3W bench proposal remains unaccepted; physical tests absent.
 - **Completion criteria:** official Spotify support, USB device/storage capability, library compatibility, power/audio, and fit are addressed; limitations are explicit; owner approves the approach before selection or purchase.
 - **Verification/owner test:** owner can explain the recommendation and its main tradeoffs and approve or reject it.
 - **Assistant verification (2026-10-04):** reviewed current official Spotify, AOSP, Linux USB-storage and Raspberry Pi sources; checked storage handoff, metadata, power/audio, cost and physical-fit coverage. No physical device or prototype tests.
 - **Owner feedback (2026-10-04):** generic Spotify-on-Android proof adds little; prioritize USB-storage export under DEC-021. Later owner review covers a concrete capability-backed hardware recommendation. No purchase or architecture acceptance yet.
 - **Research update (2026-10-05):** [pinned ZERO 3W evidence](zero3w-usb-evidence.md) traces the linked Android release to board kernel recipe, enabled mass-storage config, gadget startup and userdebug option. Build guide uses an older branch; binary correspondence/root access and live behavior are unverified. Recommend a new 2 GB board with microSD boot for the one-board storage experiment; indicative listing $39.99, not a delivered quote.
 - **Verification:** reviewed source provenance, claims/limits, handoff and record consistency; no downloaded-image inspection, firmware build or hardware test.
-- **Owner acceptance:** pending. Owner asked whether this is best; no approval inferred. Compared manufacturer-documented Pi Zero 2 W, M300, CM3 and ZERO 2 Pro alternatives; Orange Pi sources unavailable. ZERO 3W remains a defensible USB bench candidate, not a proven final-platform winner. Next research checks compact display and power integration.
+- **Owner acceptance:** pending. Owner asked whether this is best; no approval inferred. Compared manufacturer-documented Pi Zero 2 W, M300, CM3 and ZERO 2 Pro alternatives; Orange Pi sources unavailable. ZERO 3W remains a defensible USB bench candidate, not a proven final-platform winner. Owner authorized continuing the comparison under DEC-022. Display/power assessment retains ZERO 3W for the USB bench and identifies CM3 as the stronger custom-pocket integration lead. Touchscreen fit/drivers and measured endurance are unresolved. Prepare the concrete kit/power/test plan before asking for hardware approval.
 - **Open issue:** exact Android and USB-storage hardware, shared power/USB-C routing, enclosure fit and measured endurance remain unselected/unverified; no approach acceptance inferred from approval to plan; two-part architecture is a fallback.
 
 ## SER-008 — Prove the listening and DJ storage journeys

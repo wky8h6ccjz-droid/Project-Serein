@@ -1,6 +1,6 @@
 # Feasibility work
 
-Research snapshot: 2026-10-04. Recheck current primary documentation before selecting hardware or asserting compatibility. No device tests have been performed.
+Research snapshot: 2026-10-05. Recheck current primary documentation before selecting hardware or asserting compatibility. No device tests have been performed.
 
 ## Gate 1: Spotify and CDJ storage on one architecture
 
@@ -34,7 +34,7 @@ The owner reports DDJ-FLX4 with rekordbox on a laptop. Pioneer documents FLX4 as
 
 ### Proposed first test
 
-New-only test-deck ownership research checked 2026-10-04 is recorded in [DJ test targets](dj-test-targets.md). Owner rejected used options. Proposed XDJ-700 ($829 new advertised US price) covers standalone USB/library and supported cue/waveform testing. No deck is selected or tested; success on this model cannot establish compatibility with other generations or library formats.
+New-only test-deck ownership research checked 2026-10-04 is recorded in [DJ test targets](dj-test-targets.md). Owner rejected used options. Proposed XDJ-700 ($829 new advertised US price) covers standalone USB/library and supported cue/waveform testing. The XDJ-700 remains unselected and untested; success on this model cannot establish compatibility with other generations or library formats.
 
 Broader-market follow-up found Gemini MDJ-500 advertised new at $229.95. Official USB playback/file/filesystem specifications support considering a preliminary storage experiment on that model; its library workflow uses V-CASE and native Pioneer rekordbox metadata support is unverified. It cannot establish CDJ compatibility or close the Pioneer test gate. Gemini preliminary-player selection and continuation are subsequently approved under DEC-020; purchase/access and prototype architecture are unverified. Sources and practical limits are in dj-test-targets.md.
 
@@ -53,7 +53,7 @@ While the deck owns the exported storage, Serein must not concurrently modify th
 
 Owner approved the preliminary Gemini choice and continuing planning under DEC-020, then challenged the separate Spotify proof under DEC-021. The [revised assessment](prototype-architecture.md) prioritizes Android USB disk export. MSD supplies a source-backed privileged/configfs/kernel-dependent mechanism. On 2026-10-05, [ZERO 3W release-linked source review](zero3w-usb-evidence.md) established the board kernel recipe, enabled mass-storage function, configfs startup and developer build option. Recommend a new 2 GB board with microSD boot for a bounded USB-storage bench experiment, awaiting owner review. Downloaded-image equivalence, live privilege/export and deck behavior are unverified; no ready-made stock mass-storage switch is established. Separate USB-storage hardware is a fallback; battery, enclosure and power/port routing are unresolved. No firmware, USB enumeration or deck test occurred.
 
-Owner best-option follow-up (2026-10-05): bounded manufacturer-source comparison of Pi Zero 2 W, HiBy M300, CM3 and ZERO 2 Pro retained ZERO 3W as a defensible USB bench candidate, not a proven best final platform. Orange Pi primary pages were unavailable. Compare compact touchscreen and power integration next; no new selection/approval. See zero3w-usb-evidence.md.
+Owner best-option follow-up (2026-10-05): bounded manufacturer-source comparison of Pi Zero 2 W, HiBy M300, CM3 and ZERO 2 Pro retained ZERO 3W as a defensible USB bench candidate, not a proven best final platform. Orange Pi primary pages were unavailable. Owner subsequently authorized continuing the comparison under DEC-022. The [display/power assessment](display-power-assessment.md) retains ZERO 3W for the USB bench and identifies CM3 as the stronger custom-pocket integration lead among these three. Two reviewed 3.1-inch touch assemblies exceed the target height; smaller-screen leads need complete touch dimensions and driver verification. Battery management documentation does not prove runtime or completed fit. No hardware selection or purchase approved. Next prepare the concrete bench kit/power/test plan. See zero3w-usb-evidence.md.
 
 ## Gate 2: Physical fit
 
@@ -78,6 +78,6 @@ Test wired playback and connector access as well. Manufacturer headline playback
 - Spotify device test: not performed.
 - USB mass-storage test: not performed.
 - Library metadata test: not performed.
-- Battery test: not performed.
+- Battery test: not performed; illustrative energy calculations in display-power-assessment.md are assumptions, not measurements.
 - Mechanical fit: not performed.
 - Purchases: none.

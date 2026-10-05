@@ -68,19 +68,19 @@ Sources opened 2026-10-05: [ZERO 3 specs](https://docs.radxa.com/en/zero/zero3);
 
 Orange Pi Zero 2W was also investigated, but its manufacturer product/wiki pages timed out or returned a gateway error. Its exact Android kernel/privilege path was not established. It remains an unranked alternative, not a rejected product. This is a bounded shortlist review, not an exhaustive market comparison. No measurements support comparative battery-life claims.
 
-Engineering judgment: retain ZERO 3W for the initial USB experiment, while checking practical display/power integration on the Radxa shortlist before recommending a purchase. CM3's direct display and custom-carrier interfaces may suit a final device better, but no final-platform ranking is justified yet. An SBC board price alone is not the complete prototype cost.
+Engineering judgment: retain ZERO 3W for the initial USB experiment, while checking practical display/power integration on the Radxa shortlist before recommending a purchase. The subsequent [display/power assessment](display-power-assessment.md) identifies CM3 as the stronger integration lead among this three-board shortlist, with documented battery management as well as direct display interfaces. Final hardware selection, exact firmware, carrier fit and measured endurance remain open. An SBC board price alone is not the complete prototype cost.
 
 ## Owner review and next action
 
-Single next action: compare compact touchscreen and power integration for ZERO 3W, ZERO 2 Pro and CM3 before advancing the hardware recommendation. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
+Single next action: prepare a concrete ZERO 3W USB bench kit, documented power/data connection and bounded test plan for owner review. Resolve shared-port power before recommending purchases or wiring. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
 
 Copy-paste update:
 
 ```text
-Phase/status: Feasibility; SER-007 integration comparison in progress; bench proposal unaccepted.
-Completed: ZERO 3W release-source trace and bounded alternative comparison; records checked and published.
-Decisions: Existing new-only, Gemini preliminary choice and USB-first priorities retained; ZERO 3W bench approach proposed, not accepted or purchased.
-Open: Downloaded-image/root behavior, live disk export, power routing, deck compatibility, final fit and endurance untested.
-Next task: Compare compact screen and power integration on the Radxa shortlist before a purchase recommendation.
-Needed from owner: Nothing further for this research; hardware/architecture approval remains pending.
+Phase/status: Feasibility; SER-007 comparison delivered, architecture acceptance pending.
+Completed: Three-board display/power comparison, touchscreen geometry checks and illustrative 24-hour power budget.
+Decisions: Owner approved continuing comparison; ZERO 3W bench and CM3 pocket lead remain recommendations.
+Open: Safe USB power connection, live disk export, touch fit/drivers, measured battery life and deck compatibility.
+Next task: Prepare the ZERO 3W bench kit, power/data connection and test plan for review.
+Needed from owner: No purchase yet; equipment access and approval of the concrete plan before hardware work.
 ```

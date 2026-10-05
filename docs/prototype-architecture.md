@@ -1,6 +1,6 @@
 # SER-007 — USB-storage-first architecture assessment
 
-Updated: 2026-10-05. Status: Integration comparison in progress after owner best-option question; ZERO 3W bench recommendation unaccepted. Research only; no Serein electronics selected, purchased or tested.
+Updated: 2026-10-05. Status: Display/power comparison delivered for review; ZERO 3W bench recommendation unaccepted. Research only; no Serein electronics selected, purchased or tested.
 
 ## Current focus
 
@@ -33,6 +33,10 @@ Primary documentation checked 2026-10-04:
 
 Release-linked source review completed 2026-10-05: the ZERO 3 board recipe selects a kernel defconfig with mass storage enabled, relevant fragments do not explicitly disable it, Android startup creates the expected configfs gadget, and a userdebug build is offered. Recommend a new 2 GB ZERO 3W with microSD boot for a one-board USB-storage bench experiment. See [pinned evidence, cost indication and bounded test proposal](zero3w-usb-evidence.md). The downloaded binary, effective kernel configuration, live privilege/export behavior and deck compatibility remain untested. This is a bench recommendation awaiting owner review, not final hardware selection or purchase authorization. Manufacturer mass-storage instructions for [E25 running Radxa OS](https://docs.radxa.com/en/rock3/e25/radxa-os/ums) apply to a different model/OS; do not transfer that result to ZERO 3W Android.
 
+## Display and power comparison
+
+The [compact integration assessment](display-power-assessment.md) compares ZERO 3W, ZERO 2 Pro and CM3. Retain ZERO 3W for the source-backed USB bench experiment; CM3 is the stronger custom-pocket integration lead among these three because its manufacturer documents battery charging/monitoring and direct display interfaces. Neither is selected. Two reviewed 3.1-inch touch assemblies exceed the height target; smaller display leads still need complete dimensions and Android drivers. No endurance is measured. Owner authorized continuing this research under DEC-022.
+
 ## Required evidence before selection
 
 1. Identify exact board/image/build and trace its kernel/configuration to the actual shipped Android image. Confirm USB device controller, configfs, storage function and a supported way to control the gadget. If unavailable, record the gap; do not treat a generic Linux config or app README as proof.
@@ -55,4 +59,4 @@ Sources for established app behavior: [Spotify supported devices](https://suppor
 
 Release-tag source trace and recommendation are complete; downloaded-image inspection, generated kernel configuration, live enumeration and physical tests are not. The build guide/download branch mismatch and exact pinned sources are recorded in zero3w-usb-evidence.md.
 
-**Single next action:** compare compact touchscreen and power integration for ZERO 3W, ZERO 2 Pro and CM3 before advancing the hardware recommendation. ZERO 3W remains a proposed USB bench candidate; no hardware, purchase or flashing approved.
+**Single next action:** prepare a concrete ZERO 3W USB bench kit, documented power/data connection and bounded test plan for owner review. Resolve shared-port power before recommending purchases or wiring; no hardware, purchase or flashing approved.

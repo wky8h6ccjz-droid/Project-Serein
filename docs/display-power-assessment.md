@@ -56,17 +56,17 @@ Calculation: nominal energy = 3.7 V × capacity in Ah; power allowance = nominal
 
 Comparison complete and awaiting owner review within SER-007. ZERO 3W remains a bench proposal; CM3 is a final-device research lead. No final electronics, screen, battery, cost, purchase, flashing or architecture acceptance is inferred from permission to continue research. Gemini access and actual Pioneer CDJ/XDJ validation remain open.
 
-The [bench plan](usb-bench-plan.md) is now delivered under DEC-023. Direct injector and computer-only hub candidates remain conditional; board/image and electrical checks block purchase/execution.
+The [bench plan](usb-bench-plan.md) and [compatibility review](usb-compatibility-review.md) are delivered under DEC-023/024. AIC8800D80 source support strengthens the image case; exact board/binary matching remains open. The official PiKVM splitter is now the preferred accessory candidate ($54.94 board/splitter subset before separate supply/accessories/delivery); board-specific USB-C matching needs confirmation. Injector fallback and computer-only hub remain conditional. Purchase/execution remains blocked.
 
-**Single next action:** close the exact board/image and 5 V power/passthrough checks before finalizing the bench kit for owner approval. No purchase or flashing approved.
+**Single next action:** obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. No purchase or flashing approved.
 
 Owner check: confirm the distinction between the immediate USB experiment and the future pocket hardware, and that no fit or 24-hour claim is being made.
 
 ```text
-Phase/status: SER-007 bench plan delivered; procurement/execution blocked by compatibility checks.
-Completed: Exact parts leads, direct/PC-only power routes, known $158.28 subtotal and recoverable USB test criteria.
-Decisions: Owner approved plan preparation; hardware, purchases and flashing remain unapproved.
-Open: Board/image match, 5 V supply behavior and host isolation/passthrough; delivered costs and hardware tests.
-Next task: Close board/image and power checks before final kit approval.
-Needed from owner: Country and laptop USB connectors; no purchase yet.
+Phase/status: SER-007 compatibility review delivered; procurement/execution still blocked.
+Completed: AIC source trace, cheaper splitter candidate and two supplier-inquiry drafts.
+Decisions: Show evidence and recommendations in chat and GitHub; ZERO 3W/splitter remain proposals.
+Open: Exact sold board/binary match, splitter USB-C behavior, delivered costs and physical tests.
+Next task: Obtain the two exact compatibility confirmations before kit approval.
+Needed from owner: Country/laptop ports and authorization before supplier contact; no purchase yet.
 ```

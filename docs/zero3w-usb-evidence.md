@@ -20,6 +20,7 @@ At that release tag, [rockchip-r-release.xml](https://github.com/radxa/manifests
 | Kernel fragments | kernel/configs | b0c04524601828b880b48f61b187a1a0134334bf |
 | Board/product | rk/device/rockchip/rk3566 | 0242d97cd5463d8c3f0e41aaf3d2e2ab23612822 |
 | Common Android device/startup | rk/device/rockchip/rksdk | 2ebbf673598716e4903a0be148003694cf551eef |
+| Vendor modules/firmware packaging | rk/platform/vendor/rockchip/common | 3d1f3da434d7ed54caab413f588ef60eaea1d81a |
 
 Radxa's [build guide](https://docs.radxa.com/en/zero/zero3/other-os/android/lowlevel-development) points to `Android11_Radxa_rk11`, whereas the linked download uses the rk12 release. We therefore inspected the release-tag manifest and its pinned files rather than assuming the older guide matches the binary.
 
@@ -35,6 +36,10 @@ Radxa's [build guide](https://docs.radxa.com/en/zero/zero3/other-os/android/lowl
 | Developer privilege route | [AndroidProducts](https://gitlab.com/rockchip_android_r/rk/device/rockchip/rk3566/-/raw/0242d97cd5463d8c3f0e41aaf3d2e2ab23612822/AndroidProducts.mk) offers ZERO 3 userdebug and user builds; Radxa guide chooses userdebug. [AOSP explains root ADB](https://android.googlesource.com/platform/packages/modules/adb/+/HEAD/docs/dev/root.md) for developer builds | Downloaded build type/root access unknown; verify uid and policy. Root ADB alone does not install or authorize the MSD app |
 
 The inspected USB startup files do not supply a ready-made mass-storage switch. A controlled privileged implementation must configure the storage function and coordinate with Android's USB management. [MSD](https://github.com/chenxiaolong/MSD) supplies an existing Android 11+ disk-image mechanism but requires its own privileged installation. No Magisk/KernelSU installation, custom build or service has been attempted. Prefer first assessing developer ADB control on the disposable bench board; separately review any image changes needed. This is an engineering recommendation, not a verified MSD-on-Radxa recipe.
+
+## Wireless/image follow-up under DEC-024
+
+The [compatibility review](usb-compatibility-review.md) strengthens the wireless evidence: the release-selected board fragment enables AIC WLAN and an AIC8800 module, while its pinned kernel contains AIC8800D80 firmware-selection and initialization code. The vendor Wi-Fi recipe intends to copy generated modules and firmware. Image age alone is not a reason to reject this candidate. Exact sold chip/revision, actual binary contents and live Wi-Fi/Bluetooth remain unverified; the review includes a concrete seller/manufacturer inquiry. No downloaded-image inspection occurred.
 
 ## Bench proposal and pass criteria
 
@@ -72,17 +77,17 @@ Engineering judgment: retain ZERO 3W for the initial USB experiment, with the co
 
 ## Owner review and next action
 
-The [concrete bench plan](usb-bench-plan.md) is delivered under DEC-023. Current wireless variants need matching to the older Android release; injector 5 V/current, host isolation and passthrough remain unverified.
+The [concrete bench plan](usb-bench-plan.md) and [compatibility follow-up](usb-compatibility-review.md) are delivered under DEC-023/024. AIC8800D80 source support is established; exact board/binary matching remains open. The official PiKVM splitter is now the preferred accessory candidate ($54.94 board/splitter subset before separate supply/accessories/delivery). Manufacturer power/data separation is documented; ZERO 3W USB-C/OTG compatibility needs confirmation. No supplier contacted.
 
-Single next action: close the exact board/image and 5 V power/passthrough checks before finalizing the bench kit for owner approval. No purchase or flashing approved. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
+Single next action: obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. No purchase or flashing approved. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
 
 Copy-paste update:
 
 ```text
-Phase/status: SER-007 bench plan delivered; procurement/execution blocked by compatibility checks.
-Completed: Exact parts leads, direct/PC-only power routes, known $158.28 subtotal and recoverable USB test criteria.
-Decisions: Owner approved plan preparation; hardware, purchases and flashing remain unapproved.
-Open: Board/image match, 5 V supply behavior and host isolation/passthrough; delivered costs and hardware tests.
-Next task: Close board/image and power checks before final kit approval.
-Needed from owner: Country and laptop USB connectors; no purchase yet.
+Phase/status: SER-007 compatibility review delivered; procurement/execution still blocked.
+Completed: AIC source trace, cheaper splitter candidate and two supplier-inquiry drafts.
+Decisions: Show evidence and recommendations in chat and GitHub; ZERO 3W/splitter remain proposals.
+Open: Exact sold board/binary match, splitter USB-C behavior, delivered costs and physical tests.
+Next task: Obtain the two exact compatibility confirmations before kit approval.
+Needed from owner: Country/laptop ports and authorization before supplier contact; no purchase yet.
 ```

@@ -28,6 +28,8 @@ Offer concrete options, examples, screenshots, or prototypes. The owner's prefer
 
 Start with a short account of the current task. Give concise updates during longer work, flag assumptions, and explain blockers early. Incorporate new feedback into the active task or record it as a follow-up.
 
+Owner addition, 2026-10-05 (DEC-025): show the work and decision summaries **in the chat as well as on GitHub**, so the owner can refute a proposal. Explain the evidence, assumptions, meaningful tradeoffs, recommendation and what would change it before requesting consequential approval. Use concise, understandable summaries; publication must not substitute for discussion.
+
 ## 6. Verify before claiming completion
 
 Check relevant functionality and the actual user journey. Record automated checks, assistant hands-on verification, and owner acceptance separately. State what remains untested or uncertain.

@@ -57,7 +57,7 @@ Owner best-option follow-up (2026-10-05): bounded manufacturer-source comparison
 
 ### Bench connection evidence
 
-The new kit plan identifies the direct CG-UCUSBPDB injector and StarTech 311UE-USB-HUB computer-only alternative. A 5 V / 3 A PD profile or 15 W headline does not establish unnegotiated current for the exact board; isolation and USB topology remain checks. The Gemini-authored manual page 14 prohibits hubs, so a hub-connected computer result is not a Gemini test path. Current ZERO 3W wireless variants must be matched to the older Android release. Sources, accessory identities, cost limits and remaining questions are in usb-bench-plan.md.
+The [compatibility review](usb-compatibility-review.md) now prefers the official PiKVM power/data splitter: manufacturer documents separate 5 V power, prevention of backpower and a single data interface. Exact ZERO 3W CC/VBUS/OTG and supply matching remain checks; Raspberry Pi compatibility is insufficient. CG-UCUSBPDB remains a fallback; a PD profile does not establish non-PD current. StarTech hub remains computer-only because Gemini manual page 14 prohibits hubs. Pinned Android source enables AIC8800 and includes AIC8800D80 support; match exact sold board/binary rather than infer incompatibility from image age. No binary inspection or hardware test. Two supplier inquiries are prepared, none sent; sources and cost limits are in the review/bench plan.
 
 ## Gate 2: Physical fit
 

@@ -10,6 +10,8 @@ The assistant is CTO and project manager. The human is project owner, approving 
 
 ## Product and approved direction
 
+Owner feedback under DEC-026: updates have been too technical and lacked context. Read [build-plan.md](build-plan.md) and explain the plan in chat: prepare a compatible kit → open desk prototype → real deck proof → pocket electronics → physical prototype. We are preparing the first experiment, not assembling the finished product. Start each step with its purpose, success condition and next decision; technical details are optional. No hardware purchased or working prototype demonstrated. Supplier inquiries are drafted but unsent; email-sending tools are available, but the sending account and contact authorization remain to be established.
+
 A standalone pocket music player for phone-free listening and carrying an owned DJ library. Device first; genre/remix discovery and DJ set/transition software later. Noctis is separate.
 
 Upright credit-card silhouette, flat front/back/sides, full-front touchscreen, side volume up/down, top power. Bluetooth primary plus 3.5 mm jack. USB-C charging and CDJ data connection; USB-C bottom-left and jack bottom-right. At least 64 GB storage target plus microSD. Solid premium feel. Jet black, very dark matte purple, forest green, and blue.

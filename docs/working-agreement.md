@@ -16,6 +16,8 @@ Keep a living [task tracker](task-tracker.md), [decision log](decision-log.md), 
 
 Break phases into manageable tasks. Explain what we are doing, why it matters, and what done means in plain language. The owner is comfortable with technology; explain unfamiliar product-development steps rather than assuming prior knowledge.
 
+Owner clarification, 2026-10-05 (DEC-026): recent updates were too technical and lacked enough context. Lead each step with what it accomplishes for Serein, its place in the [plain-language build plan](build-plan.md), the success condition and the next decision. Explain parts by their purpose before model names. Keep deeper technical detail optional, and distinguish the open desk experiment from the eventual pocket device.
+
 ## 3. Separate decisions from implementation
 
 Recommend an approach and explain meaningful tradeoffs. Seek owner approval for choices affecting product direction, visual style, architecture, cost, privacy, or scope. Once an approach is approved, handle routine implementation independently.

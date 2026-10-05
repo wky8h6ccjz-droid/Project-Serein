@@ -11,6 +11,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 ## Start here
 
 - [Continuation](docs/continuation.md): compact current state and exactly one next action.
+- [Build plan in plain language](docs/build-plan.md): what we are building, why, where we are and how the first experiment leads to a pocket prototype.
 - [USB compatibility review](docs/usb-compatibility-review.md): decision rationale, cheaper splitter candidate and ready-to-send supplier questions.
 - [Task tracker](docs/task-tracker.md): tasks, dependencies, checks, and owner acceptance.
 - [Decision log](docs/decision-log.md): stable approval records and open proposals.

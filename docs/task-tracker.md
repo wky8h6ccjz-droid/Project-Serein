@@ -6,6 +6,8 @@ Updated: 2026-10-05. Assistant manages execution; owner approves consequential d
 
 **Phase:** product definition and feasibility; in progress.
 
+Plain-language context: we are preparing a small desk experiment to establish that one Android music player can also act as a DJ music USB drive. The recommended path is in [build-plan.md](build-plan.md). Owner feedback under DEC-026 requires purpose, place in the plan, success and next decision before technical detail. No physical prototype exists yet.
+
 **Active item:** SER-007, compatibility follow-up and supplier-inquiry drafts delivered under DEC-024; procurement/execution blocked by exact sold board/image and splitter USB-C checks. Show decision summaries in chat and GitHub under DEC-025. Bench proposal remains unaccepted; research is not a hardware test. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
 
 **Single next task/action:** obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. No purchase or flashing approved.
@@ -105,6 +107,7 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Bench-plan evidence (2026-10-05):** $158.28 board/injector subtotal excludes unquoted accessories and delivery. Manufacturer-matched injector manuals reviewed; 5 V non-PD current, upstream isolation and hub-free passthrough not established. Powered hub alternative is computer-only: Gemini-authored manual prohibits hubs. Actual supplied-player manual/firmware should be checked. Current wireless variants require Android image matching. Recovery and computer/deck pass criteria documented; no supplier contacted.
 - **Compatibility follow-up (2026-10-05, DEC-024):** pinned source enables AIC8800 and includes AIC8800D80 support/firmware-selection branches; actual sold board/binary and live wireless remain unverified. Official PiKVM splitter becomes preferred accessory candidate: new $14.95, board/splitter subset $54.94 before separate supply/accessories/delivery. Manufacturer documents 5 V up to 3 A, host-power separation and one USB interface; exact Radxa CC/VBUS/OTG match is open. Two supplier-inquiry drafts delivered in usb-compatibility-review.md, none sent. No physical tests or selection/purchase approval. Earlier $158.28 injector subset is a fallback, not the current preferred quote.
 - **Open issue:** exact Android and USB-storage hardware, shared power/USB-C routing, enclosure fit and measured endurance remain unselected/unverified; no approach acceptance inferred from approval to plan; two-part architecture is a fallback.
+- **Context correction (DEC-026):** plain-language build plan delivered and communication guidance updated after the owner reported insufficient context. Recommended sequence maps SER-007 preparation to SER-008 desk/deck proof and SER-009 pocket fit/endurance. The next action remains obtaining exact compatibility confirmations; prepared inquiries are unsent, contact requires authorization and an available channel. No new hardware research/test or owner acceptance claimed.
 
 ## SER-008 — Prove the listening and DJ storage journeys
 

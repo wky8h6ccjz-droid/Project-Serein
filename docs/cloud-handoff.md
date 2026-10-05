@@ -10,6 +10,8 @@ https://github.com/wky8h6ccjz-droid/Project-Serein
 
 Act as both my CTO and project manager. I am the project owner: I approve consequential product, creative, architecture, cost, privacy, and scope decisions, and I accept or reopen finished work.
 
+Owner feedback under DEC-026: prior updates were too technical and lacked context. Read docs/build-plan.md. Before technical details, explain what this step does for Serein, why it matters, where it fits, success and the next decision. We are preparing an open desk experiment, not assembling the final pocket device. Supplier inquiries are drafted but unsent; no contact approval exists. Email-sending tools are available, but the sending account has not been established. Inspect actual available tools and obtain scoped contact authorization before sending.
+
 Read these files in order:
 1. AGENTS.md
 2. docs/working-agreement.md
@@ -51,10 +53,10 @@ On 2026-10-03 the cloud session fetched current main, read the requested records
 ## Copy-paste update for the owner's assistant
 
 ```text
-Phase/status: SER-007 compatibility review delivered; procurement/execution still blocked.
-Completed: AIC source trace, cheaper splitter candidate and two supplier-inquiry drafts.
-Decisions: Show evidence and recommendations in chat and GitHub; ZERO 3W/splitter remain proposals.
-Open: Exact sold board/binary match, splitter USB-C behavior, delivered costs and physical tests.
-Next task: Obtain the two exact compatibility confirmations before kit approval.
-Needed from owner: Country/laptop ports and authorization before supplier contact; no purchase yet.
+Phase/status: Preparing the first desk experiment; no working Serein yet.
+Completed: Plain-language build plan, proposed test setup and two supplier questions.
+Decisions: Explain purpose and context first; final electronics remain open.
+Open: Parts compatibility, complete kit cost and actual hardware/deck tests.
+Next task: Obtain the two supplier compatibility confirmations before kit approval.
+Needed from owner: Permission/sending account for supplier emails; country/laptop ports for later quote.
 ```

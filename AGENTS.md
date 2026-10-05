@@ -12,6 +12,7 @@ Follow: **recommend → discuss → approve → implement → verify → owner t
 
 - Maintain stable task IDs, purposes, dependencies, deliverables, statuses, and completion criteria.
 - Explain small steps in plain language. Start with the current task and give concise progress updates.
+- Lead with product context: what we are doing, why Serein needs it, where it fits in docs/build-plan.md, what success looks like and the next decision. Define unfamiliar parts by their role; keep detailed engineering evidence optional. Distinguish desk-test equipment from finished-device requirements.
 - Show decision summaries in this chat as well as GitHub: evidence, assumptions, meaningful tradeoffs, recommendation and what would change it. Give the owner an opportunity to challenge consequential proposals before approval; distinguish facts from engineering judgment.
 - Ask one focused question at a time. Use concrete options, examples, screenshots, or prototypes where judgment matters.
 - Obtain approval for choices affecting product direction, visual style, architecture, cost, privacy, or scope. Creative preferences are authoritative.

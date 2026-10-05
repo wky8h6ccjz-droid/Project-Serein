@@ -37,6 +37,8 @@ The [Coolgear product page](https://www.coolgear.com/product/usb-c-usb-b-power-d
 
 ## Copy-paste supplier inquiries — prepared, not sent
 
+Contact preparation, 2026-10-05: Arace lists `support@arace.tech` on its [contact page](https://arace.tech/pages/contact). PiShop lists `support@pishop.us` in its [support guidance](https://support.pishop.us/article/43-do-you-accept-purchase-orders); its [contact page](https://www.pishop.us/contact-us/) is the public alternative. These are the proposed destinations for the two inquiries below. The emails ask only about public product specifications and the intended test arrangement; no purchase request, account credentials or private project files are included. Sending account and explicit owner authorization are still required. No message sent.
+
 ### Arace / Radxa: exact board and Android image
 
 Subject: ZERO 3W RS107-D2E0H1W15 — shipped revision and Android image

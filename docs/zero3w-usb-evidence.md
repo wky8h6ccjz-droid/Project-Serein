@@ -52,17 +52,35 @@ Power must be resolved before wiring a powered bench board to a deck. The board 
 
 [Manufacturer hardware documentation](https://docs.radxa.com/en/zero/zero3) lists a 65 × 30 mm board, USB OTG, microSD/eMMC and HDMI. It does not establish full-device fit, compact touchscreen integration, battery charging, a 3.5 mm output or 24-hour listening. Recommend this board for the storage experiment only. Final display, battery, audio, thermal behavior, port placement and storage allocation remain open. No final architecture or hardware acceptance is inferred.
 
+## Is this the best option? Owner follow-up, 2026-10-05
+
+The owner asked whether ZERO 3W is the best option. This is not acceptance. The recommendation is **a defensible first USB-storage bench candidate among the options reviewed**, not a proven market winner or the best finished Serein platform. Manufacturer source/document comparison found:
+
+| Option | Relevant advantage | Why it does not displace the bench recommendation yet |
+| --- | --- | --- |
+| ZERO 3W | Compact Android board; release-linked storage-function/startup and developer-build evidence already traced | Live support unknown; documented display connection is HDMI, not a DSI panel connector. Battery, headphone output and final packaging need additional hardware |
+| Raspberry Pi Zero 2 W | Manufacturer advertises $15, 65 × 30 mm, USB OTG; useful Linux storage-test option | Only 512 MB RAM; reviewed manufacturer OS documentation supplies Raspberry Pi OS, not an established official-Android/Spotify path. Could be storage-only fallback; not a verified integrated replacement |
+| HiBy M300 Android player | Integrated touchscreen, Android 13/Play Store, headphone output, microSD and charging | Manufacturer guide documents file transfer and USB audio, not the required disk-export/kernel/root mechanism. Do not infer inability, bootloader lock or CDJ support; those remain unverified |
+| Radxa CM3 | 55 × 40 mm RK3566 module with Android, USB OTG, MIPI DSI and I2S; candidate for placing ports/display on a custom carrier | Requires a carrier board; exact Android export, compact screen, carrier fit, full cost and battery still unverified. Shared processor is not shared firmware proof |
+| Radxa ZERO 2 Pro | 65 × 37 mm, Android documentation, USB OTG and a DSI connector | Exact Android storage/privilege support not traced here; documented supported screen is a 10-inch Display 10FHD, not evidence for a pocket panel. Screen, thermal and endurance checks remain needed |
+
+Sources opened 2026-10-05: [ZERO 3 specs](https://docs.radxa.com/en/zero/zero3); [Pi Zero 2 W specs/advertised price](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/) and [manufacturer OS downloads](https://www.raspberrypi.com/software/operating-systems/); [M300 manufacturer guide](https://track.hiby.com/Manual/Find?l=en&p=M300); [CM3 manufacturer specifications and carrier-board resources](https://radxa.com/products/cm/cm3/); [ZERO 2 Pro specs](https://docs.radxa.com/en/zero/zero2pro), [Android docs](https://docs.radxa.com/en/zero/zero2pro/other-os/android) and [supported DSI accessory](https://docs.radxa.com/en/zero/zero2pro/getting-started/accessory-usage).
+
+Orange Pi Zero 2W was also investigated, but its manufacturer product/wiki pages timed out or returned a gateway error. Its exact Android kernel/privilege path was not established. It remains an unranked alternative, not a rejected product. This is a bounded shortlist review, not an exhaustive market comparison. No measurements support comparative battery-life claims.
+
+Engineering judgment: retain ZERO 3W for the initial USB experiment, while checking practical display/power integration on the Radxa shortlist before recommending a purchase. CM3's direct display and custom-carrier interfaces may suit a final device better, but no final-platform ranking is justified yet. An SBC board price alone is not the complete prototype cost.
+
 ## Owner review and next action
 
-Single next action: owner reviews the proposed ZERO 3W one-board USB-storage bench approach. Approval covers preparing its exact parts/power/test plan, not buying, formatting or flashing. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
+Single next action: compare compact touchscreen and power integration for ZERO 3W, ZERO 2 Pro and CM3 before advancing the hardware recommendation. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
 
 Copy-paste update:
 
 ```text
-Phase/status: Feasibility; SER-007 recommendation awaiting owner review.
-Completed: Traced ZERO 3W Android release manifest, pinned kernel/fragments, gadget startup and developer build route; records checked and published.
+Phase/status: Feasibility; SER-007 integration comparison in progress; bench proposal unaccepted.
+Completed: ZERO 3W release-source trace and bounded alternative comparison; records checked and published.
 Decisions: Existing new-only, Gemini preliminary choice and USB-first priorities retained; ZERO 3W bench approach proposed, not accepted or purchased.
 Open: Downloaded-image/root behavior, live disk export, power routing, deck compatibility, final fit and endurance untested.
-Next task: Owner review of ZERO 3W one-board USB-storage bench recommendation.
-Needed from owner: Approve or revise this bounded bench approach; no purchase authorization requested.
+Next task: Compare compact screen and power integration on the Radxa shortlist before a purchase recommendation.
+Needed from owner: Nothing further for this research; hardware/architecture approval remains pending.
 ```

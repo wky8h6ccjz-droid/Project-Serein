@@ -53,6 +53,8 @@ While the deck owns the exported storage, Serein must not concurrently modify th
 
 Owner approved the preliminary Gemini choice and continuing planning under DEC-020, then challenged the separate Spotify proof under DEC-021. The [revised assessment](prototype-architecture.md) prioritizes Android USB disk export. MSD supplies a source-backed privileged/configfs/kernel-dependent mechanism. On 2026-10-05, [ZERO 3W release-linked source review](zero3w-usb-evidence.md) established the board kernel recipe, enabled mass-storage function, configfs startup and developer build option. Recommend a new 2 GB board with microSD boot for a bounded USB-storage bench experiment, awaiting owner review. Downloaded-image equivalence, live privilege/export and deck behavior are unverified; no ready-made stock mass-storage switch is established. Separate USB-storage hardware is a fallback; battery, enclosure and power/port routing are unresolved. No firmware, USB enumeration or deck test occurred.
 
+Owner best-option follow-up (2026-10-05): bounded manufacturer-source comparison of Pi Zero 2 W, HiBy M300, CM3 and ZERO 2 Pro retained ZERO 3W as a defensible USB bench candidate, not a proven best final platform. Orange Pi primary pages were unavailable. Compare compact touchscreen and power integration next; no new selection/approval. See zero3w-usb-evidence.md.
+
 ## Gate 2: Physical fit
 
 Verify display active area and module dimensions, circuit boards, antennas, headphone output, USB-C connector, microSD slot, button mechanisms, battery, structural walls, and assembly/service access against the desired 86 × 54 mm footprint.

@@ -1,6 +1,6 @@
 # SER-007 — USB-storage-first architecture assessment
 
-Updated: 2026-10-05. Status: Awaiting owner review of the ZERO 3W bench recommendation; research refocused under DEC-021. Research only; no Serein electronics selected, purchased or tested.
+Updated: 2026-10-05. Status: Integration comparison in progress after owner best-option question; ZERO 3W bench recommendation unaccepted. Research only; no Serein electronics selected, purchased or tested.
 
 ## Current focus
 
@@ -55,4 +55,4 @@ Sources for established app behavior: [Spotify supported devices](https://suppor
 
 Release-tag source trace and recommendation are complete; downloaded-image inspection, generated kernel configuration, live enumeration and physical tests are not. The build guide/download branch mismatch and exact pinned sources are recorded in zero3w-usb-evidence.md.
 
-**Single next action:** owner review of the ZERO 3W one-board USB-storage bench approach. Approval would cover preparing the exact parts/power/test plan; purchases and firmware changes still need their reviewed scope. No generic Spotify proof or superseded two-part approval question.
+**Single next action:** compare compact touchscreen and power integration for ZERO 3W, ZERO 2 Pro and CM3 before advancing the hardware recommendation. ZERO 3W remains a proposed USB bench candidate; no hardware, purchase or flashing approved.

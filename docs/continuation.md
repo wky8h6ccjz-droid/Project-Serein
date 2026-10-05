@@ -4,7 +4,7 @@ Updated: 2026-10-05. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
-Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-007 has a ZERO 3W bench recommendation awaiting owner review, following Android USB-storage research under DEC-021** under DEC-020's instruction to continue planning. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
+Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-007 is comparing final-device integration after the owner asked whether ZERO 3W is the best option; the bench recommendation remains unaccepted** under DEC-020's instruction to continue planning. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
 
 The assistant is CTO and project manager. The human is project owner, approving consequential decisions and final acceptance. Follow the ten-guideline rhythm; ask one focused question at a time.
 
@@ -46,6 +46,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-007:** owner review of the ZERO 3W one-board USB-storage bench recommendation. If approved, prepare its exact parts/power/test plan before any spending or firmware changes. Do not repeat source research, generic Spotify proof or the superseded two-part approval question. Actual Pioneer access remains a physical-validation gate.
+**SER-007:** compare compact touchscreen and power integration for ZERO 3W, ZERO 2 Pro and CM3 before advancing the hardware recommendation. ZERO 3W remains a proposed USB bench candidate; no hardware, purchase or flashing approved.
 
 Current verification: primary-source and document review only; no physical tests or owner architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.

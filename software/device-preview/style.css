@@ -6,7 +6,7 @@ button:disabled { opacity: .4; cursor: default; }
 button:focus-visible { outline: 3px solid #d6c5ed; outline-offset: 4px; }
 .workspace { max-width: 1050px; padding: 65px 50px; margin: 0 auto; display: grid; grid-template-columns: 1fr 365px; gap: 95px; align-items: center; }
 .eyebrow { color: #c6b3db; font-size: 11px; font-weight: 650; letter-spacing: .16em; }
-h1 { font-size: 54px; line-height: 1.07; letter-spacing: -.05em; font-weight: 550; margin: 27px 0 22px; }
+h1 { font-size: 40px; line-height: 1.07; letter-spacing: -.05em; font-weight: 550; margin: 27px 0 22px; }
 .description { color: #c5c3c8; line-height: 1.7; font-size: 15px; max-width: 365px; }
 .preview-label { font-size: 12px; color: #cdbddb; margin: 25px 0; display: flex; gap: 9px; align-items: center; }
 .dot { width: 6px; height: 6px; border-radius: 50%; background: #cbb2df; }
@@ -41,8 +41,8 @@ h2 { font-size: 14px; font-weight: 600; margin: 0 0 9px; }
 .tabs button span { font-size: 21px; line-height: 1; }
 .tabs button.active { background: #28212f; color: #e6d5f6; }
 .device-caption { color: #8e8796; text-align: center; font-size: 10px; line-height: 1.6; margin-top: 22px; }
-.track { display: flex; align-items: center; gap: 11px; margin: 11px 0; padding: 12px 0; border-bottom: 1px solid #27232e; cursor: pointer; }
-.track input { width: 18px; height: 18px; accent-color: #c5a8df; flex-shrink: 0; }
+.track { background: transparent; color: inherit; width: 100%; text-align: left; border: 0; min-height: 56px; display: flex; align-items: center; gap: 11px; margin: 11px 0; padding: 12px 0; border-bottom: 1px solid #27232e; cursor: pointer; }
+
 .track .track-copy { min-width: 0; }
 .track strong { font-size: 12px; font-weight: 550; display: block; }
 .track small { font-size: 9px; color: #99909f; display: block; margin-top: 5px; }
@@ -57,3 +57,18 @@ h2 { font-size: 14px; font-weight: 600; margin: 0 0 9px; }
 #notice.visible { display: block; }
 @media (max-width: 800px) { .workspace { grid-template-columns: 1fr; padding: 35px 25px; gap: 35px; } .intro { max-width: 450px; margin: auto; } h1 { font-size: 40px; } .device-area { grid-row: 2; } }
 @media (max-width: 380px) { .workspace { padding: 25px 12px; } .device { width: 100%; max-width: 335px; } }
+
+[hidden] { display: none !important; }
+a { color: #cdbddb; }
+.library-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.library-heading .page-title { margin: 0; }
+.add { background: transparent; border: 1px solid #48404f; color: #d2c8dc; border-radius: 8px; min-height: 44px; padding: 8px 10px; font-size: 11px; }
+.track strong, #player-title { overflow-wrap: anywhere; }
+.track-symbol { color: #cbb2df; }
+.track.playing .track-symbol { color: #7ed5a2; }
+.player { margin: 0 20px 14px; padding: 14px 12px 9px; background: #231d2a; border-radius: 10px; }
+.player-top { display: flex; align-items: center; gap: 10px; justify-content: space-between; }
+#player-title { font-size: 12px; min-width: 0; }
+#play-pause { flex-shrink: 0; min-height: 44px; background: #d4bfe8; color: #221b2b; border: 0; border-radius: 7px; padding: 8px 12px; font-size: 11px; }
+#seek { width: 100%; margin: 10px 0 0; min-height: 24px; accent-color: #d4bfe8; }
+.time { display: flex; justify-content: space-between; color: #aaa6b0; font-size: 9px; }

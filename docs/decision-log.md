@@ -35,6 +35,25 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 | DEC-027 | Send the two prepared compatibility inquiries through the owner-designated Outlook account — approved and performed | After the assistant asked permission to send the prepared Arace and PiShop emails, the owner selected Outlook and supplied the sending account. The connected account was verified privately, both approved inquiries were sent on 2026-10-05, and saved copies were checked. Scope covers these inquiries; no purchase, hardware acceptance or broader outreach inferred. Personal sender address and mailbox identifiers are excluded from public records. |
 | DEC-028 | Start hardware-independent device-software work while supplier replies are pending — owner-requested scope | Owner asked what can be done in the interim and suggested starting the software. Build a reversible first device-interface and handoff preview under SER-011, keeping real USB/Android integration dependent on hardware. This does not activate the deferred companion, select a final framework, approve the proposed screen design or authorize purchases/firmware changes. |
 
+## DEC-029 — Keep the interface clean and functional
+
+- **Date:** 2026-10-05.
+- **Owner direction:** liked the preview but explicitly requested removing “a little space for music”, “make it yours” and similar text from the top.
+- **Scope:** simple Home with Spotify and Library controls; remove promotional slogans. Revised preview still awaits owner review; no final Android framework or whole phase accepted.
+
+## DEC-030 — Play local files and share only the local library with decks
+
+- **Date:** 2026-10-05.
+- **Owner direction:** songs downloaded directly onto the device must play when tapped in Library. Serein plays offline files or Spotify; connecting to a deck uses only the library of files actually saved onto the device.
+- **Implementation:** preview has real local audio playback, pause/seek and owner-selected file reading without uploading. Prepare snapshots the whole local-file library, replacing per-song export selection. Spotify-managed downloads remain separate and cannot be exported. Playback and file additions pause/lock during simulated handoff until local access returns.
+- **Limit:** browser selection is a review vehicle; Android device storage scanning and real USB mass-storage handoff are future work.
+
+## DEC-031 — Source freely usable house music for the preview
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** source non-copyright house music and load it into the preview.
+- **Result:** bundled “Funky House” by Of Far Different Nature and “Synthwave House Loop” by Fupi. Creator OpenGameArt pages confirm CC0; pinned public mirror Ogg files and SHA-256 provenance recorded in software/device-preview/music/CREDITS.md. Preview embeds audio for offline playback. No purchases, Spotify downloads or private music uploads.
+
 ## Open proposals
 
 - Owner follow-up (2026-10-05): “is that the best option?” is a request for comparative justification, not approval. Bounded alternatives review is in zero3w-usb-evidence.md. ZERO 3W remains a USB bench proposal; final-platform superiority is unproven. The comparison is now delivered in display-power-assessment.md under DEC-022. ZERO 3W remains the USB bench proposal; CM3 is the stronger custom-pocket integration research lead of these three. Screen fit/drivers and endurance remain unverified; no purchase authorization.

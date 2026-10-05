@@ -10,7 +10,7 @@ https://github.com/wky8h6ccjz-droid/Project-Serein
 
 Act as both my CTO and project manager. I am the project owner: I approve consequential product, creative, architecture, cost, privacy, and scope decisions, and I accept or reopen finished work.
 
-Interim software under DEC-028: owner asked to start useful device software while awaiting supplier replies. SER-011 is now awaiting owner review; read software/device-preview/README.md. Home, fictional DJ-library selection and simulated handoff/recovery are implemented. Seven flow tests and Chromium journeys passed; rendered home inspected. Preview is self-contained HTML with optional loopback server; no accounts, owner files, audio or USB access. Android app/build, filesystem/backend and real deck proof remain future work. This does not activate SER-010 or approve a final framework/style. Single current next action: owner tries the normal/interrupted journeys and reviews the controls. Supplier replies remain the separate hardware dependency.
+Under DEC-028 the owner requested useful device software while hardware replies are pending. DEC-029 removes slogans and keeps functional labels. DEC-030 clarifies that Serein plays saved local files or Spotify, while deck use exposes only the full separately saved local-file library, never Spotify-managed downloads. DEC-031 authorizes sourcing preview house music. Read software/device-preview/README.md: clean Home, Library with two bundled CC0 house recordings, actual tap-to-play/pause/seek, optional owner-selected local files (no upload), and simulated exclusive-library deck handoff/recovery. Eight flow tests and Chromium journeys passed for audio and handoff; clean Home/Library renders inspected. Browser JavaScript remains a review vehicle, not the final Android framework. Android storage scanning, official Spotify launch and real USB/deck behavior remain unimplemented/unverified. Simulation does not establish physical storage safety. Owner liked the earlier appearance but requested these revisions; revised interaction/visual acceptance remains pending.
 
 Owner feedback under DEC-026: prior updates were too technical and lacked context. Read docs/build-plan.md. Before technical details, explain what this step does for Serein, why it matters, where it fits, success and the next decision. We are preparing an open desk experiment, not assembling the final pocket device. Under DEC-027 the two prepared supplier inquiries were sent through the owner-designated Outlook account on 2026-10-05. Account and saved copies were verified; answers are pending. Do not resend or publish personal sender/mailbox identifiers.
 
@@ -59,6 +59,6 @@ Phase/status: First device-software preview awaiting owner review; hardware awai
 Completed: Clickable screens, handoff rules, seven flow tests and browser journeys.
 Decisions: Start device software in the interim; final framework/design remain open.
 Open: Android/USB integration, hardware validation and supplier answers.
-Next task: Try and review the normal and interrupted preview flows.
+Next task: Try Library playback and review the cleaned interface.
 Needed from owner: Feedback on controls/style; no purchases needed for preview.
 ```

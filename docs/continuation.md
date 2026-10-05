@@ -20,7 +20,7 @@ Spotify is required in the first working version; the normal official Android ap
 
 ## Interim device software
 
-Under DEC-028 the owner asked to start useful software while awaiting supplier replies. Read software/device-preview/README.md. First increment: interactive Home, DJ Library and Deck flow, fictional example tracks, Spotify-launch placeholder and simulated exclusive-library handoff/recovery. Open preview.html directly in a browser, or use the loopback-only local server. Seven flow tests and Chromium journeys passed; home render inspected. Real Android app, filesystem/USB backend and physical deck behavior are not implemented or verified. Browser/JavaScript is a review vehicle, not a final framework selection. No account connection, audio or owner file access. Ask for review of the concrete interaction and proposed style; the companion remains deferred. Do not claim that simulated eject/recovery establishes actual disk safety.
+Under DEC-028 the owner requested useful device software while hardware replies are pending. DEC-029 removes slogans and keeps functional labels. DEC-030 clarifies that Serein plays saved local files or Spotify, while deck use exposes only the full separately saved local-file library, never Spotify-managed downloads. DEC-031 authorizes sourcing preview house music. Read software/device-preview/README.md: clean Home, Library with two bundled CC0 house recordings, actual tap-to-play/pause/seek, optional owner-selected local files (no upload), and simulated exclusive-library deck handoff/recovery. Eight flow tests and Chromium journeys passed for audio and handoff; clean Home/Library renders inspected. Browser JavaScript remains a review vehicle, not the final Android framework. Android storage scanning, official Spotify launch and real USB/deck behavior remain unimplemented/unverified. Simulation does not establish physical storage safety. Owner liked the earlier appearance but requested these revisions; revised interaction/visual acceptance remains pending.
 
 ## Work already done
 
@@ -42,7 +42,7 @@ Owner challenged the separate Spotify proof (DEC-021): official Spotify on compa
 
 Read usb-bench-plan.md and usb-compatibility-review.md. DEC-024 research found release-pinned AIC8800/AIC8800D80 support; image age alone is not incompatibility evidence. Exact sold board/binary matching remains open. Prefer the official PiKVM USB Power/Data Splitter (new $14.95, SKU 1106-2) as the accessory candidate: manufacturer documents 5 V up to 3 A, separated host power and one data interface. Exact ZERO 3W CC/VBUS/OTG behavior and named supply pairing need confirmation. Board/splitter subset is $54.94 before separate supply/accessories/delivery. CG-UCUSBPDB ($118.29; old $158.28 subset) remains a fallback with power/isolation gaps and conflicting included-supply descriptions. StarTech hub remains computer-only; Gemini manual prohibits hubs. Both prepared supplier inquiries were sent under DEC-027 on 2026-10-05, with saved-copy verification. Answers are pending; do not resend. Country and laptop ports were requested and remain unanswered. Do not repeat generic research: obtain exact confirmations, then prepare the concrete kit for owner approval.
 
-No selected/purchased Serein electronics, device-installed firmware/app, CAD or working physical device. A hardware-independent browser software preview now exists under SER-011. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
+No selected/purchased Serein electronics, device-installed firmware/app, CAD or working physical device. A hardware-independent browser software preview now exists under SER-011. Spotify on candidate hardware, USB storage, library metadata, battery, physical audio hardware, and component fit remain untested.
 
 24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant render assumption. Storage allocation/microSD placement and printer details are open. Budget remains deferred.
 
@@ -54,6 +54,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-011:** owner tries the first preview and reviews the Home → Library → Deck → return flow, including unexpected-unplug recovery. Arace/PiShop replies remain the independent SER-007 hardware dependency; no purchase or flashing approved.
+**SER-011:** owner tries Library playback and reviews the cleaned interface. Arace/PiShop replies remain the independent SER-007 hardware dependency; no purchase or flashing approved.
 
-Current verification: source/document review, seven software-flow tests, browser journeys and home-render inspection; no Android build, physical tests or owner interaction/architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.
+Current verification: source/document review, eight flow tests, audio/handoff browser journeys and clean Home/Library render inspection; no Android build, physical tests or owner interaction/architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.

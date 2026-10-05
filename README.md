@@ -27,7 +27,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-**Software can progress while hardware replies are pending.** Under DEC-028, SER-011 now delivers a [first device-software preview](software/device-preview/README.md): Home, example DJ-library selection and a simulated deck handoff/recovery. Open [preview.html](software/device-preview/preview.html) in a browser after downloading it. Seven software-flow tests and Chromium journeys passed. Next, try the flow and review the proposed controls/style. This is an interaction preview; actual Android, Spotify launch and USB/deck integration remain unverified. SER-010 companion stays deferred.
+**Software can progress while hardware replies are pending.** SER-011 delivers a [device preview](software/device-preview/README.md): clean Home, playable local Library with two bundled CC0 house tracks, pause/seek, optional local-file import, and simulated full-library deck handoff/recovery. Download and open [preview.html](software/device-preview/preview.html). Eight flow tests and Chromium audio/handoff journeys passed. Next: try Library playback and review the cleaned interface. Android storage scanning, official Spotify launch and real USB/deck integration remain future work. Spotify downloads never enter the deck library; SER-010 companion stays deferred.
 
 Hardware context:
 

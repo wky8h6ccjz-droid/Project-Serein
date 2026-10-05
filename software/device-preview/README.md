@@ -1,28 +1,24 @@
 # Serein device software preview
 
-First software increment, SER-011, 2026-10-05. Owner requested useful device-software work while board/splitter supplier replies are pending. Visual design and interaction acceptance remain open.
+SER-011, updated 2026-10-05. Clean Home, local music playback and a simulated deck handoff. Awaiting owner review; Android implementation and real USB/deck integration remain future work.
 
 ## Try it
 
-Open **preview.html** in a browser. It is one self-contained file: no installation, server, accounts or internet are needed. The file uses JavaScript; if a managed browser blocks local files, use the optional local server below.
+Open **preview.html** in a browser. This single file includes two CC0 house recordings, all code and styling. No account, installation or internet is needed. If browser policy blocks local files, use the optional loopback server below.
 
-1. Open **Your DJ library** and change the example track selection.
-2. Tap **Prepare … for deck**. Use **Simulate deck connection** beside the device.
-3. Visit Library: choices are locked while the simulated deck owns the music.
-4. Return to Deck and confirm **Deck ejected — return library**. Choices unlock after restoration.
-5. Try **Simulate unexpected unplug** or **Fail next preparation**, then follow recovery.
+1. Open **Library**, then tap **Funky House** or **Synthwave House Loop**. Try Pause/Play and the progress slider.
+2. Optionally choose **Add songs** and select your own audio files. The first import replaces the bundled demo library; later imports add songs. Files are read locally, never uploaded or modified. Refresh forgets these selections. Codec support depends on the browser; MP3/WAV are useful starting points.
+3. Tap **Prepare library for deck**. Local playback stops. The entire local-file library is prepared; there are no per-track export checkboxes.
+4. Use **Simulate deck connection** beside the device. Library playback and additions stay locked until **Deck ejected — return library** restores local access.
+5. Try unexpected unplug or failed preparation and follow the recovery screen.
 
-Spotify's button demonstrates where the official Android app would open. It does not launch Spotify, access an account or play audio here. The example titles/BPMs are fictional metadata, not included music files. The demo imports/exports no files, creates no USB device and changes no disk or firmware. Refresh resets the simulation.
+The Home screen has functional Spotify and Library tiles, without slogans. Spotify is a launch placeholder here; on Android it will open the official app. Spotify-managed downloads always stay inside Spotify and never enter the deck library.
 
-## Why this is useful now
-
-It makes the actual device controls reviewable while hardware is unresolved. It also implements and tests the software rule that Serein must not alter a DJ library while a host owns it. The simulated interface does not establish actual storage safety, deck compatibility or a working Android app.
-
-The flow and rules can inform the eventual Android implementation; JavaScript/browser technology is a preview choice, not an approved final-device software framework. The first Android build still needs a supported development setup and exact hardware/image access. Official Spotify remains the listening app; the deferred discovery/DJ companion is not started.
+Music credits and verified CC0 provenance are in [music/CREDITS.md](music/CREDITS.md) and linked in the preview. This is actual browser audio playback; deck ownership/eject/recovery are simulated. No disk, USB device, firmware or account is changed.
 
 ## Develop and check
 
-Node.js 20+; no npm dependencies required for the build or flow tests.
+Node.js 20+; build/flow tests need no npm dependencies.
 
 ```sh
 npm test
@@ -30,21 +26,20 @@ npm run build
 npm start
 ```
 
-The optional server binds only to 127.0.0.1:4173 and serves an explicit file allowlist. Set SEREIN_PREVIEW_PORT to change the port. Stop it with Ctrl-C. Browser testing additionally needs Playwright and Chromium in the development environment; no runtime dependency is downloaded by the app.
+Server binds only to 127.0.0.1:4173 with an explicit file allowlist. Set SEREIN_PREVIEW_PORT to change it; Ctrl-C stops it. Browser journeys need Playwright and Chromium:
 
 ```sh
 SEREIN_PREVIEW_URL=http://127.0.0.1:4173/preview.html node tests/browser.cjs
 ```
 
-For an existing installation, SEREIN_PLAYWRIGHT_MODULE and SEREIN_CHROMIUM_PATH can point to it. SEREIN_SCREENSHOT_DIR optionally saves browser screenshots. Screenshots made during development are held in the ignored work directory, not private owner data in the repository.
+SEREIN_PLAYWRIGHT_MODULE and SEREIN_CHROMIUM_PATH can select installed tools; SEREIN_SCREENSHOT_DIR optionally captures images. Development screenshots are in ignored work/.
 
-Files: core.js holds the ownership/transition model; app.js presents the simulator and screens; index.html/style.css define the proposed interface; build.cjs generates the single-file preview. Hardware logic is deliberately absent from the controller. Future integration must replace simulated completions with verified backend acknowledgments.
+core.js models full-library ownership and immutable metadata; app.js implements audio playback, local-file import, screens and simulated acknowledgments. audio.js produces synthetic WAV fixtures for tests, not the preview music. build.cjs embeds the CC0 recordings in preview.html. This browser vehicle does not select the final Android framework or activate the deferred companion.
 
 ## Verification and limits
 
-- Seven flow tests passed, covering exclusive ownership, empty selection, canceled/stale operations, unexpected unplug, failed preparation/restoration, immutable selection snapshots and bounded event sequences.
-- Chromium journeys passed: track selection, normal handoff/eject, lockout during deck ownership, interrupted connection/recovery, preparation failure/recovery, cancellation, empty selection and 360 px layout. No JavaScript errors or external requests occurred. The generated standalone file was served locally for this check because this environment's browser policy blocks file URLs.
-- Assistant inspected the rendered home screen; browser screenshots also captured deck and narrow-layout states. No Android build, Spotify installation, USB mass-storage exposure, music playback, filesystem check or physical deck test occurred.
-- This model runs in memory. It is not production storage protection: a real service must detect persisted host ownership at boot, verify flush/unmount/export/eject/remount, recover after crashes, preserve rekordbox metadata and prevent every other local writer. A button press alone cannot prove host release or filesystem health.
+Eight flow tests passed: full-library preparation, immutable metadata, empty library, stale callbacks, cancellation, exclusive ownership and failure/recovery. Chromium journeys passed for both included recordings, real selected-file playback, pause/resume/seek, deck lockout/eject, interruption/recovery, failed preparation, cancellation, escaped filenames, invalid audio, Spotify placeholder and narrow layout. No JavaScript errors or external requests. Both generated standalone and source routes were tested over loopback HTTP; direct file navigation is blocked by this environment's browser policy. Clean Home and Library/player renders were inspected.
 
-**Owner review is the next action:** try the normal and interrupted paths, then say what feels unclear or what controls should change. Publication is delivery, not owner acceptance.
+No Android APK, device filesystem scan, real Spotify launch, USB mass-storage exposure or physical deck test is implemented or verified. Simulation resets on refresh; production must persist ownership, verify flush/unmount/export/eject/remount and recovery, protect all writers, and preserve DJ metadata. A preview button cannot prove host release or disk health.
+
+**Next action:** owner tries Library playback and reviews the cleaned interface. Publication is delivery, not acceptance.

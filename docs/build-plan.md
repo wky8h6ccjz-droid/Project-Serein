@@ -44,21 +44,6 @@ The board and splitter listings total $54.94 before a separate power supply, mem
 
 ## Useful software work while suppliers reply
 
-The owner requested starting software in the interim under DEC-028. SER-011 now supplies a [clickable device preview](../software/device-preview/README.md): Home, choosing owned DJ tracks, preparing for a deck, returning to local use and handling interruption. This lets the owner try the controls now and gives us tested rules for how the library changes hands. It advances the device itself; discovery/DJ companion software remains deferred.
+The owner requested starting software in the interim under DEC-028. SER-011 now supplies a [clickable device preview](../software/device-preview/README.md): clean Home, actual local-file music playback, preparing the full local library for a deck, returning to local use and handling interruption. This lets the owner try the controls now and gives us tested rules for how the library changes hands. It advances the device itself; discovery/DJ companion software remains deferred.
 
-The preview uses example tracks and simulated signals. Spotify launch, real songs, actual USB export and deck playback are future integration work. An open browser preview is the current review format, not a final software-framework decision. Proposed styling and behavior are awaiting owner acceptance. **The immediate next action is to try and review the preview's normal and interrupted paths.**
-
-## Hardware dependency while software progresses
-
-Resolve two practical questions using the [prepared supplier inquiries](usb-compatibility-review.md):
-
-1. Does the exact board being sold have suitable Android software?
-2. Does the exact splitter power that board correctly while letting a host read its USB data?
-
-The owner authorized the two inquiries through their designated Outlook account under DEC-027. Both were sent and saved copies verified on 2026-10-05; supplier answers are pending. The immediate next action is to review those replies against the two questions before kit approval. Further generic research is not a substitute for the missing exact answers. Country and laptop ports remain needed for the subsequent delivered parts quote.
-
-Once those answers are satisfactory, prepare one concrete kit recommendation, its full expected cost and what the first test will prove, for owner approval. If a candidate fails the check, revise the candidate before presenting the kit.
-
-## How each update should read
-
-Before component names or technical details, explain: **what we are doing, why Serein needs it, where it fits in the plan, what result counts as success, and what decision comes next.** Give the recommendation and practical tradeoff in plain language; link deeper engineering evidence for optional reading. Show this context in chat as well as GitHub.
+The preview includes two CC0 house recordings and optional owner-selected files for real browser playback. Spotify launch, Android device storage scanning, actual USB export and deck playback remain future integration work. Browser technology is the review format, not a final framework decision. Revised styling/behavior await owner acceptance. **The immediate next action is to try Library playback and review the cleaned interface.**

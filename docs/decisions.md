@@ -1,6 +1,6 @@
 # Requirements and decisions
 
-Updated: 2026-10-03.
+Updated: 2026-10-05.
 
 Stable approvals and their scope are in [decision-log.md](decision-log.md). Requirements below distinguish owner direction from unverified engineering targets.
 
@@ -13,6 +13,8 @@ Stable approvals and their scope are in [decision-log.md](decision-log.md). Requ
 | Form | Upright, approximately credit-card footprint |
 | Surfaces | Flat front and back; flat sides inspired by the iPhone 4 perimeter; softened outline corners and small edge bevels |
 | Display/control | Full-front touchscreen; no front wheel or physical playback controls selected |
+| Interface | Simple functional UI without slogans (DEC-029) |
+| Local listening | Tap songs stored as local files in Library to play, with pause/progress; separate from Spotify (DEC-030) |
 | Buttons | Two side buttons: volume up and down; power/lock button on top |
 | Wireless audio | Bluetooth is the primary listening path |
 | Wired audio | 3.5 mm headphone jack |
@@ -20,7 +22,7 @@ Stable approvals and their scope are in [decision-log.md](decision-log.md). Requ
 | Storage | At least 64 GB storage target; internal/usable allocation needs owner confirmation |
 | Expansion | microSD required; external access is an assistant proposal, exact placement undecided |
 | First Spotify prototype | Official Spotify app on compatible Android hardware; normal app interface is acceptable |
-| DJ use | Direct connection to supported CDJs as a flash-drive replacement is a core requirement |
+| DJ use | Direct connection to supported CDJs as a flash-drive replacement; expose the full separately saved local-file library only, excluding Spotify-managed downloads (DEC-030) |
 | Finish palette | Jet black, very dark matte purple, very dark matte forest green, very dark matte blue |
 | Collaboration | Assistant is CTO and project manager; human is owner, decision approver, and final acceptor |
 | Prototyping | A 3D printer is available |

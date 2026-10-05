@@ -10,7 +10,7 @@ Plain-language context: we are preparing a small desk experiment to establish th
 
 **Active item:** SER-011, first hardware-independent device-software preview delivered for owner review under DEC-028. SER-007 awaits supplier replies; procurement/execution remains blocked. The browser preview is not an Android/USB/deck demonstration. Show purpose and decision summaries in chat under DEC-025/026. Gemini preliminary choice remains accepted; actual Pioneer access is open.
 
-**Single next task/action:** owner tries the SER-011 preview and reviews the Home → Library → Deck → return flow, including unexpected-unplug recovery. Supplier answers remain an independent hardware dependency; no purchase or flashing approved.
+**Single next task/action:** owner tries Library playback and reviews the cleaned interface. Supplier answers remain an independent hardware dependency; no purchase or flashing approved.
 
 ## Status rules
 
@@ -144,11 +144,11 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Purpose:** make Serein's controls and music handoff understandable and testable before hardware arrives.
 - **Dependencies:** owner request under DEC-028 and established product requirements. Actual Android/storage integration additionally depends on SER-007 hardware evidence/approval; this first preview does not.
 - **Deliverable:** software/device-preview: self-contained preview.html, source, pure ownership model, flow tests, browser journeys and owner instructions.
-- **Status:** Awaiting owner acceptance of first interaction/visual proposal. Implemented and checked; no hardware support or final framework accepted.
-- **Completion criteria:** owner can navigate Home, choose example owned music, prepare a simulated deck session, see local choices locked during host ownership, return after simulated eject, and recover from simulated failure. Simulation boundaries remain explicit.
-- **Assistant verification (2026-10-05):** seven flow tests passed; Chromium journeys for normal eject, lockout, interruption/recovery, preparation failure, cancellation, empty selection and narrow layout passed. No JS errors or external requests. Generated standalone artifact served locally; direct file navigation blocked by environment browser policy. Rendered home inspected. No Android build, audio or physical storage/deck tests.
-- **Owner test:** follow the five steps in software/device-preview/README.md; report confusing controls or desired changes. Review proposed screen styling separately from behavior.
-- **Open:** actual Android implementation/build setup, official Spotify launch, owned-file import/library metadata, privileged USB/backend acknowledgments, durable crash/reboot recovery and hardware validation. Simulation state resets on refresh and is not production storage safety. Deferred SER-010 companion remains deferred.
+- **Status:** Awaiting owner acceptance of the revised interaction/visual proposal. Earlier appearance received positive feedback; owner requested no slogans, playable local songs, full local-only deck library, and sourced house preview music under DEC-029/030/031.
+- **Completion criteria:** clean Home; Library taps play local audio with pause/seek; whole local-file library enters simulated handoff; playback/additions lock during handoff/deck/recovery; normal eject/recovery restores access. Spotify-managed downloads are excluded. Simulation boundaries remain explicit.
+- **Assistant verification (2026-10-05):** eight flow tests passed; Chromium journeys passed on standalone and source routes for both CC0 tracks, imported WAV playback, pause/resume/seek, full-library handoff/eject, recovery/failure/cancellation, escaped filenames, invalid audio and 360 px layout. No JS errors or external requests. Clean Home and Library/player inspected. Embedded music byte hashes match pinned mirror; creator CC0 pages verified. Direct file navigation is blocked by environment browser policy. No Android or physical storage/deck tests.
+- **Owner test / single next action:** try Library playback and review the cleaned interface using software/device-preview/README.md.
+- **Open:** actual Android implementation/build, device storage scan/persistent library metadata, official Spotify launch, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. Browser file choices and simulation reset on refresh. Companion remains deferred.
 
 ## Unresolved items
 

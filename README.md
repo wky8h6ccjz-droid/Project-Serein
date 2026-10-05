@@ -25,7 +25,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-SER-005's cloud handoff is accepted. SER-006 is active: the owner uses a DDJ-FLX4 with rekordbox on a laptop; standalone CDJ/XDJ access is possible but needs checking. The next action is to confirm an accessible standalone model. See [DJ test targets](docs/dj-test-targets.md). No deck compatibility has been tested.
+SER-005's cloud handoff is accepted. The new Gemini MDJ-500 is chosen for preliminary basic USB testing; actual equipment access and Pioneer compatibility remain unverified. SER-007's [prototype architecture recommendation](docs/prototype-architecture.md) is ready: review and approve or revise a two-part bench proof using official Spotify on Android plus a separate DJ USB-storage module. Exact hardware and purchases are not selected or performed. See [DJ test targets](docs/dj-test-targets.md).
 
 The assistant handles CTO and project-management work. The human is the project owner and retains consequential decisions and final acceptance.
 

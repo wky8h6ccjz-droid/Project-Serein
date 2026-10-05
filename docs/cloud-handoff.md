@@ -1,6 +1,6 @@
 # Cloud handoff for Serein
 
-Prepared: 2026-10-03. This handoff carries project records, not the full local chat transcript.
+Prepared: 2026-10-04. This handoff carries project records, not the full local chat transcript.
 
 ## Paste into the cloud session
 
@@ -29,7 +29,7 @@ Completed work includes naming, requirements, iterative renders, initial technic
 
 Public Serein repository publication and uploads after completed tasks are explicitly authorized within that scope. Announce publication, run appropriate checks, publish reviewed work, and report the result. Paid requests, deployment, unrelated disclosure, invitations, and destructive actions need their own approval. Publishing a deliverable does not close owner acceptance.
 
-Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018; do not repeat its acceptance gate. SER-006 is active. I use DDJ-FLX4 with laptop rekordbox, which cannot validate standalone CDJ storage playback. I may have access to a standalone CDJ/XDJ but need to check. Read docs/dj-test-targets.md. The single next action is for me to check possible access and report its model; if I have not answered, preserve that pending input rather than selecting hardware or spending. Update records and give a copy-paste assistant update at closeout.
+Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018. New-only purchase preference is recorded under DEC-019. Gemini MDJ-500 preliminary basic player choice and continuing architecture planning are approved under DEC-020; no purchase/access or physical compatibility is verified. Actual Pioneer CDJ/XDJ access remains open and its compatibility gate still applies. SER-007's two-part bench proof recommendation is ready for owner approval: read docs/prototype-architecture.md and docs/dj-test-targets.md. The single next action is to approve or revise this bench approach, not repeat the accepted Gemini-choice question. Exact hardware, costs, integrated enclosure/power/USB-C routing and battery results remain open. Preserve acceptance states, update records and give a copy-paste assistant update at closeout.
 ```
 
 ## Independent owner check for SER-005
@@ -40,7 +40,7 @@ The cloud readback should correctly identify:
 - The agreed shape, controls, ports, storage, and dark finish direction.
 - Battery, fit, architecture, and real CDJ compatibility as untested.
 - Budget deferred; hardware unselected; no completed physical prototype.
-- SER-005 handoff accepted; SER-006 active with standalone test access awaiting confirmation.
+- SER-005 accepted; Gemini preliminary choice accepted; SER-007 approach awaiting approval; actual Pioneer access and tests unverified.
 
 This owner check was completed and accepted under DEC-018. Reopen if context is missing or inaccurate. SER-002's separate render acceptance remains pending.
 
@@ -51,10 +51,10 @@ On 2026-10-03 the cloud session fetched current main, read the requested records
 ## Copy-paste update for the owner's assistant
 
 ```text
-Phase/status: Product definition and feasibility; SER-006 in progress.
-Completed: Working agreement/cloud handoff accepted; current DDJ-FLX4/laptop rekordbox setup recorded; official documentation checked.
-Decisions: Existing device requirements remain; no platform, purchase, or scope expansion approved.
-Open: Standalone deck model/access unconfirmed; device, battery, fit, Spotify and CDJ workflows untested; final-render acceptance pending; budget deferred.
-Next task: SER-006—confirm one accessible standalone CDJ or USB-reading XDJ.
-Needed from owner: Check possible access and report the model.
+Phase/status: Feasibility; SER-007 recommendation ready for owner approval.
+Completed: Gemini basic-player choice recorded; prototype approaches researched and compared; records published.
+Decisions: New-only; MDJ-500 preliminary choice; architecture planning authorized. Two-part bench approach is proposed, not accepted.
+Open: Device hardware, integrated fit/power/battery, Gemini ownership/access and Pioneer target/access/testing unverified.
+Next task: Approve or revise the two-part bench proof approach.
+Needed from owner: Bench-approach decision; exact equipment inventory comes afterward.
 ```

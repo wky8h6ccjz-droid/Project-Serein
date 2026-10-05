@@ -32,7 +32,7 @@ Exact supported library formats and filesystems must be checked against the chos
 
 ## New-only test-deck recommendation
 
-Checked 2026-10-04. The owner asked about a personal test purchase and then explicitly rejected used options. Apply a **new-only** preference to purchase recommendations. This is research, not approval of a model, budget, or purchase.
+Checked 2026-10-04. The owner asked about a personal test purchase and then explicitly rejected used options. Apply a **new-only** preference to purchase recommendations (DEC-019). Subsequent Gemini preliminary-player selection is recorded below under DEC-020; this research did not execute a purchase.
 
 The lowest-priced suitable new Pioneer/AlphaTheta standalone player confirmed in this search is the **XDJ-700 at US $829 per player**, advertised in stock by [Sweetwater](https://www.sweetwater.com/store/detail/XDJ700--pioneer-dj-xdj-700) and [B&H](https://www.bhphotovideo.com/c/product/1274176-REG/pioneer_xdj_700_rekordbox_compatible_compact.html). Final tax, delivery, local availability, and audio-monitoring accessories depend on the owner’s location/setup. Availability may change; no checkout was performed.
 
@@ -50,12 +50,16 @@ The owner challenged the $829 cost and asked about very basic new options. The e
 
 Engineering implication: a Gemini could support a low-cost preliminary experiment with USB-storage recognition, supported file browsing, playback, and reconnect/eject behavior on that Gemini. This does not close the CDJ test-target or Pioneer compatibility gate. Keep the CDJ requirement; identify a real CDJ/XDJ for the definitive test later. A second player/mixer is unnecessary for this bounded experiment, but an appropriate RCA audio-monitoring path is needed. No prototype, Gemini playback, or Serein storage test has occurred.
 
-Recommendation: MDJ-500 is a cheaper new option to consider if the owner also wants a basic personal player. For spending solely to establish Pioneer compatibility, prioritize borrowed/rented access to the actual target rather than assuming a Gemini test is equivalent. Rental costs/availability are unresearched; no purchase, rental, test-scope change, or model selection is approved.
+Recommendation: MDJ-500 is a cheaper new option to consider if the owner also wants a basic personal player. For spending solely to establish Pioneer compatibility, prioritize borrowed/rented access to the actual target rather than assuming a Gemini test is equivalent. Rental costs/availability are unresearched. Subsequent approval of the preliminary Gemini choice is recorded below; no purchase or rental was executed.
 
-## Owner acceptance
+## Preliminary player choice accepted
+
+On 2026-10-04 the owner replied “that works - lets go to the next step!” to the new MDJ-500 option and its limited test role. Under DEC-020, Gemini MDJ-500 is the chosen preliminary basic player and architecture planning may proceed. Ownership, purchase, access, firmware and baseline USB playback are not verified. This accepts the preliminary choice, not SER-006's actual Pioneer target/access completion criteria or compatibility. A real CDJ/XDJ remains needed before accepting that gate.
+
+## Owner acceptance of the Pioneer target
 
 Done means the owner confirms one standalone model and practical test access. Unknown firmware is assigned an inspection step. Then the owner independently checks this record against the available equipment before accepting SER-006.
 
 ## Single next action
 
-Owner decides whether a $229.95 basic Gemini player is useful enough for a separate preliminary experiment/personal purchase, or confirms access to an actual CDJ/XDJ target. No purchase, rental, or hardware selection is approved.
+Review the SER-007 two-part bench proof recommendation in prototype-architecture.md. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.

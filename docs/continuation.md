@@ -4,7 +4,7 @@ Updated: 2026-10-04. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
-Product definition and feasibility. SER-005's working agreement and cloud handoff are accepted under DEC-018. **SER-006 is in progress: identify the first standalone CDJ test target.**
+Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-007 recommendation is ready for owner approval** under DEC-020's instruction to continue planning. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
 
 The assistant is CTO and project manager. The human is project owner, approving consequential decisions and final acceptance. Follow the ten-guideline rhythm; ask one focused question at a time.
 
@@ -30,11 +30,11 @@ Spotify is required in the first working version; the normal official Android ap
 
 Owner says standalone CDJ/XDJ access is “Possibly, but I need to check.” Model and access are unconfirmed. See dj-test-targets.md. The laptop may prepare a baseline library; no export or deck test has occurred. Do not expand scope into Serein hosting rekordbox for the FLX4.
 
-Owner asked for the cheapest personal test purchase and explicitly rejected used options. Purchase recommendations are new-only. Proposed XDJ-700: $829 new/in stock at Sweetwater and B&H, checked 2026-10-04; tax/delivery/accessories and local availability unconfirmed. Official capabilities reviewed; no model or spending approved. Broad deck compatibility remains untested. Earlier used-deck recommendations are superseded; details in dj-test-targets.md.
+Owner requires new-only purchase recommendations (DEC-019). After the new Gemini MDJ-500 ($229.95 advertised US price) and its limits were explained, owner said “that works - lets go to the next step!” (DEC-020). The Gemini is selected for preliminary basic testing; ownership, purchase/access, firmware and playback are unverified. Gemini's V-CASE workflow does not establish Pioneer rekordbox/CDJ compatibility. Do not repeat the preliminary-player selection question.
 
-Owner challenged the price and requested very basic options across the market. Gemini MDJ-500 is listed new at $229.95 by its official store and Musician’s Friend, checked 2026-10-04. It supports standalone USB audio; official preparation software is V-CASE, and native Pioneer rekordbox library/cue support is unverified. It could be a preliminary USB/storage experiment, not acceptance of the CDJ/Pioneer compatibility gate. The earlier $829 figure was limited to Pioneer/AlphaTheta. No purchase or experimental-scope change is approved.
+SER-007 compares one Android device versus separate Android listening and USB-storage modules. Recommended first approach: a two-part desk/bench proof before integrated enclosure work. Read prototype-architecture.md. Exact hardware and bench-approach approval are pending; Pi Zero-family gadget is a storage candidate, not a Spotify platform or proven deck-compatible board. Spotify downloads and exported owned DJ files remain separate.
 
-No selected/purchased electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
+No selected/purchased Serein device electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
 
 24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant render assumption. Storage allocation/microSD placement and printer details are open. Budget remains deferred.
 
@@ -46,6 +46,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-006:** owner decides whether the $229.95 Gemini is useful for a separate preliminary experiment/personal purchase, or confirms actual CDJ/XDJ access. Keep SER-006 in progress until a real CDJ/XDJ target and access are confirmed; then give the owner a short record check before accepting it.
+**SER-007:** owner approves or revises the two-part bench proof approach. Then collect existing suitable Android/board/storage equipment and prepare exact new-parts and test recommendations. Actual Pioneer target/access remains required before physical CDJ validation.
 
-Current verification: primary-source review and documentation checks; no physical tests. No budget or purchase input requested.
+Current verification: primary-source and document review only; no physical tests or owner architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.

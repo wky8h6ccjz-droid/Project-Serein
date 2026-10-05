@@ -1,6 +1,6 @@
 # Feasibility work
 
-Research snapshot: 2026-10-03. Recheck current primary documentation before selecting hardware or asserting compatibility. No device tests have been performed.
+Research snapshot: 2026-10-04. Recheck current primary documentation before selecting hardware or asserting compatibility. No device tests have been performed.
 
 ## Gate 1: Spotify and CDJ storage on one architecture
 
@@ -36,7 +36,7 @@ The owner reports DDJ-FLX4 with rekordbox on a laptop. Pioneer documents FLX4 as
 
 New-only test-deck ownership research checked 2026-10-04 is recorded in [DJ test targets](dj-test-targets.md). Owner rejected used options. Proposed XDJ-700 ($829 new advertised US price) covers standalone USB/library and supported cue/waveform testing. No deck is selected or tested; success on this model cannot establish compatibility with other generations or library formats.
 
-Broader-market follow-up found Gemini MDJ-500 advertised new at $229.95. Official USB playback/file/filesystem specifications support considering a preliminary storage experiment on that model; its library workflow uses V-CASE and native Pioneer rekordbox metadata support is unverified. It cannot establish CDJ compatibility or close the Pioneer test gate. No model, separate experiment, or spending is approved. Sources and practical limits are in dj-test-targets.md.
+Broader-market follow-up found Gemini MDJ-500 advertised new at $229.95. Official USB playback/file/filesystem specifications support considering a preliminary storage experiment on that model; its library workflow uses V-CASE and native Pioneer rekordbox metadata support is unverified. It cannot establish CDJ compatibility or close the Pioneer test gate. Gemini preliminary-player selection and continuation are subsequently approved under DEC-020; purchase/access and prototype architecture are unverified. Sources and practical limits are in dj-test-targets.md.
 
 1. Identify an accessible CDJ and record its model and firmware.
 2. Establish a baseline using a known-good flash drive and a small rekordbox export of owned files.
@@ -48,6 +48,10 @@ Broader-market follow-up found Gemini MDJ-500 advertised new at $229.95. Officia
 While the deck owns the exported storage, Serein must not concurrently modify that filesystem. Prefer a distinct storage mode that safely hands off the DJ volume and restores local access after disconnection/eject. Decide whether deck history/cue writes are required before choosing read-only behavior.
 
 **Selection rule:** USB-C charging, Android file transfer, and a microSD slot are not sufficient evidence of USB mass-storage support.
+
+## SER-007 architecture recommendation
+
+Owner approved the preliminary Gemini choice and continuing planning under DEC-020. The [reviewable recommendation](prototype-architecture.md) compares one Android device against separate Android listening and USB-storage modules. Recommend a two-part bench proof while exact hardware, combined enclosure/one USB-C power/data routing, endurance and fit remain open. Approach approval is pending. Official Spotify/AOSP/Linux/Raspberry Pi sources are linked in that document. No board, app login, USB enumeration or deck test was performed.
 
 ## Gate 2: Physical fit
 
@@ -65,9 +69,10 @@ Test wired playback and connector access as well. Manufacturer headline playback
 
 ## Evidence status
 
-- Architecture: open.
+- Architecture: two-part bench proof recommended; awaiting owner approval, exact hardware unselected.
 - Current setup: DDJ-FLX4 and laptop rekordbox; software-host controller, not a standalone storage test target.
-- CDJ/XDJ test model: unselected; owner checking possible access.
+- Preliminary player: Gemini MDJ-500 chosen under DEC-020; purchase/access and tests unverified.
+- Pioneer CDJ/XDJ test model/access: still unconfirmed.
 - Spotify device test: not performed.
 - USB mass-storage test: not performed.
 - Library metadata test: not performed.

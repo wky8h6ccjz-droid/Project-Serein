@@ -6,9 +6,9 @@ Updated: 2026-10-04. Assistant manages execution; owner approves consequential d
 
 **Phase:** product definition and feasibility; in progress.
 
-**Active item:** SER-006, identify the first CDJ test target. Current setup is recorded; standalone deck access awaits owner confirmation.
+**Active item:** SER-007, prototype architecture recommendation, awaiting owner approach approval. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
 
-**Single next task/action:** owner weighs a basic new Gemini MDJ-500 ($229.95 advertised US price) for a separate preliminary experiment/personal purchase, or confirms actual CDJ/XDJ access. This option does not close the Pioneer compatibility gate; model/access, experimental scope, and spending remain unapproved.
+**Single next task/action:** owner reviews and approves or revises the two-part bench proof in prototype-architecture.md. No build/purchase has occurred; actual CDJ/XDJ access remains a physical-test gate.
 
 ## Status rules
 
@@ -80,24 +80,26 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Purpose:** define compatibility against real accessible equipment.
 - **Dependencies:** SER-005 acceptance and owner input.
 - **Deliverable:** [DJ test-target record](dj-test-targets.md), listing model, firmware if known, access, prepared-library workflow, and baseline flash drive.
-- **Status:** In progress; awaiting owner input on standalone deck access.
+- **Status:** In progress for actual Pioneer target/access; Gemini preliminary choice accepted under DEC-020. Owner authorized advancing architecture planning with the Pioneer gate open.
 - **Completion criteria:** owner confirms the first model and how it can be tested; unknown firmware details are assigned a check.
 - **Assistant verification:** checked official DDJ-FLX4 documentation. Its software-host workflow cannot validate standalone USB-storage playback. No hardware test performed.
 - **Owner input:** DDJ-FLX4 with rekordbox; owner confirmed laptop dependence and answered “Possibly, but I need to check” about standalone CDJ/XDJ access.
 - **Research update (2026-10-04):** owner requested the cheapest personal test purchase and rejected used options. New-only recommendation: XDJ-700, advertised new/in stock at $829 by Sweetwater and B&H, excluding tax and any delivery/accessories. Official capabilities reviewed; no model, budget, purchase, or physical result confirmed. Earlier used comparisons are superseded. Evidence and limits in dj-test-targets.md.
 - **Broader-market follow-up (2026-10-04):** owner challenged the price and asked for very basic new options. Gemini MDJ-500 is listed new at $229.95; official standalone USB/audio capability checked. It could support an early experiment, but native Pioneer library/cue support is unverified and it cannot establish CDJ compatibility. Earlier $829 research applied to Pioneer/AlphaTheta only. No test or purchase occurred.
-- **Owner test/acceptance:** once a standalone target is recorded, confirm its model and practical test access. Not yet accepted.
-- **Needed from owner:** weigh the basic Gemini option for a separate experiment/personal purchase, or confirm actual CDJ/XDJ access; firmware can be inspected later.
+- **Owner test/acceptance:** Gemini preliminary choice accepted on 2026-10-04 under DEC-020. Actual Pioneer target/access and physical compatibility are not accepted or verified.
+- **Needed before physical tests:** actual Gemini/Pioneer access, firmware and baseline USB workflow. Do not repeat the accepted preliminary choice; single current action is SER-007 approach review.
 
 ## SER-007 — Recommend a bounded prototype architecture
 
 - **Purpose:** choose a credible path for official Spotify and CDJ-compatible USB storage.
-- **Dependencies:** SER-006 and current primary-source research.
-- **Deliverable:** a small comparison of candidate approaches, evidence, uncertainties, a recommended proof plan, and owner decision.
-- **Status:** Proposed.
+- **Dependencies:** SER-006 and current primary-source research. DEC-020 permits planning while actual CDJ access is unresolved; physical Pioneer validation still requires that access.
+- **Deliverable:** [Prototype architecture recommendation](prototype-architecture.md), comparing one-Android and separate-listening/storage approaches with evidence, risks, bounded proof and owner decision.
+- **Status:** Awaiting owner acceptance of the recommendation (bench-approach approval pending); research and reviewable recommendation complete.
 - **Completion criteria:** official Spotify support, USB device/storage capability, library compatibility, power/audio, and fit are addressed; limitations are explicit; owner approves the approach before selection or purchase.
 - **Verification/owner test:** owner can explain the recommendation and its main tradeoffs and approve or reject it.
-- **Open issue:** an Android donor was proposed, but no architecture or hardware was selected.
+- **Assistant verification (2026-10-04):** reviewed current official Spotify, AOSP, Linux USB-storage and Raspberry Pi sources; checked storage handoff, metadata, power/audio, cost and physical-fit coverage. No physical device or prototype tests.
+- **Owner test:** read the two-part proof plan; confirm temporary separate bench modules are acceptable and Spotify/owned files remain separate. Approve or revise the approach.
+- **Open issue:** exact Android and USB-storage hardware, shared power/USB-C routing, enclosure fit and measured endurance remain unselected/unverified; no approach acceptance inferred from approval to plan.
 
 ## SER-008 — Prove the listening and DJ storage journeys
 

@@ -77,17 +77,17 @@ Engineering judgment: retain ZERO 3W for the initial USB experiment, with the co
 
 ## Owner review and next action
 
-The [concrete bench plan](usb-bench-plan.md) and [compatibility follow-up](usb-compatibility-review.md) are delivered under DEC-023/024. AIC8800D80 source support is established; exact board/binary matching remains open. The official PiKVM splitter is now the preferred accessory candidate ($54.94 board/splitter subset before separate supply/accessories/delivery). Manufacturer power/data separation is documented; ZERO 3W USB-C/OTG compatibility needs confirmation. No supplier contacted.
+The [concrete bench plan](usb-bench-plan.md) and [compatibility follow-up](usb-compatibility-review.md) are delivered under DEC-023/024. AIC8800D80 source support is established; exact board/binary matching remains open. The official PiKVM splitter is now the preferred accessory candidate ($54.94 board/splitter subset before separate supply/accessories/delivery). Manufacturer power/data separation is documented; ZERO 3W USB-C/OTG compatibility needs confirmation. Both prepared board/splitter inquiries were sent under DEC-027; replies remain pending.
 
-Single next action: obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. No purchase or flashing approved. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
+Single next action: review Arace and PiShop replies for the two compatibility checks before final kit approval. No purchase or flashing approved. The ZERO 3W bench proposal remains unaccepted; no buying, formatting or flashing authorized. Owner check: the recommendation should be understandable as one Android board handing an owned DJ disk to a host, with physical compatibility and final-device engineering still open.
 
 Copy-paste update:
 
 ```text
-Phase/status: SER-007 compatibility review delivered; procurement/execution still blocked.
-Completed: AIC source trace, cheaper splitter candidate and two supplier-inquiry drafts.
-Decisions: Show evidence and recommendations in chat and GitHub; ZERO 3W/splitter remain proposals.
-Open: Exact sold board/binary match, splitter USB-C behavior, delivered costs and physical tests.
-Next task: Obtain the two exact compatibility confirmations before kit approval.
-Needed from owner: Country/laptop ports and authorization before supplier contact; no purchase yet.
+Phase/status: Preparing the first desk experiment; awaiting supplier replies.
+Completed: Both approved compatibility emails sent through Outlook; saved copies verified.
+Decisions: Outlook supplier contact approved; hardware and purchases remain open.
+Open: Supplier answers, full kit cost and actual hardware/deck tests.
+Next task: Review both replies before final kit approval.
+Needed from owner: Country/laptop ports for the later quote; no purchase yet.
 ```

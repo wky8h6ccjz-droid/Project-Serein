@@ -65,7 +65,7 @@ This is a **proposed topology**, not a validated wiring instruction. The [matchi
 3. Is externally supplied power prevented from feeding back into upstream host VBUS? The reviewed documents do not establish reverse-power isolation; the technical sheet lists electrical protections as N/A.
 4. Which supply and cables are included in the exact order? Manufacturer now lists in stock at $118.29, but different supply ratings appear across the page; obtain the exact matched adapter specification. C-to-C cable is listed; upstream A-to-B cable is not. Local stock/delivery remain unknown. Supply connects only to the injector's prescribed input, never to the board's GPIO or USB-C directly.
 
-These are supplier/documentation questions, not evidence of a product fault. No supplier message was sent. Do not substitute CG-UCUSBPD: its documented data direction is Type-C host to USB-A device and does not match this proposed connection.
+These are supplier/documentation questions, not evidence of a product fault. No Coolgear inquiry was sent; the preferred board/PiKVM questions were sent separately under DEC-027. Do not substitute CG-UCUSBPD: its documented data direction is Type-C host to USB-A device and does not match this proposed connection.
 
 ### Powered hub route — computer-only alternative
 
@@ -109,15 +109,15 @@ Repeat on an accessible Pioneer CDJ/XDJ with a matching desktop rekordbox export
 
 Assistant checks: release-pinned AIC source and official PiKVM documentation reviewed under DEC-024; preferred splitter candidate and $54.94 board/splitter subset recorded. Two precise supplier-inquiry drafts are delivered in usb-compatibility-review.md. Matching injector manuals, recovery limits and computer/deck pass criteria remain documented. Actual image and circuitry were not inspected or tested; no live enumeration, deck playback or owner acceptance recorded. A complete delivered quote is unavailable.
 
-**Single next action:** obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. Country/ports can narrow sourcing, but cannot resolve undocumented electrical behavior. The two inquiries are now prepared in [the compatibility review](usb-compatibility-review.md); sending requires owner authorization. No supplier contacted. Revisit the board/accessory if exact evidence fails; do not invent the answer.
+**Single next action:** review Arace and PiShop replies for the two compatibility checks before final kit approval. Country/ports can narrow sourcing, but cannot resolve undocumented electrical behavior. The two inquiries are now prepared in [the compatibility review](usb-compatibility-review.md); the owner authorized them under DEC-027 and both saved sent copies are verified. Compatibility replies remain pending. Revisit the board/accessory if exact evidence fails; do not invent the answer.
 
 Owner review: verify that the first test answers Android disk export, that the hub option applies only to a computer, and that neither the known subtotal nor permission to plan authorizes buying or flashing.
 
 ```text
-Phase/status: SER-007 compatibility review delivered; procurement/execution still blocked.
-Completed: AIC source trace, cheaper splitter candidate and two supplier-inquiry drafts.
-Decisions: Show evidence and recommendations in chat and GitHub; ZERO 3W/splitter remain proposals.
-Open: Exact sold board/binary match, splitter USB-C behavior, delivered costs and physical tests.
-Next task: Obtain the two exact compatibility confirmations before kit approval.
-Needed from owner: Country/laptop ports and authorization before supplier contact; no purchase yet.
+Phase/status: Preparing the first desk experiment; awaiting supplier replies.
+Completed: Both approved compatibility emails sent through Outlook; saved copies verified.
+Decisions: Outlook supplier contact approved; hardware and purchases remain open.
+Open: Supplier answers, full kit cost and actual hardware/deck tests.
+Next task: Review both replies before final kit approval.
+Needed from owner: Country/laptop ports for the later quote; no purchase yet.
 ```

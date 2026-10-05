@@ -66,4 +66,4 @@ Done means the owner confirms one standalone model and practical test access. Un
 
 ## Single next action
 
-Continue SER-007 by obtaining the exact board/image and official PiKVM splitter compatibility confirmations using the prepared inquiries in usb-compatibility-review.md before final kit approval. No supplier contacted. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.
+Continue SER-007 by reviewing Arace and PiShop replies to the sent compatibility inquiries in usb-compatibility-review.md before final kit approval. Both prepared board/splitter inquiries were sent under DEC-027; replies remain pending. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.

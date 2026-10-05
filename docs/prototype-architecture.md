@@ -39,7 +39,7 @@ The [compact integration assessment](display-power-assessment.md) compares ZERO 
 
 ## Concrete kit and connection plan
 
-The [bench plan](usb-bench-plan.md) and [compatibility follow-up](usb-compatibility-review.md), prepared under DEC-023/024, name parts and staged pass criteria. Pinned source includes AIC8800D80 support; exact sold board/binary matching remains open. Prefer the official PiKVM splitter as an accessory candidate: $14.95, board/splitter subset $54.94 before separate supply/accessories/delivery. Manufacturer documents separated 5 V power and direct data; ZERO 3W CC/VBUS/OTG matching and named supply need confirmation. CG-UCUSBPDB is a fallback with unresolved power/isolation questions; its older $158.28 subset included a supply. A powered hub is computer-only; Gemini manual prohibits hubs. Two supplier-inquiry drafts are prepared, none sent. These are blockers, not permission to buy or flash.
+The [bench plan](usb-bench-plan.md) and [compatibility follow-up](usb-compatibility-review.md), prepared under DEC-023/024, name parts and staged pass criteria. Pinned source includes AIC8800D80 support; exact sold board/binary matching remains open. Prefer the official PiKVM splitter as an accessory candidate: $14.95, board/splitter subset $54.94 before separate supply/accessories/delivery. Manufacturer documents separated 5 V power and direct data; ZERO 3W CC/VBUS/OTG matching and named supply need confirmation. CG-UCUSBPDB is a fallback with unresolved power/isolation questions; its older $158.28 subset included a supply. A powered hub is computer-only; Gemini manual prohibits hubs. Both prepared inquiries were sent under DEC-027; compatibility answers remain pending. These are blockers, not permission to buy or flash.
 
 ## Required evidence before selection
 
@@ -63,4 +63,4 @@ Sources for established app behavior: [Spotify supported devices](https://suppor
 
 Release-tag source trace and recommendation are complete; downloaded-image inspection, generated kernel configuration, live enumeration and physical tests are not. The build guide/download branch mismatch and exact pinned sources are recorded in zero3w-usb-evidence.md.
 
-**Single next action:** obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. No purchase or flashing approved.
+**Single next action:** review Arace and PiShop replies for the two compatibility checks before final kit approval. No purchase or flashing approved.

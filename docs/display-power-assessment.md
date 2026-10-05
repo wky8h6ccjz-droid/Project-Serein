@@ -29,7 +29,7 @@ Working enclosure target is approximately **54 mm wide × 86 mm tall**. It must 
 | Maclight MLT030W27-1, 3.1-inch 480 × 800 | Bare module 43.68 × 77.02 mm; touchscreen optional | Bare module is a geometry lead. Full touch/lens dimensions are missing, so fit is unproven |
 | Tailor Pixels TTH288XVS-01CG, 2.8-inch 480 × 640 | Product page lists module 52.2 × 72.68 × 3.01 mm and capacitive touch; specifications table also calls touch optional | Smaller-screen lead, pending confirmation that dimensions include the exact touch/lens assembly. Only 1.8 mm total width margin remains before enclosure allowances; Android panel/touch compatibility unverified |
 
-Primary sources: [Hongjia](https://www.lcdtftlcd.com/3-1-inch-with-capacitive-touch-screen-480x800.html), [SAEF](https://www.saefdisplay.com/sale-22611641-3-1-inch-ips-tft-lcd-with-capacitive-touch-panel-480-800-mipi-dsi-display-module-st7701-driver.html), [Maclight](https://www.szmaclight.com/product/3-inch-tft-lcd-module.html), [Tailor Pixels](https://tailorpixels.com/product/2-8-inch-ips-tft-high-resolution-480x640-mipi-with-capacitive-touch/) and [its linked drawing](https://tailorpixels.com/wp-content/uploads/2026/08/TTH288XVS-01CG_2.8-inch-TFT-LCD-480x640-MIPI-optical-bonding.pdf). Tables were reviewed; drawing geometry was not visually verified. These are component leads, not approved retail parts or delivered quotes. No supplier was contacted.
+Primary sources: [Hongjia](https://www.lcdtftlcd.com/3-1-inch-with-capacitive-touch-screen-480x800.html), [SAEF](https://www.saefdisplay.com/sale-22611641-3-1-inch-ips-tft-lcd-with-capacitive-touch-panel-480-800-mipi-dsi-display-module-st7701-driver.html), [Maclight](https://www.szmaclight.com/product/3-inch-tft-lcd-module.html), [Tailor Pixels](https://tailorpixels.com/product/2-8-inch-ips-tft-high-resolution-480x640-mipi-with-capacitive-touch/) and [its linked drawing](https://tailorpixels.com/wp-content/uploads/2026/08/TTH288XVS-01CG_2.8-inch-TFT-LCD-480x640-MIPI-optical-bonding.pdf). Tables were reviewed; drawing geometry was not visually verified. These are component leads, not approved retail parts or delivered quotes. No display supplier was contacted; separate board/power inquiries were subsequently sent under DEC-027.
 
 Matching MIPI DSI does not make a panel plug-and-play. Verify lane count, connector/pinout, voltages, panel initialization/timings, backlight supply/control and I2C touch driver against the chosen Android image. A custom flex adapter or carrier may be needed. Neither Radxa board's existing display support establishes support for these panels. Waveshare small-HDMI product pages were inaccessible during review; no exact assembly fit or Android touch support was established for them.
 
@@ -58,15 +58,15 @@ Comparison complete and awaiting owner review within SER-007. ZERO 3W remains a 
 
 The [bench plan](usb-bench-plan.md) and [compatibility review](usb-compatibility-review.md) are delivered under DEC-023/024. AIC8800D80 source support strengthens the image case; exact board/binary matching remains open. The official PiKVM splitter is now the preferred accessory candidate ($54.94 board/splitter subset before separate supply/accessories/delivery); board-specific USB-C matching needs confirmation. Injector fallback and computer-only hub remain conditional. Purchase/execution remains blocked.
 
-**Single next action:** obtain the exact board/image and PiKVM splitter compatibility confirmations using the prepared supplier inquiries before final kit approval. No purchase or flashing approved.
+**Single next action:** review Arace and PiShop replies for the two compatibility checks before final kit approval. No purchase or flashing approved.
 
 Owner check: confirm the distinction between the immediate USB experiment and the future pocket hardware, and that no fit or 24-hour claim is being made.
 
 ```text
-Phase/status: SER-007 compatibility review delivered; procurement/execution still blocked.
-Completed: AIC source trace, cheaper splitter candidate and two supplier-inquiry drafts.
-Decisions: Show evidence and recommendations in chat and GitHub; ZERO 3W/splitter remain proposals.
-Open: Exact sold board/binary match, splitter USB-C behavior, delivered costs and physical tests.
-Next task: Obtain the two exact compatibility confirmations before kit approval.
-Needed from owner: Country/laptop ports and authorization before supplier contact; no purchase yet.
+Phase/status: Preparing the first desk experiment; awaiting supplier replies.
+Completed: Both approved compatibility emails sent through Outlook; saved copies verified.
+Decisions: Outlook supplier contact approved; hardware and purchases remain open.
+Open: Supplier answers, full kit cost and actual hardware/deck tests.
+Next task: Review both replies before final kit approval.
+Needed from owner: Country/laptop ports for the later quote; no purchase yet.
 ```

@@ -49,7 +49,7 @@ Resolve two practical questions using the [prepared supplier inquiries](usb-comp
 1. Does the exact board being sold have suitable Android software?
 2. Does the exact splitter power that board correctly while letting a host read its USB data?
 
-The questions are drafted but unsent; supplier contact is not authorized. Email-sending tools are available, but the sending account and permission to contact these suppliers have not been established. Supplier contact needs explicit owner authorization. Further generic research is not a substitute for the missing exact answers. Country and laptop ports remain needed for the subsequent delivered parts quote.
+The owner authorized the two inquiries through their designated Outlook account under DEC-027. Both were sent and saved copies verified on 2026-10-05; supplier answers are pending. The immediate next action is to review those replies against the two questions before kit approval. Further generic research is not a substitute for the missing exact answers. Country and laptop ports remain needed for the subsequent delivered parts quote.
 
 Once those answers are satisfactory, prepare one concrete kit recommendation, its full expected cost and what the first test will prove, for owner approval. If a candidate fails the check, revise the candidate before presenting the kit.
 

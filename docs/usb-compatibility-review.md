@@ -1,6 +1,6 @@
 # SER-007 — Board/image and direct USB power review
 
-Checked: 2026-10-05 under DEC-024. Source review and supplier-inquiry drafts, delivered for owner discussion. No purchase, supplier contact, image download/build, wiring or physical test occurred.
+Checked: 2026-10-05 under DEC-024. Source review and supplier-inquiry drafts, delivered for owner discussion. Research-stage review involved no purchase, image download/build, wiring or physical test. Follow-up under DEC-027: the two inquiries below were sent on 2026-10-05; compatibility replies are pending.
 
 ## Recommendation and reasons
 
@@ -35,9 +35,9 @@ A separate BLIKVM splitter has a published pin table, but it is **not this PiKVM
 
 The [Coolgear product page](https://www.coolgear.com/product/usb-c-usb-b-power-delivery-adapter-wmounting-kit) now establishes price/stock, but lists different supply ratings across its description/package information (65 W versus 19 V × 2.64 A). It lists a C-to-C cable; an upstream A-to-B cable is not listed. Its [matching manual](https://www.coolgear.com/wp-content/uploads/2017/08/CG-UCUSBPDB-Product-Manual.pdf) and [technical sheet](https://www.coolgear.com/wp-content/uploads/CG-UCUSBPDB_Technical-Data-Sheet-06-241115.pdf) do not close the non-PD current/isolation questions. These gaps are not evidence that the product is faulty. Retain as fallback; do not order both alternatives.
 
-## Copy-paste supplier inquiries — prepared, not sent
+## Supplier inquiries — sent, awaiting answers
 
-Contact preparation, 2026-10-05: Arace lists `support@arace.tech` on its [contact page](https://arace.tech/pages/contact). PiShop lists `support@pishop.us` in its [support guidance](https://support.pishop.us/article/43-do-you-accept-purchase-orders); its [contact page](https://www.pishop.us/contact-us/) is the public alternative. These are the proposed destinations for the two inquiries below. The emails ask only about public product specifications and the intended test arrangement; no purchase request, account credentials or private project files are included. Sending account and explicit owner authorization are still required. No message sent.
+Contact preparation, 2026-10-05: Arace lists `support@arace.tech` on its [contact page](https://arace.tech/pages/contact). PiShop lists `support@pishop.us` in its [support guidance](https://support.pishop.us/article/43-do-you-accept-purchase-orders); its [contact page](https://www.pishop.us/contact-us/) is the public alternative. These are the verified public destinations for the two inquiries below. The emails ask only about public product specifications and the intended test arrangement; no purchase request, account credentials or private project files are included. Under DEC-027 the owner approved sending through their designated Outlook account, which was verified privately. Both emails were submitted successfully and their saved copies checked for sender, recipient, subject and approved body. Arace copy recorded at 20:35:23 UTC and PiShop at 20:35:32 UTC on 2026-10-05. No delivery/read receipt or compatibility reply is established. Private sender address, message IDs and mailbox links are not published.
 
 ### Arace / Radxa: exact board and Android image
 
@@ -71,4 +71,4 @@ Please confirm host VBUS isolation and a direct USB 2 D+/D- path, whether any po
 
 Retain the candidate if the exact board has a supported Android image and the exact splitter/power pairing satisfies the USB-C/5 V/direct-data conditions. A missing image/privilege route calls for a specifically scoped recoverable firmware plan or another board; an incompatible splitter calls for another documented accessory. Do not equate a supplier's generic “works with USB-C” answer with either condition.
 
-**Single next action:** obtain the two exact compatibility confirmations using these prepared inquiries before final kit approval. The drafts are ready to send; no supplier contact is authorized or performed. Country and laptop ports remain needed for the eventual delivered quote. The owner can challenge the preferred accessory or any assumption here; physical proof follows only after a separately approved kit/test scope.
+**Single next action:** review Arace and PiShop replies for the two compatibility checks before final kit approval. Both initial inquiries were sent under DEC-027; do not resend them or infer compatibility from successful email submission. Country and laptop ports remain needed for the eventual delivered quote. The owner can challenge the preferred accessory or any assumption here; physical proof follows only after a separately approved kit/test scope.

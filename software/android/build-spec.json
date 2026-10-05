@@ -1,0 +1,100 @@
+{
+  "task": "SER-014",
+  "status": "proposal-awaiting-owner-approval",
+  "checked_date": "2026-10-05",
+  "route": "native-android-kotlin-compose-media3-room",
+  "android": {
+    "application_id": "dev.serein.player.debug",
+    "min_sdk": 26,
+    "compile_sdk": 36,
+    "target_sdk": 36,
+    "build_tools": "36.0.0"
+  },
+  "toolchain": {
+    "jdk_major": 17,
+    "gradle": "8.13",
+    "agp": "8.13.2",
+    "kotlin": "2.2.21",
+    "compose_compiler_plugin": "2.2.21",
+    "ksp": "2.2.21-2.0.4",
+    "gradle_distribution_sha256": "20f1b1176237254a6fc204d8434196fa11a4cfb387567519c61556e8710aed78"
+  },
+  "libraries": {
+    "compose_bom": "2025.10.01",
+    "media3": "1.8.0",
+    "room": "2.8.5"
+  },
+  "artifact_availability": [
+    {
+      "name": "agp",
+      "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.13.2/gradle-8.13.2.pom",
+      "version": "8.13.2",
+      "okay": true
+    },
+    {
+      "name": "kotlin",
+      "url": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-gradle-plugin/2.2.21/kotlin-gradle-plugin-2.2.21.pom",
+      "version": "2.2.21",
+      "okay": true
+    },
+    {
+      "name": "compose_plugin",
+      "url": "https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/compose-compiler-gradle-plugin/2.2.21/compose-compiler-gradle-plugin-2.2.21.pom",
+      "version": "2.2.21",
+      "okay": true
+    },
+    {
+      "name": "compose_bom",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/compose/compose-bom/2025.10.01/compose-bom-2025.10.01.pom",
+      "version": "2025.10.01",
+      "okay": true
+    },
+    {
+      "name": "media3",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/media3/media3-exoplayer/1.8.0/media3-exoplayer-1.8.0.pom",
+      "version": "1.8.0",
+      "okay": true
+    },
+    {
+      "name": "room",
+      "url": "https://dl.google.com/dl/android/maven2/androidx/room/room-runtime/2.8.5/room-runtime-2.8.5.pom",
+      "version": "2.8.5",
+      "okay": true
+    },
+    {
+      "name": "ksp",
+      "url": "https://repo.maven.apache.org/maven2/com/google/devtools/ksp/symbol-processing-gradle-plugin/2.2.21-2.0.4/symbol-processing-gradle-plugin-2.2.21-2.0.4.pom",
+      "version": "2.2.21-2.0.4",
+      "okay": true
+    },
+    {
+      "name": "gradle_checksum",
+      "url": "https://downloads.gradle.org/distributions/gradle-8.13-bin.zip.sha256",
+      "sha256": "20f1b1176237254a6fc204d8434196fa11a4cfb387567519c61556e8710aed78",
+      "okay": true
+    },
+    {
+      "name": "android_repository",
+      "url": "https://dl.google.com/android/repository/repository2-1.xml",
+      "platform36": true,
+      "build_tools36": true,
+      "okay": true
+    }
+  ],
+  "verification_limits": [
+    "Pinned top-level artifacts exist; full graph not resolved or compiled.",
+    "No APK, install, emulator or real-device results.",
+    "Current workspace lacks full JDK17/SDK; emulator host/image not configured.",
+    "No Serein network permission, cloud backend or Spotify SDK proposed."
+  ],
+  "test_target": {
+    "owner_choice": "emulator-first",
+    "candidate_api_levels": [
+      30,
+      36
+    ],
+    "minimum_api_before_compatibility_claim": 26,
+    "host_and_image_setup": "not configured",
+    "hardware_acceleration_here": false
+  }
+}

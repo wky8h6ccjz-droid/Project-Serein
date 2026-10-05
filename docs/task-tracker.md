@@ -8,9 +8,9 @@ Updated: 2026-10-05. Assistant manages execution; owner approves consequential d
 
 Plain-language context: we are preparing a small desk experiment to establish that one Android music player can also act as a DJ music USB drive. The recommended path is in [build-plan.md](build-plan.md). Owner feedback under DEC-026 requires purpose, place in the plan, success and next decision before technical detail. No physical prototype exists yet.
 
-**Active item:** SER-013, visual project map delivered for owner review. SER-011 preview is accepted; SER-012 local browser saving is delivered and awaits the owner's restart test. SER-014 is proposed next software work. SER-007 waits for supplier replies; procurement/execution remains blocked.
+**Active item:** SER-014 Android build preparation delivered under DEC-037. Owner selected this next focus; the native route/first-build scope recommendation is awaiting approval under DEC-038. SER-011 preview remains accepted; SER-012 restart test and SER-013 whole-map acceptance remain open. SER-007 still waits for supplier replies.
 
-**Single next task/action:** owner reviews the [visual map](project-map.html) and chooses the next focus. Recommendation: agree a bounded first Android app build while supplier replies are pending. No purchase, flashing or Android framework selection is inferred.
+**Single next task/action:** owner approves or revises the [prepared first Android build scope/native route](../software/android/README.md), then execute SER-014A. No purchases, physical USB integration or final electronics selection included.
 
 ## Status rules
 
@@ -89,7 +89,7 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Research update (2026-10-04):** owner requested the cheapest personal test purchase and rejected used options. New-only recommendation: XDJ-700, advertised new/in stock at $829 by Sweetwater and B&H, excluding tax and any delivery/accessories. Official capabilities reviewed; no model, budget, purchase, or physical result confirmed. Earlier used comparisons are superseded. Evidence and limits in dj-test-targets.md.
 - **Broader-market follow-up (2026-10-04):** owner challenged the price and asked for very basic new options. Gemini MDJ-500 is listed new at $229.95; official standalone USB/audio capability checked. It could support an early experiment, but native Pioneer library/cue support is unverified and it cannot establish CDJ compatibility. Earlier $829 research applied to Pioneer/AlphaTheta only. No test or purchase occurred.
 - **Owner test/acceptance:** Gemini preliminary choice accepted on 2026-10-04 under DEC-020. Actual Pioneer target/access and physical compatibility are not accepted or verified.
-- **Needed before physical tests:** actual Gemini/Pioneer access, firmware and baseline USB workflow. Do not repeat the accepted preliminary choice; single current action is SER-007 closing board/image and power checks before final kit approval.
+- **Needed before physical tests:** actual Gemini/Pioneer access, firmware and baseline USB workflow. Do not repeat the accepted preliminary choice; physical-test dependency is SER-007 closing board/image and power checks before final kit approval.
 
 ## SER-007 — Recommend a bounded prototype architecture
 
@@ -169,17 +169,29 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Status:** Awaiting owner acceptance.
 - **Completion criteria:** show all fourteen stable tasks in five workstreams, accepted/pending/blocked/proposed/deferred state, dependencies and deliverables; filter work available now; work on narrow screens; retain scoped acceptance and untested hardware limits.
 - **Assistant verification:** Chromium checked fourteen task cards, all five filters/counts, expandable details, keyboard activation and 360 px layout; no page errors or external requests. Desktop/mobile renders inspected; tracker IDs checked against map.
-- **Owner test / single next action:** review map and choose the next focus. Recommended next focus: scope the first Android app build (SER-014).
+- **Owner review:** owner chose Android build preparation as the next focus under DEC-037. Whole-map acceptance/corrections remain open; task has served its next-choice purpose.
 - **Open:** owner confirmation/corrections; proposed future task scope may change.
 
-## SER-014 — First Android app build
+## SER-014 — Prepare and deliver the first Android app build
 
-- **Purpose:** turn the accepted software experience into something installable for testing before custom hardware arrives.
-- **Dependencies:** review SER-012 and approve a bounded Android build scope/framework; SDK setup and an emulator or compatible Android device. Real USB integration additionally needs SER-007/008 evidence and approval.
-- **Deliverable (proposed):** debug Android build with local-file playback, saved playlists/setlists and official Spotify launch; honest deck placeholder until native storage backend/hardware is proven.
-- **Status:** Proposed. No implementation has started and no final framework/platform is selected.
-- **Completion criteria (proposed):** build/install/launch on a recorded Android target; local import/playback/reopen checks; official Spotify launch if installed; backend/simulation boundaries visible. Hardware deck behavior is excluded from this first build's acceptance.
-- **Verification/owner test:** define with approved build scope; no APK or Android test evidence exists yet.
+- **Purpose:** move the accepted listening/library experience into an installable Android test app while suppliers reply.
+- **Dependencies:** owner authorized preparation under DEC-037. Native route/scope needs owner approval under DEC-038 before app implementation; JDK/SDK, dependency resolution and recorded test target needed. SER-012's browser owner test remains open; Android persistence must be verified independently. Physical USB integration separately requires SER-007/008 evidence and approval.
+- **Deliverable:** preparation packet at software/android/README.md, candidate dependency spec and read-only readiness checker now delivered. Debug APK and runtime evidence are later deliverables, not present results.
+- **Status:** Awaiting owner approval of prepared first-build scope/native route; preparation completed and verified, app implementation unstarted.
+- **Proposed scope:** preserve accepted clean Home/Library/artwork player; file-picker import to saved local copies; ordered playlists/setlists; background playback/Android controls; launch installed official Spotify and handle absence. Deck displays unavailable; no simulation presented as physical USB behavior.
+- **Proposed implementation:** Kotlin/Compose, Media3 service, Room/KSP; local-only imported files/metadata, app-managed test storage with a repository boundary for later exportable storage. No server/accounts/Spotify SDK or companion activation.
+- **Preparation verification (2026-10-05):** primary Android guidance reviewed; all seven proposed library/tool plugin POMs returned expected versions; Gradle distribution checksum and platform 36/Build Tools 36.0.0 availability verified. Readiness check reports missing full JDK17/SDK/tools as expected. No full dependency resolution, compile/install, emulator or real-device evidence. Candidate versions are a supported baseline, not a latest-release claim. Python syntax, record/link/pin alignment and updated map details checked.
+- **Workspace:** Java runtime 21, no javac/Gradle/SDK/adb/emulator; no /dev/kvm. Tool installation/license steps belong to A after scope approval. Owner chose emulator-first; runnable host/image setup remains open, with real audio/Spotify checks on suitable equipment later.
+- **Owner test / single next action:** read the behavior table/route tradeoff and approve or revise the proposal. App acceptance later requires independent install/import/setlist/screen-off/offline-reopen journey.
+
+| Subtask | Purpose and dependency | Deliverable / completion evidence | Status |
+| --- | --- | --- | --- |
+| SER-014A | Prepare build tools/app shell after route/scope approval | Checked JDK/SDK/wrapper; clean debug APK compile log | Proposed; parent approval required |
+| SER-014B | Port accepted screens/queue rules after A | Native UI parity, narrow layout/accessibility evidence | Proposed |
+| SER-014C | Import/store audio and lists after A/B | Offline local copies, restart/order and failed-import tests | Proposed |
+| SER-014D | Background playback/controls after B/C | Lock-screen/media controls, audio focus/headset results | Proposed |
+| SER-014E | Spotify launch and unavailable Deck after B/D | Present/absent launch paths; no fake storage export | Proposed |
+| SER-014F | Package/install/owner test after A–E | APK hash, target record and independent owner acceptance | Proposed |
 
 ## Unresolved items
 

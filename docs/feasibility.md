@@ -85,3 +85,9 @@ Test wired playback and connector access as well. Manufacturer headline playback
 - Battery test: not performed; illustrative energy calculations in display-power-assessment.md are assumptions, not measurements.
 - Mechanical fit: not performed.
 - Purchases: none.
+
+## SER-014 Android build preparation evidence
+
+Checked 2026-10-05. Owner authorized preparing the first app, not selection of an unspecified framework. [Preparation packet](../software/android/README.md) compares native Android with browser packaging and proposes Kotlin/Compose + Media3/Room. Primary [Compose](https://developer.android.com/compose), [playback service](https://developer.android.com/media/media3/session/background-playback), [file picker](https://developer.android.com/training/data-storage/shared/documents-files), [audio focus](https://developer.android.com/media/optimize/audio-focus), [backup controls](https://developer.android.com/identity/data/autobackup) and [AGP compatibility](https://developer.android.com/build/releases/agp-8-13-0-release-notes) sources inform this proposal. This is source evidence and engineering judgment, not native runtime proof.
+
+Seven candidate top-level POMs were fetched from official Google/Maven repositories and versions checked, with Gradle's published distribution checksum and Android platform 36/Build Tools 36.0.0 package availability. Exact links/pins are in build-spec.json. No full dependency graph resolved, toolchain installed or APK compiled. Read-only report finds Java runtime 21, no full JDK17/compiler/SDK/Gradle/adb/emulator and no KVM. Task network permission enabled direct dependency checks and Git fetch without changing policy or bypassing the inherited proxy. Owner chose emulator-first; no emulator host/image is installed/running yet. USB and physical audio/Spotify evidence remains separate.

@@ -48,6 +48,8 @@ The [visual project map](project-map.html) groups the work into five workstreams
 
 SER-011's Library/player preview is accepted under DEC-034. It has local-song playback, Play/Shuffle, full artwork player, playlists/setlists and simulated whole-library deck handoff. SER-012 adds browser-local audio/list saving across reopening, verified offline playback, failed-write rollback and simulated handoff restart recovery; owner acceptance of this increment is pending. Browser storage is not native device storage or physical safety evidence.
 
-Recommended next software focus: agree the scope of a first installable Android test build (proposed SER-014). This can progress before supplier replies and bridges the accepted interface to the eventual device. The final Android framework remains undecided. Official Spotify launch, native storage scanning and real USB/deck playback still need implementation and target-specific checks.
+The owner chose Android build preparation under DEC-037. [The concrete first-build packet](../software/android/README.md) proposes native Android local playback/import, saved lists, background audio and official Spotify launch while the hardware inquiry continues. Deck stays unavailable until physical backend proof. Candidate dependencies and tool availability are checked; the SDK/full Java compiler and test target are still missing. No Android app/APK exists yet.
 
-Shape/finish review (SER-002) and confirming test-deck access (SER-006) are also available now. Companion discovery/remix/DJ software stays deferred. **Single next action: review the map and choose the next focus.**
+SER-014 now has six visible subtasks: tools/app shell → accepted screens → saved local library → background playback → Spotify launch/Deck boundary → package/install/owner test. Recommendation: native Android rather than a browser wrapper for this functional audio build; the route tradeoff and test criteria are ready for review.
+
+Shape/finish review and deck access remain parallel choices; discovery/remix companion stays deferred. **Single next action: approve or revise the prepared first-build scope/native route, then execute SER-014A.**

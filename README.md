@@ -28,7 +28,7 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-**Next action: review the [visual project map](docs/project-map.html) and choose our next focus.** It shows five workstreams and fourteen tasks, including what we can tackle while hardware replies are pending. Recommendation: scope the first Android app build (SER-014, proposed).
+**Current task: Android build preparation (SER-014), chosen by the owner.** The [first-build packet](software/android/README.md) contains proposed behavior, native/browser route comparison, candidate dependency pins, readiness checks and six implementation steps. The [visual map](docs/project-map.html) reflects this focus. **Next action: approve or revise the first-build scope/native route**, then prepare tools and app shell (SER-014A). No app or APK has been built yet.
 
 The [Library/player preview](software/device-preview/README.md) is accepted (SER-011). Local songs, artwork, playlists and ordered setlists now save in this browser across reopening (SER-012, awaiting owner restart test). Eleven unit checks and Chromium interaction/persistence/map journeys passed. No uploads or original-file changes; browser/site data removal can remove saved copies. Android implementation, official Spotify launch and real USB/deck integration remain open. Decks use only the full local-file library, never Spotify downloads. Companion software stays deferred.
 

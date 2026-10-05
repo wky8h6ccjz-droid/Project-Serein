@@ -87,6 +87,22 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 - **Result:** SER-013 groups fourteen stable tasks into five workstreams with filters, status, dependencies, deliverables and next steps. Records align with the map; chat explains the recommendation.
 - **Recommendation:** first Android app build planning (SER-014) is useful before suppliers reply; shape review and deck-access checks are also available. Future task descriptions remain proposals. No new purchase, outreach, framework or implementation approval inferred.
 
+## DEC-037 — Prepare the Android app build next
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** “lets prepare the app build next”.
+- **Scope:** authorizes SER-014 build preparation after the map next-focus recommendation: concrete behavior, route comparison, candidate dependency/tool setup and test sequence. Does not itself approve a previously unspecified framework, app implementation, spending or hardware execution. It does not infer acceptance of SER-012's owner restart test or the entire SER-013 map.
+- **Result:** preparation packet, seven verified top-level dependency artifacts, Gradle checksum, Android package availability and read-only readiness report. No app/APK or new installs.
+- **Test target:** owner answered “Start with an emulator”; emulator-first testing is selected. Actual runnable host/image setup and native route approval remain open.
+
+## DEC-038 — Native Android first-build recommendation
+
+- **Date:** 2026-10-05.
+- **Status:** Proposed; awaiting owner approval of the concrete scope/route.
+- **Recommendation:** Kotlin/Compose + Media3 playback service + Room/KSP, retaining accepted UI and collections. First test app copies selected music locally, restores lists across restart, supports background playback and opens official Spotify. Deck is unavailable pending backend/hardware proof.
+- **Tradeoff:** native implementation requires rebuilding screens but avoids browser/native bridges for file access and background playback. Browser remains reference; cross-platform runtime is not justified by current Android-only scope. Reconsider for an explicit multi-platform or visual-only priority.
+- **Limits:** candidate pins have verified artifact availability, not full compile/runtime compatibility. Toolchain and recorded test target are needed. No cloud backend/network permission, Spotify SDK, final electronics, USB export or real-deck approval included. Approval would cover the first Android test app rather than permanent hardware selection.
+
 ## Open proposals
 
 - Owner follow-up (2026-10-05): “is that the best option?” is a request for comparative justification, not approval. Bounded alternatives review is in zero3w-usb-evidence.md. ZERO 3W remains a USB bench proposal; final-platform superiority is unproven. The comparison is now delivered in display-power-assessment.md under DEC-022. ZERO 3W remains the USB bench proposal; CM3 is the stronger custom-pocket integration research lead of these three. Screen fit/drivers and endurance remain unverified; no purchase authorization.

@@ -51,7 +51,7 @@ While the deck owns the exported storage, Serein must not concurrently modify th
 
 ## SER-007 architecture recommendation
 
-Owner approved the preliminary Gemini choice and continuing planning under DEC-020. The [reviewable recommendation](prototype-architecture.md) compares one Android device against separate Android listening and USB-storage modules. Recommend a two-part bench proof while exact hardware, combined enclosure/one USB-C power/data routing, endurance and fit remain open. Approach approval is pending. Official Spotify/AOSP/Linux/Raspberry Pi sources are linked in that document. No board, app login, USB enumeration or deck test was performed.
+Owner approved the preliminary Gemini choice and continuing planning under DEC-020, then challenged the separate Spotify proof under DEC-021. The [revised assessment](prototype-architecture.md) prioritizes Android USB disk export. MSD supplies a source-backed privileged/configfs/kernel-dependent mechanism; ZERO 3W is a compact Android/OTG lead, not a verified mass-storage platform. Exact image/kernel support is the next evidence task. Separate USB-storage hardware is a fallback; battery, enclosure and power/port routing are unresolved. No firmware, USB enumeration or deck test occurred.
 
 ## Gate 2: Physical fit
 
@@ -69,7 +69,7 @@ Test wired playback and connector access as well. Manufacturer headline playback
 
 ## Evidence status
 
-- Architecture: two-part bench proof recommended; awaiting owner approval, exact hardware unselected.
+- Architecture: USB-storage-first candidate assessment in progress after DEC-021; exact hardware unselected, two-part route is a fallback.
 - Current setup: DDJ-FLX4 and laptop rekordbox; software-host controller, not a standalone storage test target.
 - Preliminary player: Gemini MDJ-500 chosen under DEC-020; purchase/access and tests unverified.
 - Pioneer CDJ/XDJ test model/access: still unconfirmed.

@@ -6,9 +6,9 @@ Updated: 2026-10-04. Assistant manages execution; owner approves consequential d
 
 **Phase:** product definition and feasibility; in progress.
 
-**Active item:** SER-007, prototype architecture recommendation, awaiting owner approach approval. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
+**Active item:** SER-007, USB-storage-first architecture assessment; recommendation revised after owner feedback under DEC-021. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
 
-**Single next task/action:** owner reviews and approves or revises the two-part bench proof in prototype-architecture.md. No build/purchase has occurred; actual CDJ/XDJ access remains a physical-test gate.
+**Single next task/action:** verify the compact candidate's exact Android-build USB-storage/privilege support and prepare an evidence-based hardware recommendation. No separate Spotify feasibility task or repeated approval question for the superseded two-part plan.
 
 ## Status rules
 
@@ -93,13 +93,14 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 
 - **Purpose:** choose a credible path for official Spotify and CDJ-compatible USB storage.
 - **Dependencies:** SER-006 and current primary-source research. DEC-020 permits planning while actual CDJ access is unresolved; physical Pioneer validation still requires that access.
-- **Deliverable:** [Prototype architecture recommendation](prototype-architecture.md), comparing one-Android and separate-listening/storage approaches with evidence, risks, bounded proof and owner decision.
-- **Status:** Awaiting owner acceptance of the recommendation (bench-approach approval pending); research and reviewable recommendation complete.
+- **Deliverable:** [USB-storage-first assessment](prototype-architecture.md), source-backed Android storage mechanism, compact hardware lead, evidence gaps, proposed proof and eventual owner decision.
+- **Status:** In progress; prior recommendation reopened/revised after DEC-021. Android USB storage and exact candidate support are the active uncertainty.
 - **Completion criteria:** official Spotify support, USB device/storage capability, library compatibility, power/audio, and fit are addressed; limitations are explicit; owner approves the approach before selection or purchase.
 - **Verification/owner test:** owner can explain the recommendation and its main tradeoffs and approve or reject it.
 - **Assistant verification (2026-10-04):** reviewed current official Spotify, AOSP, Linux USB-storage and Raspberry Pi sources; checked storage handoff, metadata, power/audio, cost and physical-fit coverage. No physical device or prototype tests.
-- **Owner test:** read the two-part proof plan; confirm temporary separate bench modules are acceptable and Spotify/owned files remain separate. Approve or revise the approach.
-- **Open issue:** exact Android and USB-storage hardware, shared power/USB-C routing, enclosure fit and measured endurance remain unselected/unverified; no approach acceptance inferred from approval to plan.
+- **Owner feedback (2026-10-04):** generic Spotify-on-Android proof adds little; prioritize USB-storage export under DEC-021. Later owner review covers a concrete capability-backed hardware recommendation. No purchase or architecture acceptance yet.
+- **Research update:** MSD source documents Android 11+ disk emulation with privilege/configfs/kernel requirements; ZERO 3W official docs provide Android/OTG/dimension evidence, not runtime mass-storage proof. Exact image/kernel and live tests unverified.
+- **Open issue:** exact Android and USB-storage hardware, shared power/USB-C routing, enclosure fit and measured endurance remain unselected/unverified; no approach acceptance inferred from approval to plan; two-part architecture is a fallback.
 
 ## SER-008 — Prove the listening and DJ storage journeys
 

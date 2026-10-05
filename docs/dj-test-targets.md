@@ -62,4 +62,4 @@ Done means the owner confirms one standalone model and practical test access. Un
 
 ## Single next action
 
-Review the SER-007 two-part bench proof recommendation in prototype-architecture.md. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.
+Continue SER-007 USB-storage-first candidate verification in prototype-architecture.md under DEC-021. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.

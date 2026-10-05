@@ -29,7 +29,7 @@ Completed work includes naming, requirements, iterative renders, initial technic
 
 Public Serein repository publication and uploads after completed tasks are explicitly authorized within that scope. Announce publication, run appropriate checks, publish reviewed work, and report the result. Paid requests, deployment, unrelated disclosure, invitations, and destructive actions need their own approval. Publishing a deliverable does not close owner acceptance.
 
-Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018. New-only purchase preference is recorded under DEC-019. Gemini MDJ-500 preliminary basic player choice and continuing architecture planning are approved under DEC-020; no purchase/access or physical compatibility is verified. Actual Pioneer CDJ/XDJ access remains open and its compatibility gate still applies. SER-007's two-part bench proof recommendation is ready for owner approval: read docs/prototype-architecture.md and docs/dj-test-targets.md. The single next action is to approve or revise this bench approach, not repeat the accepted Gemini-choice question. Exact hardware, costs, integrated enclosure/power/USB-C routing and battery results remain open. Preserve acceptance states, update records and give a copy-paste assistant update at closeout.
+Begin with a short readback of current state. SER-005 handoff is accepted under DEC-018. New-only purchase preference is recorded under DEC-019. Gemini MDJ-500 preliminary basic player choice and continuing architecture planning are approved under DEC-020; no purchase/access or physical compatibility is verified. Actual Pioneer CDJ/XDJ access remains open and its compatibility gate still applies. Owner feedback under DEC-021 challenged the standalone Spotify proof. SER-007 now prioritizes compact Android USB disk export: read docs/prototype-architecture.md and docs/dj-test-targets.md. MSD documents a privileged configfs/kernel-dependent mechanism; Radxa ZERO 3W is a lead with Android/OTG documentation, but exact image/kernel export is unverified. The single next task is verify that support and prepare a capability-backed hardware recommendation. Do not repeat the accepted Gemini choice, generic Spotify proof, or approval question for the superseded two-part plan. Exact hardware, costs, integrated enclosure/power/USB-C routing and battery results remain open. Preserve acceptance states, update records and give a copy-paste assistant update at closeout.
 ```
 
 ## Independent owner check for SER-005
@@ -40,7 +40,7 @@ The cloud readback should correctly identify:
 - The agreed shape, controls, ports, storage, and dark finish direction.
 - Battery, fit, architecture, and real CDJ compatibility as untested.
 - Budget deferred; hardware unselected; no completed physical prototype.
-- SER-005 accepted; Gemini preliminary choice accepted; SER-007 approach awaiting approval; actual Pioneer access and tests unverified.
+- SER-005 accepted; Gemini preliminary choice accepted; SER-007 USB-storage assessment in progress; actual Pioneer access and tests unverified.
 
 This owner check was completed and accepted under DEC-018. Reopen if context is missing or inaccurate. SER-002's separate render acceptance remains pending.
 
@@ -51,10 +51,10 @@ On 2026-10-03 the cloud session fetched current main, read the requested records
 ## Copy-paste update for the owner's assistant
 
 ```text
-Phase/status: Feasibility; SER-007 recommendation ready for owner approval.
-Completed: Gemini basic-player choice recorded; prototype approaches researched and compared; records published.
-Decisions: New-only; MDJ-500 preliminary choice; architecture planning authorized. Two-part bench approach is proposed, not accepted.
+Phase/status: Feasibility; SER-007 USB-storage assessment in progress.
+Completed: Gemini choice recorded; architecture focus revised after feedback; Android storage mechanism and compact lead researched; records published.
+Decisions: New-only; MDJ-500 preliminary choice; prioritize USB storage. Separate storage board is a fallback, not selected.
 Open: Device hardware, integrated fit/power/battery, Gemini ownership/access and Pioneer target/access/testing unverified.
-Next task: Approve or revise the two-part bench proof approach.
-Needed from owner: Bench-approach decision; exact equipment inventory comes afterward.
+Next task: Verify exact Android image/kernel/privilege support for USB disk export before a hardware recommendation.
+Needed from owner: No repeated Spotify proof or superseded approach approval; hardware/cost choice comes after evidence review.
 ```

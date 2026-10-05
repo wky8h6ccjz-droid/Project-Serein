@@ -1,69 +1,58 @@
-# SER-007 — Prototype architecture recommendation
+# SER-007 — USB-storage-first architecture assessment
 
-Prepared: 2026-10-04. Status: Awaiting owner approval of the proposed bench approach. Research/documentation only; no Serein hardware selected, purchased, built, or tested.
+Updated: 2026-10-04. Status: In progress; recommendation revised after owner feedback (DEC-021). Research only; no Serein electronics selected, purchased or tested.
 
-## Purpose and authorized progress
+## Current focus
 
-Find a practical route to official Spotify listening plus a USB mass-storage DJ library, before investing in compact packaging. Owner selected the new Gemini MDJ-500 as the preliminary basic player and said “that works - lets go to the next step!” (DEC-020). This authorizes architecture planning now while real Pioneer CDJ/XDJ access remains open. It does not establish equipment ownership or accept an integrated architecture.
+Owner selected the new Gemini MDJ-500 for preliminary basic testing (DEC-020), then challenged the value of a separate Android/Spotify proof: “Well we know the android with Spotify will work… that’s not exactly hard”. Treat official Spotify on compatible Android as an established capability. Candidate-specific installation/audio/offline checks remain routine integration checks later, not a standalone feasibility task now.
 
-## Comparison
+The hard question is whether a compact Android platform can safely expose owned DJ storage as a USB mass-storage device. Prioritize that question before proposing an additional storage processor. The earlier two-part bench recommendation was not accepted and is superseded as the default next step. Separate storage hardware remains a fallback if a credible single-device route cannot be established.
 
-| Approach | Advantage | Main uncertainty | Recommendation |
+## Architecture routes
+
+| Route | Benefit | Evidence / unresolved condition | Current position |
 | --- | --- | --- | --- |
-| One Android device does listening and exports DJ storage | Reuses touchscreen, battery, Bluetooth and audio in one assembly | Exact model must expose USB mass storage; ordinary MTP/file transfer is insufficient. Kernel/USB controller access and software modifications may be required. Official Spotify must remain functional. | Keep as an integration candidate; no suitable model established |
-| Android listening hardware plus a separate USB-storage module | Test official Spotify without depending on Android's export support; use a documented storage mechanism independently | Additional board, power, safe file handoff and communication; final combined footprint, battery and one-port routing unknown | Recommended for the first bench proof only |
+| Android platform with USB mass-storage gadget | One processor for listening and DJ storage; potentially simpler packaging/power | Android USB disk emulation has a source-backed implementation, but privileges, configfs, kernel storage function and safe handoff depend on exact hardware/image | Investigate first |
+| Android plus separate USB-storage hardware | Avoids dependence on Android's gadget configuration | Extra board, communication, power/USB-C routing and volume; whole-device integration still unknown | Fallback, not approved selection |
 
-These are engineering proposals, not evidence that either approach fits the final object. A Raspberry Pi running standard Linux alone is not our selected official Android Spotify-app platform.
+USB host support (reading a flash drive), ordinary Android file transfer, flashing/recovery storage and a Linux-only demonstration do not establish live USB disk export while the intended Android system is running.
 
-## Recommended bench proof
+## Source-backed software mechanism
 
-Use two independently testable parts on a desk:
+[MSD original project](https://github.com/chenxiaolong/MSD), checked 2026-10-04, implements USB disk/CD-ROM emulation on Android 11+. Its documented requirements include Magisk/KernelSU system privileges, USB gadget configfs, and a kernel with `CONFIG_USB_CONFIGFS_MASS_STORAGE=y`. It exports local disk-image files. This provides a concrete mechanism to investigate, not compatibility evidence for any candidate board or DJ player. No installation or rooting was performed, and bootloader/firmware changes require a separate reviewed hardware-specific plan.
 
-1. **Listening:** compatible Android hardware running the normal official Spotify app. Test installation/login, streamed and Premium-offline music, screen-off Bluetooth, and wired audio on the actual hardware. Start with an available device if suitable; any new purchase gets a separate concrete parts/price review.
-2. **DJ storage:** a USB-device-capable module with dedicated owned-file storage. A Raspberry Pi Zero-family Linux mass-storage gadget is a candidate mechanism; exact board/OS/storage/cable/power selection remains open. Check the board exposes storage to a computer before connecting to a DJ player. The Pi does not run Spotify in this plan.
-3. **Basic player test:** establish a known-good USB-drive baseline on the chosen Gemini MDJ-500, then test candidate storage recognition, supported-file browsing, sustained playback, eject, and reconnect. Audio files are owner-owned; no account/library exports enter Git. Gemini library metadata is not substituted for rekordbox database evidence.
-4. **Pioneer gate:** repeat the relevant storage and prepared-rekordbox library tests on an identified CDJ/XDJ. Keep playlists, supported cues/grids, firmware, filesystem and exported library format in the evidence record. Gemini success cannot accept this gate.
+[Linux mass-storage gadget documentation](https://docs.kernel.org/usb/mass-storage.html) explains file/block-device-backed export and exclusive ownership. The local system must flush and release the DJ volume before export and prevent background modifications while the host owns it. Read-only initial playback would not prove deck history/cue writes; writable export and power-loss recovery need later tests.
 
-Bench modules remain separate for these checks. Joining them into one enclosure, a shared power system, common USB-C charge/data port, and local access to the dedicated DJ library is a subsequent architecture decision. A desk prototype is temporary development equipment; the end product remains phone-free pocket listening.
+## First hardware lead: Radxa ZERO 3W
 
-## Storage and power boundaries
+Primary documentation checked 2026-10-04:
 
-- Spotify-managed downloads stay in the official app's storage; the deck receives only exportable owned music.
-- Prepare a small baseline from desktop rekordbox for Pioneer tests. Exact app version, deck firmware, owned tracks, export format and filesystem need recording first.
-- Candidate storage has two exclusive modes: locally editable or exported to the host. Flush and unmount local access before export; prevent local/background writes until the host is safely disconnected and the export disabled.
-- Read-only export can simplify an initial playback test, but it does not prove deck history/cue writes. Writable export and crash recovery need separate checks with exclusive ownership.
-- Check cable data capability, USB enumeration, power consumption, host current limits, boot/reconnect behavior and power-loss integrity. Do not join independent power sources without a verified power design.
-- Final USB-C at bottom-left and headphone jack at bottom-right remain the design direction; Pi bench connectors do not determine final ports.
+- [ZERO 3 hardware](https://docs.radxa.com/en/zero/zero3): 65 × 30 mm, USB 2.0 Type-C OTG, eMMC options plus microSD, Wi-Fi/Bluetooth. Power and data share the OTG/power port. HDMI output does not establish a compact touchscreen design.
+- [Android resources](https://docs.radxa.com/en/zero/zero3/other-os/android/download): manufacturer links an Android 11 image.
+- [Android installation](https://docs.radxa.com/en/zero/zero3/other-os/android/install-os): documents Android boot and OTG connection for flashing; flashing is not evidence of runtime mass-storage support.
 
-## Requirements and limits
+This is a research lead, not a hardware recommendation to buy. The exact Android kernel configuration, privilege access, USB gadget service behavior, disk export, peripheral compatibility, app availability and power behavior are unverified. Documentation's image link was identified, but its binary was not fetched or inspected. Manufacturer mass-storage instructions for [E25 running Radxa OS](https://docs.radxa.com/en/rock3/e25/radxa-os/ums) apply to a different model/OS; do not transfer that result to ZERO 3W Android.
 
-| Requirement | What this proof addresses | What remains open |
-| --- | --- | --- |
-| Official Spotify | Actual app behavior on selected Android hardware | Candidate selection, app availability, account/offline test, future update support |
-| USB storage / DJ playback | Generic USB mechanism, then Gemini and Pioneer tests | No board/kernel/OS or deck is physically tested |
-| Bluetooth and headphone jack | Measured listening on bench hardware | Final audio circuitry, routing and performance |
-| 64 GB plus microSD | Dedicated DJ storage is a proposal; use small test data first | Internal/usable capacity allocation, microSD access, storage owner handoff |
-| 24-hour listening | Record a realistic power/endurance test once hardware exists | Battery capacity, standby/module gating, charging and measured endurance |
-| Approx. 86 × 54 mm footprint | Preserve target while proving electronics | No fit evidence; display, battery, both boards, ports, antenna and walls need CAD/measurements |
-| Cost / privacy | No paid calls or purchases during research; private files stay out of Git | Parts quote after approach approval and equipment inventory |
+## Required evidence before selection
 
-The Pi Zero 2 W manufacturer specifies 65 × 30 mm, microSD, and micro-USB OTG. A board being smaller than the target footprint does not prove a full device fits: connectors, Android electronics, display, battery and structure still occupy volume. The Zero W tutorial demonstrates a USB-storage technique; it does not validate a Zero 2 W build or either DJ player. Use the kernel's exclusive-storage guidance rather than copying simultaneous network-write behavior from a tutorial.
+1. Identify exact board/image/build and trace its kernel/configuration to the actual shipped Android image. Confirm USB device controller, configfs, storage function and a supported way to control the gadget. If unavailable, record the gap; do not treat a generic Linux config or app README as proof.
+2. Define a recoverable, approved hardware-specific test before flashing/rooting. Do not operate on the owner's everyday phone as an assumed disposable test device.
+3. On approved test hardware, expose a small disposable owned-file disk image to a computer while Android is running. Confirm actual USB mass-storage enumeration, file hashes and reliable local/exported mode handoff. Keep the OS partition and Spotify-managed storage separate.
+4. Establish a known-good flash-drive baseline on the chosen Gemini, then check storage recognition, supported-file browsing, sustained playback, safe eject and reconnect with the candidate.
+5. Repeat on an accessible Pioneer CDJ/XDJ with the correct desktop rekordbox library export, firmware and filesystem. Gemini success does not close Pioneer metadata/cue compatibility.
 
-## Evidence reviewed
+This is a proposed test sequence, not authorization to buy, root, format or flash hardware. Exact parts and costs are reviewed once there is a credible capability path and relevant equipment access.
 
-Primary sources checked 2026-10-04:
+## Integration checks retained for later
 
-- [Spotify supported devices](https://support.spotify.com/us/article/supported-devices-for-spotify/): Android OS 7.0+ listed today; use a suitably supported candidate rather than choosing solely by this minimum.
-- [Spotify offline listening](https://support.spotify.com/us/article/listen-offline/): Premium for downloaded music; periodic online renewal required. This is app listening, not exportable DJ tracks.
-- [Spotify Android SDK](https://developer.spotify.com/documentation/android): App Remote controls Spotify; playback/caching are handled by the Spotify app. No custom Spotify integration is needed for the bench proof.
-- [AOSP USB gadget functions](https://android.googlesource.com/platform/hardware/interfaces/+/refs/heads/main/usb/gadget/1.0/types.hal): MTP is a separate declared function. This reference is not a capability certification for any donor/model.
-- [Linux mass-storage gadget](https://docs.kernel.org/usb/mass-storage.html): file/block-device-backed USB storage and exclusive backing-store ownership.
-- [Raspberry Pi Zero W USB-storage demonstration](https://magazine.raspberrypi.com/articles/pi-zero-w-smart-usb-flash-drive): mechanism demonstration; no DJ compatibility evidence.
-- [Raspberry Pi Zero 2 W specification](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/): dimensions, microSD and OTG hardware facts only.
-- [Gemini MDJ-500 official specification](https://www.geminisound.com/products/mdj-500): standalone USB playback and V-CASE preparation; exact Serein compatibility untested.
+Official Spotify app installation, streamed/Premium-offline listening, Bluetooth and wired audio still need routine checks on selected hardware. No custom Spotify SDK/app integration is proposed. Spotify-managed downloads are not the DJ files.
 
-## Verification and owner decision
+Battery endurance, touchscreen fit, 64 GB capacity allocation, microSD access, headphone output, enclosure, premium finish and common USB-C charge/data routing remain unresolved. A bare 65 × 30 mm board does not establish that the full device fits the approximately 86 × 54 mm target or reaches 24 hours. The board's documented power supply is not measured listening consumption.
 
-Assistant reviewed coverage of official Spotify, USB export, library distinction, storage ownership, power/audio, cost and physical limits. Document links and whitespace are checked; physical tests and owner architecture acceptance are pending.
+Sources for established app behavior: [Spotify supported devices](https://support.spotify.com/us/article/supported-devices-for-spotify/), [offline listening](https://support.spotify.com/us/article/listen-offline/), [Android SDK/app separation](https://developer.spotify.com/documentation/android). These do not certify a specific custom Android image.
 
-**Single next action:** owner approves or revises the two-part bench proof approach. Approval covers prototype approach only; exact electronics, purchases and final integrated architecture still require review. Once approved, collect existing Android/board/storage equipment and prepare a bounded new-parts shortlist and test plan.
+## Verification and single next task
+
+Source/document review complete for the mechanism and first lead. No candidate kernel binary/configuration or live USB enumeration has been verified; no physical tests performed.
+
+**Single next task:** verify the exact Android build's USB-storage/privilege support for the compact candidate, then produce an evidence-based hardware recommendation for owner review. No repeated standalone Spotify proof or acceptance question for the superseded two-part plan.

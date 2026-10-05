@@ -4,7 +4,7 @@ Updated: 2026-10-04. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
-Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-007 recommendation is ready for owner approval** under DEC-020's instruction to continue planning. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
+Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-007 is in progress, refocused on Android USB-storage support under DEC-021** under DEC-020's instruction to continue planning. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
 
 The assistant is CTO and project manager. The human is project owner, approving consequential decisions and final acceptance. Follow the ten-guideline rhythm; ask one focused question at a time.
 
@@ -32,7 +32,7 @@ Owner says standalone CDJ/XDJ access is “Possibly, but I need to check.” Mod
 
 Owner requires new-only purchase recommendations (DEC-019). After the new Gemini MDJ-500 ($229.95 advertised US price) and its limits were explained, owner said “that works - lets go to the next step!” (DEC-020). The Gemini is selected for preliminary basic testing; ownership, purchase/access, firmware and playback are unverified. Gemini's V-CASE workflow does not establish Pioneer rekordbox/CDJ compatibility. Do not repeat the preliminary-player selection question.
 
-SER-007 compares one Android device versus separate Android listening and USB-storage modules. Recommended first approach: a two-part desk/bench proof before integrated enclosure work. Read prototype-architecture.md. Exact hardware and bench-approach approval are pending; Pi Zero-family gadget is a storage candidate, not a Spotify platform or proven deck-compatible board. Spotify downloads and exported owned DJ files remain separate.
+Owner challenged the separate Spotify proof (DEC-021): official Spotify on compatible Android is established; actual candidate checks are routine later. SER-007 now investigates USB disk export on compact Android hardware before choosing a separate storage processor. MSD source supplies a concrete privileged Android/configfs/kernel-dependent mechanism. Radxa ZERO 3W has manufacturer Android 11 and OTG documentation and a 65 × 30 mm footprint; exact Android kernel/storage export and full-device fit are unverified. Read prototype-architecture.md. Earlier two-part proposal was unaccepted and is superseded as the default next step; separate storage remains a fallback.
 
 No selected/purchased Serein device electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
 
@@ -46,6 +46,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-007:** owner approves or revises the two-part bench proof approach. Then collect existing suitable Android/board/storage equipment and prepare exact new-parts and test recommendations. Actual Pioneer target/access remains required before physical CDJ validation.
+**SER-007:** verify exact Android-build USB-storage/privilege support for the compact candidate, then produce an evidence-based hardware recommendation. Do not repeat the standalone Spotify proof or approval question for the superseded plan. Actual Pioneer access remains a physical-validation gate.
 
 Current verification: primary-source and document review only; no physical tests or owner architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.

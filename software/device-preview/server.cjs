@@ -2,7 +2,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
-const types = { '/index.html': 'text/html; charset=utf-8', '/preview.html': 'text/html; charset=utf-8', '/style.css': 'text/css', '/core.js': 'text/javascript', '/audio.js': 'text/javascript', '/library.js': 'text/javascript', '/app.js': 'text/javascript', '/music/funky-house.ogg': 'audio/ogg', '/music/synthwave-house-loop.ogg': 'audio/ogg' };
+const types = { '/index.html': 'text/html; charset=utf-8', '/preview.html': 'text/html; charset=utf-8', '/style.css': 'text/css', '/core.js': 'text/javascript', '/audio.js': 'text/javascript', '/storage.js': 'text/javascript', '/library.js': 'text/javascript', '/app.js': 'text/javascript', '/music/funky-house.ogg': 'audio/ogg', '/music/synthwave-house-loop.ogg': 'audio/ogg' };
 const port = Number(process.env.SEREIN_PREVIEW_PORT || 4173);
 http.createServer((req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;

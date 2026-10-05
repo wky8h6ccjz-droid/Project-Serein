@@ -128,3 +128,7 @@ a { color: #cdbddb; }
 .order-button { min-width: 44px; min-height: 44px; border: 0; background: transparent; color: #cdbddb; font-size: 18px; }
 
 .order-list summary { color: #b4a7bf; font-size: 11px; min-height: 44px; cursor: pointer; padding-top: 12px; }
+
+.preview-storage { margin-top: 14px; }
+.preview-storage summary { color: #aaa6b0; font-size: 11px; cursor: pointer; }
+.preview-storage .quiet { max-width: 250px; }

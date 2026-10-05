@@ -8,9 +8,9 @@ Updated: 2026-10-05. Assistant manages execution; owner approves consequential d
 
 Plain-language context: we are preparing a small desk experiment to establish that one Android music player can also act as a DJ music USB drive. The recommended path is in [build-plan.md](build-plan.md). Owner feedback under DEC-026 requires purpose, place in the plan, success and next decision before technical detail. No physical prototype exists yet.
 
-**Active item:** SER-011, first hardware-independent device-software preview delivered for owner review under DEC-028. SER-007 awaits supplier replies; procurement/execution remains blocked. The browser preview is not an Android/USB/deck demonstration. Show purpose and decision summaries in chat under DEC-025/026. Gemini preliminary choice remains accepted; actual Pioneer access is open.
+**Active item:** SER-013, visual project map delivered for owner review. SER-011 preview is accepted; SER-012 local browser saving is delivered and awaits the owner's restart test. SER-014 is proposed next software work. SER-007 waits for supplier replies; procurement/execution remains blocked.
 
-**Single next task/action:** owner creates and plays a setlist in the revised Library. Supplier answers remain an independent hardware dependency; no purchase or flashing approved.
+**Single next task/action:** owner reviews the [visual map](project-map.html) and chooses the next focus. Recommendation: agree a bounded first Android app build while supplier replies are pending. No purchase, flashing or Android framework selection is inferred.
 
 ## Status rules
 
@@ -144,12 +144,45 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Purpose:** make Serein's controls and music handoff understandable and testable before hardware arrives.
 - **Dependencies:** owner request under DEC-028 and established product requirements. Actual Android/storage integration additionally depends on SER-007 hardware evidence/approval; this first preview does not.
 - **Deliverable:** software/device-preview: self-contained preview.html, source, pure ownership model, flow tests, browser journeys and owner instructions.
-- **Status:** Awaiting owner acceptance of the revised interaction/visual proposal. Earlier appearance received positive feedback; owner requested no slogans, playable local songs, full local-only deck library, and sourced house preview music under DEC-029/030/031. Latest DEC-032/033 requests add a familiar Play/Shuffle library, full artwork player, playlists and ordered setlists; these directions do not accept the finished preview.
+- **Status:** Accepted for preview UI/interaction under DEC-034; owner said “works great - lets go next”. No Android/hardware/whole-phase acceptance inferred.
 - **Completion criteria:** clean Home; Library list with Play/Shuffle and full artwork player; create/edit/reorder/play playlists/setlists; Library taps play local audio with pause/seek; whole local-file library enters simulated handoff; playback/additions lock during handoff/deck/recovery; normal eject/recovery restores access. Spotify-managed downloads are excluded. Simulation boundaries remain explicit.
 - **Assistant verification (2026-10-05):** eleven tests passed (eight ownership, three queue/metadata); Chromium journeys passed on standalone and source routes for list Play/Shuffle, full/mini player, queue navigation/advance, embedded PNG/tag rendering, playlist create/membership edits and ordered setlist playback, both CC0 tracks, imported WAV playback, pause/resume/seek, full-library handoff/eject, recovery/failure/cancellation, escaped filenames, invalid audio and 360 px layout. No JS errors or external requests. Library, full player and setlist renders inspected. Embedded music byte hashes match pinned mirror; creator CC0 pages verified. Direct file navigation is blocked by environment browser policy. No Android or physical storage/deck tests.
-- **Owner test / single next action:** create and play a setlist in the revised Library using software/device-preview/README.md.
-- **Open:** actual Android implementation/build, device storage scan/persistent library metadata, official Spotify launch, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. Browser file choices, collections and simulation reset on refresh. Native deck playlist metadata support remains unverified. Companion remains deferred.
+- **Owner acceptance:** owner confirmed the revised preview works great under DEC-034, after the DEC-032/033 Library/player/collection work.
+- **Open:** actual Android implementation/build, device storage scan/persistent library metadata, official Spotify launch, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. SER-012 now persists browser files/collections and starts interrupted handoff in locked recovery; native device behavior remains future work. Native deck playlist metadata support remains unverified. Companion remains deferred.
+
+## SER-012 — Keep the local library after restarting
+
+- **Purpose:** let the device preview keep imported songs and prepared lists across reopening.
+- **Dependencies:** accepted SER-011 and continuation instruction under DEC-034/035. Native implementation remains separate.
+- **Deliverable:** browser-local IndexedDB storage, atomic snapshot saves, reload/recovery rules, optional confirmed clear and persistence browser checks.
+- **Status:** Awaiting owner acceptance.
+- **Completion criteria:** imported audio/embedded art and ordered lists survive reopening on the same browser/origin; offline playback works; a failed write preserves prior data; stale tabs cannot overwrite; handoff reload stays locked until explicit simulated recovery; clear is explicit and affects only preview copies.
+- **Assistant verification:** eleven existing unit checks plus updated standalone browser interaction and persistence journeys passed. Persistence journey covers reopen/offline audio, ordered setlists, aborted transaction, injected write failure, cross-tab lockout, handoff reload recovery and cancel/confirm clear. No JavaScript errors. The failure fixture runs on the source route; generated standalone covers saved audio and recovery. Current source and standalone interaction journeys passed.
+- **Owner test:** import a song, create a setlist, reopen the same preview in the same browser/origin and play the song offline.
+- **Limits:** browser/site data can be cleared/evicted; saving may be unavailable under local-file/private-mode policies (clearly labeled session-only). Use a stable loopback origin for repeatable testing. No uploads; original files untouched. Native Android storage/ownership recovery remains unimplemented. No whole-device acceptance.
+
+## SER-013 — Visual project and task map
+
+- **Purpose:** let the owner see project workstreams, tasks, dependencies and the next choices while suppliers reply.
+- **Dependencies:** owner's visual-map request under DEC-036 and current tracker/decisions.
+- **Deliverable:** docs/project-map.html, optional loopback server, aligned records and chat decision summary.
+- **Status:** Awaiting owner acceptance.
+- **Completion criteria:** show all fourteen stable tasks in five workstreams, accepted/pending/blocked/proposed/deferred state, dependencies and deliverables; filter work available now; work on narrow screens; retain scoped acceptance and untested hardware limits.
+- **Assistant verification:** Chromium checked fourteen task cards, all five filters/counts, expandable details, keyboard activation and 360 px layout; no page errors or external requests. Desktop/mobile renders inspected; tracker IDs checked against map.
+- **Owner test / single next action:** review map and choose the next focus. Recommended next focus: scope the first Android app build (SER-014).
+- **Open:** owner confirmation/corrections; proposed future task scope may change.
+
+## SER-014 — First Android app build
+
+- **Purpose:** turn the accepted software experience into something installable for testing before custom hardware arrives.
+- **Dependencies:** review SER-012 and approve a bounded Android build scope/framework; SDK setup and an emulator or compatible Android device. Real USB integration additionally needs SER-007/008 evidence and approval.
+- **Deliverable (proposed):** debug Android build with local-file playback, saved playlists/setlists and official Spotify launch; honest deck placeholder until native storage backend/hardware is proven.
+- **Status:** Proposed. No implementation has started and no final framework/platform is selected.
+- **Completion criteria (proposed):** build/install/launch on a recorded Android target; local import/playback/reopen checks; official Spotify launch if installed; backend/simulation boundaries visible. Hardware deck behavior is excluded from this first build's acceptance.
+- **Verification/owner test:** define with approved build scope; no APK or Android test evidence exists yet.
 
 ## Unresolved items
 
 Untested Spotify/CDJ integration, no selected hardware, unmeasured battery life, unverified size/fit, unresolved storage allocation/microSD placement, final-render acceptance pending, account-level cloud environment publication unverified, local-session CLI push authentication unavailable, and budget deferred. Cloud documentation access and image inspection are verified.
+
+Supplier status evidence (2026-10-05): two targeted sender/date Outlook searches for the Arace and PiShop inquiries returned zero matching messages. This is a bounded search result, not a full-inbox conclusion. No new outreach sent.

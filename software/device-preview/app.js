@@ -22,6 +22,74 @@ let editingId = null;
 let playbackScope = [];
 let playerReturn = 'library';
 let orderExpanded = false;
+let savedTracks = new Map();
+let database = null;
+let revision = 0;
+let initialized = false;
+let saving = false;
+let stale = false;
+let storageMessage = 'Opening local library…';
+const updates = typeof BroadcastChannel === 'function' ? new BroadcastChannel('serein-library-updates') : null;
+function canEdit() { return initialized && !saving && !stale && state.mode === 'local'; }
+function storageStatus() {
+  const node = document.getElementById('storage-status');
+  node.textContent = saving ? 'Saving locally…' : storageMessage;
+  document.getElementById('clear-saved').disabled = !canEdit();
+}
+function lockOtherTab() {
+  stale = true; stopAudio(); storageMessage = 'Changed in another tab. Reload this preview to continue.'; render();
+}
+updates?.addEventListener('message', event => { if (event.data?.revision > revision) lockOtherTab(); });
+function snapshot(nextState = state, nextCollections = collections, nextTracks = savedTracks, seq = {}) {
+  return {version: 1, revision, mode: nextState.mode, tracks: nextState.library.map(t => ({...t, ...nextTracks.get(t.id)})),
+    collections: nextCollections, fileSequence: seq.fileSequence ?? fileSequence, collectionSequence: seq.collectionSequence ?? collectionSequence};
+}
+async function commit(nextState, nextCollections = collections, nextTracks = savedTracks, seq = {}) {
+  if (!initialized || saving || stale) return false;
+  saving = true; refreshLocks(); storageStatus();
+  try {
+    if (database) {
+      revision = await database.save(snapshot(nextState, nextCollections, nextTracks, seq), revision);
+      storageMessage = 'Library saved on this browser.';
+      updates?.postMessage({revision});
+    }
+    state = nextState; collections = nextCollections; savedTracks = nextTracks;
+    fileSequence = seq.fileSequence ?? fileSequence; collectionSequence = seq.collectionSequence ?? collectionSequence;
+    return true;
+  } catch (error) {
+    if (error.name === 'LibraryConflict') lockOtherTab();
+    else { storageMessage = 'Save failed. Your previous saved library is intact.'; notify('Could not save this change. Browser storage may be full or unavailable.'); }
+    return false;
+  } finally { saving = false; refreshLocks(); storageStatus(); }
+}
+function refreshLocks() {
+  // During startup/saving/stale-tab conflict, prevent any mutation or playback.
+  for (const button of document.querySelectorAll('button')) {
+    if (!initialized || saving || stale) { if (!button.disabled) button.dataset.storageLock = 'true'; button.disabled = true; }
+    else if (button.dataset.storageLock) { button.disabled = false; delete button.dataset.storageLock; }
+  }
+}
+async function initialize() {
+  try {
+    database = await window.SereinStorage.open();
+    const saved = await database.load();
+    if (saved) {
+      revision = saved.revision;
+      savedTracks = new Map(saved.tracks.filter(t => t.source === 'file').map(t => [t.id, {file: t.file, artist: t.artist, album: t.album, art: t.art}]));
+      state = flow.initialState(saved.tracks);
+      for (const t of saved.tracks) if (t.source === 'file') {
+        resources.set(t.id, URL.createObjectURL(t.file));
+        metadata.set(t.id, {artist: t.artist, album: t.album, art: t.art ? URL.createObjectURL(t.art) : undefined});
+      }
+      collections = saved.collections; fileSequence = saved.fileSequence; collectionSequence = saved.collectionSequence;
+      if (saved.mode !== 'local') { state = Object.freeze({...state, mode: 'recovery', run: 1, session: Object.freeze(state.library.map(t => t.id))}); page = 'deck'; }
+    }
+    storageMessage = 'Library saved on this browser.';
+  } catch (error) {
+    if (database) { stale = true; storageMessage = error.message + ' Saved data was not replaced.'; }
+    else storageMessage = 'Session only: browser storage unavailable. Refresh will lose changes.';
+  } finally { initialized = true; render(); }
+}
 function selectedCollection() { return collections.find(c => c.id === collectionId); }
 function visibleIds() { return page === 'collection' ? selectedCollection()?.tracks || [] : state.library.map(t => t.id); }
 const metadata = new Map(flow.tracks.map(t => [t.id, {artist: t.id === 'funky-house' ? 'Of Far Different Nature' : 'Fupi', album: 'Local library'}]));
@@ -44,15 +112,15 @@ function cover(id) {
 }
 function artwork(id, className = '') { return `<img class="cover ${className}" data-art-track="${escapeHtml(id)}" src="${escapeHtml(cover(id))}" alt="${metadata.get(id)?.art ? 'Album artwork' : 'Preview cover'}">`; }
 function setQueue(id) { playbackQueue = window.SereinLibrary.queue(playbackScope, id, shuffle); }
-function openTrack(id) { if (state.mode !== 'local') return; playbackScope = visibleIds(); playerReturn = page === 'collection' ? 'collection' : 'library'; setQueue(id); playTrack(id); page = 'now-playing'; render(); }
+function openTrack(id) { if (!canEdit()) return; playbackScope = visibleIds(); playerReturn = page === 'collection' ? 'collection' : 'library'; setQueue(id); playTrack(id); page = 'now-playing'; render(); }
 function startLibrary(mixed) {
   const ids = visibleIds();
-  if (state.mode !== 'local' || !ids.length) return;
+  if (!canEdit() || !ids.length) return;
   shuffle = mixed;
   openTrack(ids[mixed ? Math.floor(Math.random() * ids.length) : 0]);
 }
 function stepTrack(direction, automatic = false) {
-  if (state.mode !== 'local' || !currentTrack) return;
+  if (!canEdit() || !currentTrack) return;
   if (direction < 0 && audio.currentTime > 3) { audio.currentTime = 0; return; }
   const index = playbackQueue.indexOf(currentTrack) + direction;
   if (index < 0 || index >= playbackQueue.length) { if (!automatic) notify(direction > 0 ? 'End of library.' : 'First song in the library.'); return; }
@@ -98,7 +166,7 @@ function updatePlayer() {
 }
 function stopAudio() { playAttempt++; audio.pause(); audio.removeAttribute('src'); audio.load(); currentTrack = null; playbackQueue = []; updatePlayer(); }
 async function playTrack(id) {
-  if (state.mode !== 'local' || !resources.has(id)) return;
+  if (!canEdit() || !resources.has(id)) return;
   if (currentTrack !== id) { currentTrack = id; audio.src = resources.get(id); }
   if (audio.ended) audio.currentTime = 0;
   const attempt = ++playAttempt;
@@ -108,7 +176,7 @@ async function playTrack(id) {
   updatePlayer();
 }
 function togglePlayback() {
-  if (state.mode !== 'local' || !currentTrack) return;
+  if (!canEdit() || !currentTrack) return;
   if (!audio.paused) { playAttempt++; audio.pause(); } else playTrack(currentTrack);
 }
 for (const event of ['play', 'pause', 'timeupdate', 'durationchange', 'ended', 'loadedmetadata']) audio.addEventListener(event, () => {
@@ -119,7 +187,7 @@ audio.addEventListener('ended', () => stepTrack(1, true));
 audio.addEventListener('error', () => { audio.pause(); if (currentTrack) notify('This file could not play. Try an MP3 or WAV supported by your browser.'); updatePlayer(); });
 picker.addEventListener('change', async () => {
   const files = [...picker.files]; picker.value = '';
-  if (state.mode !== 'local') { notify('Return the library from the deck before adding songs.'); return; }
+  if (!canEdit()) { notify('Return the library from the deck before adding songs.'); return; }
   const valid = files.filter(f => /\.(mp3|wav|m4a|aac|flac|ogg|opus|aiff|aif)$/i.test(f.name) || f.type.startsWith('audio/'));
   if (!valid.length) { if (files.length) notify('Choose an audio file such as MP3 or WAV.'); return; }
   const attempt = ++importAttempt;
@@ -128,19 +196,28 @@ picker.addEventListener('change', async () => {
     catch { return {file: f, info: {}}; }
   }));
   // File-reading completion must not change a library now owned by a deck.
-  if (attempt !== importAttempt || state.mode !== 'local') return;
+  if (attempt !== importAttempt || !canEdit()) return;
+  let sequence = fileSequence;
+  const nextTracks = new Map(savedTracks);
   const imported = prepared.map(({file: f, info}) => {
-    const id = `file-${++fileSequence}`;
-    resources.set(id, URL.createObjectURL(f));
-    if (info.art) info.art = URL.createObjectURL(new Blob([info.art.bytes], {type: info.art.mime}));
-    metadata.set(id, info);
+    const id = `file-${++sequence}`;
+    nextTracks.set(id, {file: f, artist: info.artist, album: info.album, art: info.art ? new Blob([info.art.bytes], {type: info.art.mime}) : undefined});
     return {id, title: info.title || (f.name.replace(/\.[^.]+$/, '') || f.name).slice(0, 300), detail: info.artist || 'Local file', source: 'file'};
   });
-  if (state.library.some(t => t.source === 'demo')) { stopAudio(); if (page === 'now-playing') page = 'library'; }
-  dispatch({type: 'SET_LIBRARY', library: [...state.library.filter(t => t.source !== 'demo'), ...imported]});
-  const ids = new Set(state.library.map(t => t.id));
-  collections = collections.map(c => ({...c, tracks: c.tracks.filter(id => ids.has(id))}));
+  const library = [...state.library.filter(t => t.source !== 'demo'), ...imported];
+  const ids = new Set(library.map(t => t.id));
+  const lists = collections.map(c => ({...c, tracks: c.tracks.filter(id => ids.has(id))}));
+  const replaceDemo = state.library.some(t => t.source === 'demo');
+  const nextState = flow.transition(state, {type: 'SET_LIBRARY', library});
+  if (!await commit(nextState, lists, nextTracks, {fileSequence: sequence})) return;
+  for (const t of imported) {
+    const stored = nextTracks.get(t.id);
+    resources.set(t.id, URL.createObjectURL(stored.file));
+    metadata.set(t.id, {artist: stored.artist, album: stored.album, art: stored.art ? URL.createObjectURL(stored.art) : undefined});
+  }
+  if (replaceDemo) { stopAudio(); if (page === 'now-playing') page = 'library'; }
   if (currentTrack) { playbackScope = playbackScope.filter(id => ids.has(id)); setQueue(currentTrack); }
+  render();
   if (valid.length < files.length) notify('Audio files added. Other files were skipped.');
 });
 document.addEventListener('error', event => {
@@ -158,23 +235,20 @@ function notify(message) {
   clearTimeout(noticeTimer);
   noticeTimer = setTimeout(() => node.classList.remove('visible'), 6500);
 }
-function dispatch(event) {
-  try { state = flow.transition(state, event); render(); return true; }
+async function dispatch(event) {
+  try { const next = flow.transition(state, event); if (!await commit(next)) return false; render(); return true; }
   catch (error) { notify(error.message); return false; }
 }
 function simulateCompletion(success, failure) {
   const run = state.run;
   const fail = failNext && success === 'PREPARED';
   if (success === 'PREPARED') { failNext = false; render(); }
-  setTimeout(() => {
-    // A canceled operation cannot later complete a new operation.
-    if (state.run !== run) return;
-    dispatch({ type: fail ? failure : success, run });
-  }, 850);
+  setTimeout(() => { if (state.run === run) dispatch({type: fail ? failure : success, run}); }, 850);
 }
-function prepare() {
+async function prepare() {
+  if (!canEdit()) return;
   importAttempt++; stopAudio();
-  if (dispatch({ type: 'PREPARE' })) { page = 'deck'; render(); simulateCompletion('PREPARED', 'PREPARE_FAILED'); }
+  if (await dispatch({type: 'PREPARE'})) { page = 'deck'; render(); simulateCompletion('PREPARED', 'PREPARE_FAILED'); }
 }
 function ownership() { return `<p class="ownership"><span class="dot"></span>Music access: ${flow.owner(state)}${state.mode === 'local' ? ' · on this device' : ' · simulated'}</p>`; }
 function home() {
@@ -182,15 +256,15 @@ function home() {
     <button class="feature library" id="open-library"><span class="symbol" aria-hidden="true">▤</span><strong>Library</strong><small>${state.library.length} local songs</small></button>${ownership()}`;
 }
 function songRows(ids) {
-  const locked = state.mode !== 'local';
+  const locked = !canEdit();
   return `<div class="song-list">${ids.map(id => state.library.find(t => t.id === id)).filter(Boolean).map(t => `<button class="track" data-track="${escapeHtml(t.id)}" ${locked ? 'disabled' : ''}>${artwork(t.id)}<span class="track-copy"><strong>${escapeHtml(t.title)}</strong><small>${escapeHtml(metadata.get(t.id)?.artist || t.detail)}</small></span><span class="track-more" aria-hidden="true">♫</span></button>`).join('')}</div>`;
 }
 function listControls(ids) {
-  const disabled = state.mode !== 'local' || !ids.length;
+  const disabled = !canEdit() || !ids.length;
   return `<div class="library-actions"><button id="library-play" class="library-play" ${disabled ? 'disabled' : ''}><span aria-hidden="true">${icon('play')}</span> Play</button><button id="library-shuffle" class="library-shuffle" ${disabled ? 'disabled' : ''}><span aria-hidden="true">${icon('shuffle')}</span> Shuffle</button></div>`;
 }
 function library() {
-  const locked = state.mode !== 'local';
+  const locked = !canEdit();
   const kind = libraryView === 'playlists' ? 'playlist' : 'setlist';
   const lists = collections.filter(c => c.kind === kind);
   return `<div class="library-heading"><h2 class="page-title">Library</h2><button class="add" id="add-songs" ${locked ? 'disabled' : ''}>Add songs</button></div>
@@ -201,7 +275,7 @@ function library() {
 }
 function collection() {
   const c = selectedCollection(); if (!c) return library();
-  const locked = state.mode !== 'local';
+  const locked = !canEdit();
   return `<button class="back-link" id="back-library">‹ Library</button><div class="library-heading"><h2 class="page-title collection-title">${escapeHtml(c.name)}</h2><button class="add" id="edit-list" ${locked ? 'disabled' : ''}>Edit</button></div>
     <p class="library-count">${c.kind === 'setlist' ? 'Setlist' : 'Playlist'} · ${c.tracks.length} songs</p>${listControls(c.tracks)}
     ${songRows(c.tracks)}${c.tracks.length && !locked ? `<details class="order-list" ${orderExpanded ? 'open' : ''}><summary>Song order</summary>${c.tracks.map((id, i) => `<div class="order-row"><span>${i+1}. ${escapeHtml(state.library.find(t => t.id === id)?.title || '')}</span><button class="order-button" data-move="${i}" data-direction="-1" aria-label="Move song ${i+1} up" ${i === 0 ? 'disabled' : ''}>↑</button><button class="order-button" data-move="${i}" data-direction="1" aria-label="Move song ${i+1} down" ${i === c.tracks.length-1 ? 'disabled' : ''}>↓</button></div>`).join('')}</details>` : ''}`;
@@ -209,7 +283,7 @@ function collection() {
 function editCollection() {
   const existing = collections.find(c => c.id === editingId);
   const kind = existing?.kind || (libraryView === 'playlists' ? 'playlist' : 'setlist');
-  const locked = state.mode !== 'local';
+  const locked = !canEdit();
   return `<button class="back-link" id="cancel-list">‹ Back</button><h2 class="page-title">${existing ? 'Edit' : 'New'} ${kind}</h2><form id="collection-form"><label class="name-label" for="list-name">Name</label><input class="list-name" id="list-name" name="name" required maxlength="80" value="${escapeHtml(existing?.name || '')}" ${locked ? 'disabled' : ''}>
     <p class="small">Choose songs</p>${state.library.map(t => `<label class="song-choice"><input type="checkbox" name="song" value="${escapeHtml(t.id)}" ${existing?.tracks.includes(t.id) ? 'checked' : ''} ${locked ? 'disabled' : ''}>${artwork(t.id)}<span>${escapeHtml(t.title)}</span></label>`).join('')}
     <button class="primary" type="submit" ${locked ? 'disabled' : ''}>Save ${kind}</button></form>`;
@@ -263,34 +337,34 @@ function render() {
   bind('next', () => stepTrack(1));
   bind('now-shuffle', () => { shuffle = !shuffle; setQueue(currentTrack); updatePlayer(); });
   document.getElementById('seek')?.addEventListener('input', event => { if (state.mode === 'local' && Number.isFinite(audio.duration)) audio.currentTime = Number(event.target.value); });
-  bind('add-songs', () => { if (state.mode === 'local') picker.click(); });
+  bind('add-songs', () => { if (canEdit()) picker.click(); });
   for (const button of content.querySelectorAll('[data-view]')) button.addEventListener('click', () => { libraryView = button.dataset.view; render(); });
   for (const button of content.querySelectorAll('[data-collection]')) button.addEventListener('click', () => { collectionId = button.dataset.collection; orderExpanded = false; page = 'collection'; render(); });
-  bind('new-list', () => { if (state.mode !== 'local') return; editingId = null; page = 'edit-collection'; render(); document.getElementById('list-name').focus(); });
+  bind('new-list', () => { if (!canEdit()) return; editingId = null; page = 'edit-collection'; render(); document.getElementById('list-name').focus(); });
   content.querySelector('.order-list')?.addEventListener('toggle', event => { orderExpanded = event.target.open; });
-  bind('edit-list', () => { if (state.mode !== 'local') return; editingId = collectionId; page = 'edit-collection'; render(); });
+  bind('edit-list', () => { if (!canEdit()) return; editingId = collectionId; page = 'edit-collection'; render(); });
   bind('cancel-list', () => { page = editingId ? 'collection' : 'library'; render(); });
   bind('back-library', () => { page = 'library'; render(); });
-  document.getElementById('collection-form')?.addEventListener('submit', event => {
-    event.preventDefault(); if (state.mode !== 'local') return;
+  document.getElementById('collection-form')?.addEventListener('submit', async event => {
+    event.preventDefault(); if (!canEdit()) return;
     const name = document.getElementById('list-name').value.trim(); if (!name) { document.getElementById('list-name').focus(); return; }
     const chosen = [...content.querySelectorAll('input[name="song"]:checked')].map(n => n.value);
     const existing = collections.find(c => c.id === editingId);
     const old = existing?.tracks || [];
     const tracks = [...old.filter(id => chosen.includes(id)), ...chosen.filter(id => !old.includes(id))];
-    const saved = {id: existing?.id || `list-${++collectionSequence}`, name, kind: existing?.kind || (libraryView === 'playlists' ? 'playlist' : 'setlist'), tracks};
-    collections = [...collections.filter(c => c.id !== saved.id), saved];
+    const saved = {id: existing?.id || `list-${collectionSequence + 1}`, name, kind: existing?.kind || (libraryView === 'playlists' ? 'playlist' : 'setlist'), tracks};
+    if (!await commit(state, [...collections.filter(c => c.id !== saved.id), saved], savedTracks, {collectionSequence: existing ? collectionSequence : collectionSequence + 1})) return;
     collectionId = saved.id; page = 'collection'; render();
   });
-  for (const button of content.querySelectorAll('[data-move]')) button.addEventListener('click', () => {
-    if (state.mode !== 'local') return;
+  for (const button of content.querySelectorAll('[data-move]')) button.addEventListener('click', async () => {
+    if (!canEdit()) return;
     const c = selectedCollection(); const i = Number(button.dataset.move); const target = i + Number(button.dataset.direction);
     if (!c || target < 0 || target >= c.tracks.length) return;
     const tracks = [...c.tracks]; [tracks[i], tracks[target]] = [tracks[target], tracks[i]];
-    collections = collections.map(list => list.id === c.id ? {...list, tracks} : list); render();
+    if (await commit(state, collections.map(list => list.id === c.id ? {...list, tracks} : list))) render();
   });
-  bind('cancel', () => { if (dispatch({ type: 'CANCEL' })) simulateCompletion('RESTORED'); });
-  bind('ejected', () => { if (dispatch({ type: 'EJECT_ACK' })) simulateCompletion('RESTORED'); });
+  bind('cancel', async () => { if (await dispatch({ type: 'CANCEL' })) simulateCompletion('RESTORED'); });
+  bind('ejected', async () => { if (await dispatch({ type: 'EJECT_ACK' })) simulateCompletion('RESTORED'); });
   bind('recover', () => {
     const run = state.run;
     const button = document.getElementById('recover');
@@ -298,7 +372,7 @@ function render() {
     setTimeout(() => { if (state.mode === 'recovery' && state.run === run) dispatch({ type: 'RECOVERED', run }); }, 850);
   });
   for (const button of content.querySelectorAll('[data-track]')) button.addEventListener('click', () => openTrack(button.dataset.track));
-  updatePlayer();
+  updatePlayer(); refreshLocks(); storageStatus();
 }
 for (const tab of ['home', 'library', 'deck']) bind(`${tab}-tab`, () => { page = tab; render(); });
 bind('play-pause', togglePlayback);
@@ -308,3 +382,17 @@ bind('interrupt', () => dispatch({ type: 'CABLE_LOST' }));
 bind('fail', () => { failNext = !failNext; render(); });
 render();
 
+
+bind('clear-saved', () => { document.getElementById('clear-confirmation').hidden = false; });
+bind('cancel-clear', () => { document.getElementById('clear-confirmation').hidden = true; });
+bind('confirm-clear', async () => {
+  if (!canEdit()) return;
+  if (await commit(flow.initialState(), [], new Map(), {fileSequence: 0, collectionSequence: 0})) {
+    stopAudio();
+    for (const url of [...resources.values(), ...[...metadata.values()].map(t => t.art).filter(Boolean)]) if (url.startsWith('blob:')) URL.revokeObjectURL(url);
+    resources.clear(); metadata.clear();
+    for (const t of flow.tracks) { resources.set(t.id, window.SereinDemoUrls?.[t.id] || `music/${t.id}.ogg`); metadata.set(t.id, {artist: t.id === 'funky-house' ? 'Of Far Different Nature' : 'Fupi', album: 'Local library'}); }
+    document.getElementById('clear-confirmation').hidden = true; page = 'home'; libraryView = 'songs'; render();
+  }
+});
+initialize();

@@ -15,7 +15,9 @@ Stable approvals and their scope are in [decision-log.md](decision-log.md). Requ
 | Display/control | Full-front touchscreen; no front wheel or physical playback controls selected |
 | Interface | Simple functional UI without slogans; familiar song list with Play/Shuffle and full artwork player (DEC-029/032) |
 | Local listening | Tap songs stored as local files in Library to play, with pause/progress; separate from Spotify (DEC-030) |
-| Collections | Named playlists and ordered setlists, with song membership editing, reordering and collection playback (DEC-033) |
+| Collections | Named playlists and ordered setlists, with song membership editing, reordering and collection playback (DEC-033); preview UI accepted under DEC-034 |
+| Restart continuity | Keep local songs and lists across reopening; browser-only saving delivered in SER-012, awaiting owner test; native device implementation remains open |
+| Planning visibility | Visual project/workstream/task map and chat decision summaries (DEC-025/036) |
 | Buttons | Two side buttons: volume up and down; power/lock button on top |
 | Wireless audio | Bluetooth is the primary listening path |
 | Wired audio | 3.5 mm headphone jack |

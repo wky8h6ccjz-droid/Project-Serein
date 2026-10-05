@@ -65,7 +65,27 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 - **Date:** 2026-10-05.
 - **Owner instruction:** Library must support playlists or setlists.
 - **Result:** separate Songs/Playlists/Setlists views; create/name/edit song membership; change order; Play follows order and Shuffle affects only playback within that collection. File inventory is not duplicated or reduced by list membership. Deck preparation still includes the whole local-file library; collection writes remain locked during handoff/deck/recovery.
-- **Limits:** browser collections are in memory and reset on refresh. Persistent Android storage and native deck/rekordbox playlist export are unimplemented/unverified. This direction does not accept the finished UI or a physical device.
+- **Limits:** at DEC-033 delivery browser collections were in memory and reset on refresh; SER-012 later adds local browser saving. Persistent Android storage and native deck/rekordbox playlist export are unimplemented/unverified. This direction does not accept the finished UI or a physical device.
+
+## DEC-034 — Accept the revised Library/player preview
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** “works great - lets go next”.
+- **Scope:** accepts SER-011's revised browser UI/interaction, including playlists/setlists. Continue useful device software. Does not select final Android framework/electronics or accept physical USB safety, deck integration or a finished phase.
+
+## DEC-035 — Local saving as the next bounded software increment
+
+- **Date:** 2026-10-05.
+- **Basis:** owner asked to continue after accepting the Library/player; assistant explained the next step as keeping songs/lists after reopening.
+- **Implementation choice:** browser-local storage within the existing local-file preview. Imported copies/artwork and list metadata stay in the browser, with no upload and no modification of original files. Atomic saves, conflict lockout and interrupted simulated handoff recovery protect the preview's stored snapshot.
+- **Limits:** browser-origin storage is a review mechanism, not a final Android architecture choice; SER-012 awaits owner restart-test acceptance. Clearing site data/private-mode policies can remove/prevent saving.
+
+## DEC-036 — Visual project map and visible next choices
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** wants a visual map of project/subprojects/tasks to choose what to tackle while awaiting email replies.
+- **Result:** SER-013 groups fourteen stable tasks into five workstreams with filters, status, dependencies, deliverables and next steps. Records align with the map; chat explains the recommendation.
+- **Recommendation:** first Android app build planning (SER-014) is useful before suppliers reply; shape review and deck-access checks are also available. Future task descriptions remain proposals. No new purchase, outreach, framework or implementation approval inferred.
 
 ## Open proposals
 

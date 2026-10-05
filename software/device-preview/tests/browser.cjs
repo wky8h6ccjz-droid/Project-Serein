@@ -53,6 +53,7 @@ const { chromium } = require(process.env.SEREIN_PLAYWRIGHT_MODULE || 'playwright
     await page.locator('#list-name').fill('House favourites');
     await page.locator('input[name="song"][value="funky-house"]').check();
     await page.getByRole('button', {name: 'Save playlist', exact: true}).click();
+    await page.locator('.collection-title').waitFor();
     assert.equal(await page.locator('[data-track]').count(), 1);
     await page.locator('#library-play').click();
     assert.equal(await page.locator('#now-title').textContent(), 'Funky House');
@@ -62,10 +63,12 @@ const { chromium } = require(process.env.SEREIN_PLAYWRIGHT_MODULE || 'playwright
     await page.locator('#edit-list').click();
     await page.locator('input[name="song"][value="synthwave-house-loop"]').check();
     await page.getByRole('button', {name: 'Save playlist', exact: true}).click();
+    await page.locator('.collection-title').waitFor();
     assert.equal(await page.locator('[data-track]').count(), 2);
     await page.locator('#edit-list').click();
     await page.locator('input[name="song"][value="synthwave-house-loop"]').uncheck();
     await page.getByRole('button', {name: 'Save playlist', exact: true}).click();
+    await page.locator('.collection-title').waitFor();
     assert.equal(await page.locator('[data-track]').count(), 1);
     await page.locator('#back-library').click();
     await page.locator('[data-view="setlists"]').click();
@@ -73,12 +76,16 @@ const { chromium } = require(process.env.SEREIN_PLAYWRIGHT_MODULE || 'playwright
     await page.locator('#list-name').fill('Opening set');
     for (const checkbox of await page.locator('input[name="song"]').all()) await checkbox.check();
     await page.getByRole('button', {name: 'Save setlist', exact: true}).click();
+    await page.locator('.collection-title').waitFor();
     await page.locator('.order-list summary').click();
     await page.getByRole('button', {name: 'Move song 2 up', exact: true}).click();
+    await page.waitForFunction(() => document.querySelector('[data-track]')?.dataset.track === 'synthwave-house-loop');
     assert.equal(await page.locator('[data-track]').first().getAttribute('data-track'), 'synthwave-house-loop');
     await page.locator('#edit-list').click();
     await page.locator('#list-name').fill('Warm-up set');
     await page.getByRole('button', {name: 'Save setlist', exact: true}).click();
+    await page.locator('.collection-title').waitFor();
+    await page.waitForFunction(() => document.querySelector('[data-track]')?.dataset.track === 'synthwave-house-loop');
     assert.equal(await page.locator('[data-track]').first().getAttribute('data-track'), 'synthwave-house-loop');
     if (await page.locator('.order-list').getAttribute('open') !== null) await page.locator('.order-list summary').click();
     if (screenshots) await page.locator('.device').screenshot({path: path.join(screenshots, 'serein-setlist-device.png')});

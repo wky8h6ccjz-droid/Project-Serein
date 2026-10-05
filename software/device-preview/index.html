@@ -9,6 +9,7 @@
   <script src="core.js" defer></script>
   <script src="audio.js" defer></script>
   <script src="library.js" defer></script>
+  <script src="storage.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -28,7 +29,9 @@
         <button id="fail" class="secondary" type="button">Fail next preparation</button>
         <p id="failure-setting" class="small">Preparation will succeed in this demo.</p>
       </div>
-      <p class="small">Selected audio is read locally for playback. Nothing is uploaded or changed. Refresh clears the file choices.</p>
+      <p class="small">Imported songs and lists are saved only in this browser. Nothing is uploaded, and original files stay unchanged. Clearing browser/site data can remove the saved library.</p>
+      <p id="storage-status" class="small" role="status">Opening local library…</p>
+      <details class="preview-storage"><summary>Preview storage</summary><p class="small">Local saving belongs to this browser and origin. Private browsing, changing browsers/addresses or clearing site data can remove it. Keep your original files.</p><button id="clear-saved" class="quiet" type="button">Clear saved library</button><div id="clear-confirmation" hidden><p class="small">Remove saved copies and lists from this preview? Your original files stay unchanged.</p><button id="confirm-clear" class="quiet" type="button">Clear this preview</button><button id="cancel-clear" class="quiet" type="button">Keep library</button></div></details>
     </section>
     <section class="device-area" aria-label="Serein touchscreen preview">
       <div class="device">

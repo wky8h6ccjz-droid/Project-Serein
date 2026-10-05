@@ -10,7 +10,7 @@ Plain-language context: we are preparing a small desk experiment to establish th
 
 **Active item:** SER-011, first hardware-independent device-software preview delivered for owner review under DEC-028. SER-007 awaits supplier replies; procurement/execution remains blocked. The browser preview is not an Android/USB/deck demonstration. Show purpose and decision summaries in chat under DEC-025/026. Gemini preliminary choice remains accepted; actual Pioneer access is open.
 
-**Single next task/action:** owner tries Library playback and reviews the cleaned interface. Supplier answers remain an independent hardware dependency; no purchase or flashing approved.
+**Single next task/action:** owner creates and plays a setlist in the revised Library. Supplier answers remain an independent hardware dependency; no purchase or flashing approved.
 
 ## Status rules
 
@@ -144,11 +144,11 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Purpose:** make Serein's controls and music handoff understandable and testable before hardware arrives.
 - **Dependencies:** owner request under DEC-028 and established product requirements. Actual Android/storage integration additionally depends on SER-007 hardware evidence/approval; this first preview does not.
 - **Deliverable:** software/device-preview: self-contained preview.html, source, pure ownership model, flow tests, browser journeys and owner instructions.
-- **Status:** Awaiting owner acceptance of the revised interaction/visual proposal. Earlier appearance received positive feedback; owner requested no slogans, playable local songs, full local-only deck library, and sourced house preview music under DEC-029/030/031.
-- **Completion criteria:** clean Home; Library taps play local audio with pause/seek; whole local-file library enters simulated handoff; playback/additions lock during handoff/deck/recovery; normal eject/recovery restores access. Spotify-managed downloads are excluded. Simulation boundaries remain explicit.
-- **Assistant verification (2026-10-05):** eight flow tests passed; Chromium journeys passed on standalone and source routes for both CC0 tracks, imported WAV playback, pause/resume/seek, full-library handoff/eject, recovery/failure/cancellation, escaped filenames, invalid audio and 360 px layout. No JS errors or external requests. Clean Home and Library/player inspected. Embedded music byte hashes match pinned mirror; creator CC0 pages verified. Direct file navigation is blocked by environment browser policy. No Android or physical storage/deck tests.
-- **Owner test / single next action:** try Library playback and review the cleaned interface using software/device-preview/README.md.
-- **Open:** actual Android implementation/build, device storage scan/persistent library metadata, official Spotify launch, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. Browser file choices and simulation reset on refresh. Companion remains deferred.
+- **Status:** Awaiting owner acceptance of the revised interaction/visual proposal. Earlier appearance received positive feedback; owner requested no slogans, playable local songs, full local-only deck library, and sourced house preview music under DEC-029/030/031. Latest DEC-032/033 requests add a familiar Play/Shuffle library, full artwork player, playlists and ordered setlists; these directions do not accept the finished preview.
+- **Completion criteria:** clean Home; Library list with Play/Shuffle and full artwork player; create/edit/reorder/play playlists/setlists; Library taps play local audio with pause/seek; whole local-file library enters simulated handoff; playback/additions lock during handoff/deck/recovery; normal eject/recovery restores access. Spotify-managed downloads are excluded. Simulation boundaries remain explicit.
+- **Assistant verification (2026-10-05):** eleven tests passed (eight ownership, three queue/metadata); Chromium journeys passed on standalone and source routes for list Play/Shuffle, full/mini player, queue navigation/advance, embedded PNG/tag rendering, playlist create/membership edits and ordered setlist playback, both CC0 tracks, imported WAV playback, pause/resume/seek, full-library handoff/eject, recovery/failure/cancellation, escaped filenames, invalid audio and 360 px layout. No JS errors or external requests. Library, full player and setlist renders inspected. Embedded music byte hashes match pinned mirror; creator CC0 pages verified. Direct file navigation is blocked by environment browser policy. No Android or physical storage/deck tests.
+- **Owner test / single next action:** create and play a setlist in the revised Library using software/device-preview/README.md.
+- **Open:** actual Android implementation/build, device storage scan/persistent library metadata, official Spotify launch, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. Browser file choices, collections and simulation reset on refresh. Native deck playlist metadata support remains unverified. Companion remains deferred.
 
 ## Unresolved items
 

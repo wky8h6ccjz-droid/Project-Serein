@@ -2,7 +2,7 @@
 const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
-const types = { '/index.html': 'text/html; charset=utf-8', '/preview.html': 'text/html; charset=utf-8', '/style.css': 'text/css', '/core.js': 'text/javascript', '/audio.js': 'text/javascript', '/app.js': 'text/javascript', '/music/funky-house.ogg': 'audio/ogg', '/music/synthwave-house-loop.ogg': 'audio/ogg' };
+const types = { '/index.html': 'text/html; charset=utf-8', '/preview.html': 'text/html; charset=utf-8', '/style.css': 'text/css', '/core.js': 'text/javascript', '/audio.js': 'text/javascript', '/library.js': 'text/javascript', '/app.js': 'text/javascript', '/music/funky-house.ogg': 'audio/ogg', '/music/synthwave-house-loop.ogg': 'audio/ogg' };
 const port = Number(process.env.SEREIN_PREVIEW_PORT || 4173);
 http.createServer((req, res) => {
   const pathname = new URL(req.url, 'http://localhost').pathname;
@@ -11,7 +11,7 @@ http.createServer((req, res) => {
   const standalone = file === '/preview.html';
   const bytes = fs.readFileSync(path.join(__dirname, file.slice(1)));
   const headers = { 'Content-Type': types[file], 'Cache-Control': 'no-store',
-    'Content-Security-Policy': `default-src 'self'; media-src 'self' blob: data:; style-src 'self'${standalone ? " 'unsafe-inline'" : ''}; script-src 'self'${standalone ? " 'unsafe-inline'" : ''}; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'`, 'Accept-Ranges': 'bytes' };
+    'Content-Security-Policy': `default-src 'self'; img-src 'self' blob: data:; media-src 'self' blob: data:; style-src 'self'${standalone ? " 'unsafe-inline'" : ''}; script-src 'self'${standalone ? " 'unsafe-inline'" : ''}; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'`, 'Accept-Ranges': 'bytes' };
   const range = req.headers.range;
   if (range) {
     const match = /^bytes=(\d*)-(\d*)$/.exec(range);

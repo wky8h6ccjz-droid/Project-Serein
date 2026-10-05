@@ -54,6 +54,19 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 - **Owner instruction:** source non-copyright house music and load it into the preview.
 - **Result:** bundled “Funky House” by Of Far Different Nature and “Synthwave House Loop” by Fupi. Creator OpenGameArt pages confirm CC0; pinned public mirror Ogg files and SHA-256 provenance recorded in software/device-preview/music/CREDITS.md. Preview embeds audio for offline playback. No purchases, Spotify downloads or private music uploads.
 
+## DEC-032 — Familiar library list and full artwork player
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** emulate Spotify's library style: list, Play/Shuffle at the top, and a player with album art when a song is tapped.
+- **Scope/result:** local-library list and thumbnails; top Play/Shuffle; expanded title/artist/artwork, pause/progress, previous/next, shuffle; mini-player reopening and queue advance. Original preview covers are fallback art, not original album artwork. Supported bounded ID3v2.3/2.4 MP3 metadata and JPEG/PNG are read locally; no artwork/account requests. Final revised appearance awaits owner review.
+
+## DEC-033 — Playlists and setlists in Library
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** Library must support playlists or setlists.
+- **Result:** separate Songs/Playlists/Setlists views; create/name/edit song membership; change order; Play follows order and Shuffle affects only playback within that collection. File inventory is not duplicated or reduced by list membership. Deck preparation still includes the whole local-file library; collection writes remain locked during handoff/deck/recovery.
+- **Limits:** browser collections are in memory and reset on refresh. Persistent Android storage and native deck/rekordbox playlist export are unimplemented/unverified. This direction does not accept the finished UI or a physical device.
+
 ## Open proposals
 
 - Owner follow-up (2026-10-05): “is that the best option?” is a request for comparative justification, not approval. Bounded alternatives review is in zero3w-usb-evidence.md. ZERO 3W remains a USB bench proposal; final-platform superiority is unproven. The comparison is now delivered in display-power-assessment.md under DEC-022. ZERO 3W remains the USB bench proposal; CM3 is the stronger custom-pocket integration research lead of these three. Screen fit/drivers and endurance remain unverified; no purchase authorization.

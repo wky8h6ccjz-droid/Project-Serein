@@ -13,8 +13,9 @@ Stable approvals and their scope are in [decision-log.md](decision-log.md). Requ
 | Form | Upright, approximately credit-card footprint |
 | Surfaces | Flat front and back; flat sides inspired by the iPhone 4 perimeter; softened outline corners and small edge bevels |
 | Display/control | Full-front touchscreen; no front wheel or physical playback controls selected |
-| Interface | Simple functional UI without slogans (DEC-029) |
+| Interface | Simple functional UI without slogans; familiar song list with Play/Shuffle and full artwork player (DEC-029/032) |
 | Local listening | Tap songs stored as local files in Library to play, with pause/progress; separate from Spotify (DEC-030) |
+| Collections | Named playlists and ordered setlists, with song membership editing, reordering and collection playback (DEC-033) |
 | Buttons | Two side buttons: volume up and down; power/lock button on top |
 | Wireless audio | Bluetooth is the primary listening path |
 | Wired audio | 3.5 mm headphone jack |

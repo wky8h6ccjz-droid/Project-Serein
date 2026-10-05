@@ -8,9 +8,9 @@ Updated: 2026-10-05. Assistant manages execution; owner approves consequential d
 
 Plain-language context: we are preparing a small desk experiment to establish that one Android music player can also act as a DJ music USB drive. The recommended path is in [build-plan.md](build-plan.md). Owner feedback under DEC-026 requires purpose, place in the plan, success and next decision before technical detail. No physical prototype exists yet.
 
-**Active item:** SER-007, awaiting supplier compatibility replies after both inquiries were sent and verified under DEC-027; procurement/execution blocked by exact sold board/image and splitter USB-C checks. Show decision summaries in chat and GitHub under DEC-025. Bench proposal remains unaccepted; research is not a hardware test. Gemini MDJ-500 preliminary choice is accepted under DEC-020; SER-006 actual Pioneer CDJ/XDJ access remains open.
+**Active item:** SER-011, first hardware-independent device-software preview delivered for owner review under DEC-028. SER-007 awaits supplier replies; procurement/execution remains blocked. The browser preview is not an Android/USB/deck demonstration. Show purpose and decision summaries in chat under DEC-025/026. Gemini preliminary choice remains accepted; actual Pioneer access is open.
 
-**Single next task/action:** review Arace and PiShop replies for the two compatibility checks before final kit approval. No purchase or flashing approved.
+**Single next task/action:** owner tries the SER-011 preview and reviews the Home → Library → Deck → return flow, including unexpected-unplug recovery. Supplier answers remain an independent hardware dependency; no purchase or flashing approved.
 
 ## Status rules
 
@@ -138,6 +138,17 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Status:** Deferred while the device is first.
 - **Completion criteria:** owner approves a narrow phase before software work begins.
 - **Verification/owner test:** defined when that scope is approved.
+
+## SER-011 — Start device software while hardware replies are pending
+
+- **Purpose:** make Serein's controls and music handoff understandable and testable before hardware arrives.
+- **Dependencies:** owner request under DEC-028 and established product requirements. Actual Android/storage integration additionally depends on SER-007 hardware evidence/approval; this first preview does not.
+- **Deliverable:** software/device-preview: self-contained preview.html, source, pure ownership model, flow tests, browser journeys and owner instructions.
+- **Status:** Awaiting owner acceptance of first interaction/visual proposal. Implemented and checked; no hardware support or final framework accepted.
+- **Completion criteria:** owner can navigate Home, choose example owned music, prepare a simulated deck session, see local choices locked during host ownership, return after simulated eject, and recover from simulated failure. Simulation boundaries remain explicit.
+- **Assistant verification (2026-10-05):** seven flow tests passed; Chromium journeys for normal eject, lockout, interruption/recovery, preparation failure, cancellation, empty selection and narrow layout passed. No JS errors or external requests. Generated standalone artifact served locally; direct file navigation blocked by environment browser policy. Rendered home inspected. No Android build, audio or physical storage/deck tests.
+- **Owner test:** follow the five steps in software/device-preview/README.md; report confusing controls or desired changes. Review proposed screen styling separately from behavior.
+- **Open:** actual Android implementation/build setup, official Spotify launch, owned-file import/library metadata, privileged USB/backend acknowledgments, durable crash/reboot recovery and hardware validation. Simulation state resets on refresh and is not production storage safety. Deferred SER-010 companion remains deferred.
 
 ## Unresolved items
 

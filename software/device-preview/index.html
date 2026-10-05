@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Serein · Device preview</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="core.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="workspace">
+    <section class="intro" aria-labelledby="preview-title">
+      <p class="eyebrow">PROJECT SEREIN / SOFTWARE 01</p>
+      <h1 id="preview-title">Your music.<br>Your space.</h1>
+      <p class="description">A first look at the controls on your pocket player. Try choosing music, preparing it for a deck, and coming back to listening.</p>
+      <p class="preview-label"><span class="dot"></span>Interactive preview · example tracks</p>
+      <div class="explanation"><h2>What works here</h2><p>The screens, track selection and handoff rules. Spotify launch and the deck connection are simulated. This preview plays no audio and connects to no accounts or hardware.</p></div>
+      <div class="simulator" aria-labelledby="simulator-title">
+        <h2 id="simulator-title">Try the deck side</h2>
+        <p>These controls stand in for signals from a real deck.</p>
+        <button id="attach" type="button" disabled>Simulate deck connection</button>
+        <button id="interrupt" class="secondary" type="button" disabled>Simulate unexpected unplug</button>
+        <button id="fail" class="secondary" type="button">Fail next preparation</button>
+        <p id="failure-setting" class="small">Preparation will succeed in this demo.</p>
+      </div>
+      <p class="small">No files are read, uploaded or changed. Refresh to reset.</p>
+    </section>
+    <section class="device-area" aria-label="Serein touchscreen preview">
+      <div class="device">
+        <div class="screen">
+          <header class="device-header"><span class="wordmark">serein</span><span class="device-mark">PREVIEW</span></header>
+          <div id="content" class="content"></div>
+          <nav class="tabs" aria-label="Device screens">
+            <button id="home-tab" class="active" type="button" aria-current="page"><span aria-hidden="true">⌂</span>Home</button>
+            <button id="library-tab" type="button"><span aria-hidden="true">♫</span>Library</button>
+            <button id="deck-tab" type="button"><span aria-hidden="true">⇄</span>Deck</button>
+          </nav>
+        </div>
+      </div>
+      <p class="device-caption">Proposed screen flow · visual design open for review</p>
+    </section>
+  </main>
+  <div id="notice" role="status" aria-live="polite"></div>
+</body>
+</html>

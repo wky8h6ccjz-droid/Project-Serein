@@ -42,7 +42,13 @@ We have requirements, concept images, a proposed test setup, test criteria and s
 
 The board and splitter listings total $54.94 before a separate power supply, memory card, cables, delivery and other needed accessories. That is an incomplete subset, not the price of Serein or a ready-to-buy prototype kit. A Gemini purchase is separate and is unnecessary for the first computer check. Total project budget is still deferred.
 
-## The immediate next step
+## Useful software work while suppliers reply
+
+The owner requested starting software in the interim under DEC-028. SER-011 now supplies a [clickable device preview](../software/device-preview/README.md): Home, choosing owned DJ tracks, preparing for a deck, returning to local use and handling interruption. This lets the owner try the controls now and gives us tested rules for how the library changes hands. It advances the device itself; discovery/DJ companion software remains deferred.
+
+The preview uses example tracks and simulated signals. Spotify launch, real songs, actual USB export and deck playback are future integration work. An open browser preview is the current review format, not a final software-framework decision. Proposed styling and behavior are awaiting owner acceptance. **The immediate next action is to try and review the preview's normal and interrupted paths.**
+
+## Hardware dependency while software progresses
 
 Resolve two practical questions using the [prepared supplier inquiries](usb-compatibility-review.md):
 

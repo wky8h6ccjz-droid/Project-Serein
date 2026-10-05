@@ -4,7 +4,7 @@ Updated: 2026-10-05. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
-Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-007 bench plan is delivered for review; procurement/execution is blocked by exact board/image and 5 V power checks.** DEC-023/024 authorize bench planning and compatibility research, not hardware selection or execution. DEC-027 separately authorizes the two initial supplier inquiries; both have been sent. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
+Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-011 device-software preview is implemented and awaiting owner review. SER-007 awaits supplier replies; hardware procurement/execution remains blocked.** DEC-023/024 authorize bench planning and compatibility research, not hardware selection or execution. DEC-027 separately authorizes the two initial supplier inquiries; both have been sent. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
 
 The assistant is CTO and project manager. The human is project owner, approving consequential decisions and final acceptance. Follow the ten-guideline rhythm; ask one focused question at a time. Under DEC-025, show concise evidence, assumptions, tradeoffs, recommendation and what would change it in this chat as well as GitHub, so the owner can challenge proposals.
 
@@ -17,6 +17,10 @@ A standalone pocket music player for phone-free listening and carrying an owned 
 Upright credit-card silhouette, flat front/back/sides, full-front touchscreen, side volume up/down, top power. Bluetooth primary plus 3.5 mm jack. USB-C charging and CDJ data connection; USB-C bottom-left and jack bottom-right. At least 64 GB storage target plus microSD. Solid premium feel. Jet black, very dark matte purple, forest green, and blue.
 
 Spotify is required in the first working version; the normal official Android app is acceptable initially. Direct connection to supported CDJs in place of a flash drive is core. Keep Spotify listening and exportable owned DJ files distinct.
+
+## Interim device software
+
+Under DEC-028 the owner asked to start useful software while awaiting supplier replies. Read software/device-preview/README.md. First increment: interactive Home, DJ Library and Deck flow, fictional example tracks, Spotify-launch placeholder and simulated exclusive-library handoff/recovery. Open preview.html directly in a browser, or use the loopback-only local server. Seven flow tests and Chromium journeys passed; home render inspected. Real Android app, filesystem/USB backend and physical deck behavior are not implemented or verified. Browser/JavaScript is a review vehicle, not a final framework selection. No account connection, audio or owner file access. Ask for review of the concrete interaction and proposed style; the companion remains deferred. Do not claim that simulated eject/recovery establishes actual disk safety.
 
 ## Work already done
 
@@ -38,7 +42,7 @@ Owner challenged the separate Spotify proof (DEC-021): official Spotify on compa
 
 Read usb-bench-plan.md and usb-compatibility-review.md. DEC-024 research found release-pinned AIC8800/AIC8800D80 support; image age alone is not incompatibility evidence. Exact sold board/binary matching remains open. Prefer the official PiKVM USB Power/Data Splitter (new $14.95, SKU 1106-2) as the accessory candidate: manufacturer documents 5 V up to 3 A, separated host power and one data interface. Exact ZERO 3W CC/VBUS/OTG behavior and named supply pairing need confirmation. Board/splitter subset is $54.94 before separate supply/accessories/delivery. CG-UCUSBPDB ($118.29; old $158.28 subset) remains a fallback with power/isolation gaps and conflicting included-supply descriptions. StarTech hub remains computer-only; Gemini manual prohibits hubs. Both prepared supplier inquiries were sent under DEC-027 on 2026-10-05, with saved-copy verification. Answers are pending; do not resend. Country and laptop ports were requested and remain unanswered. Do not repeat generic research: obtain exact confirmations, then prepare the concrete kit for owner approval.
 
-No selected/purchased Serein device electronics, firmware/app, CAD, or working device. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
+No selected/purchased Serein electronics, device-installed firmware/app, CAD or working physical device. A hardware-independent browser software preview now exists under SER-011. Spotify on candidate hardware, USB storage, library metadata, battery, audio, and component fit remain untested.
 
 24-hour listening and about 86 × 54 mm footprint are targets. Roughly 12–14 mm depth is an assistant render assumption. Storage allocation/microSD placement and printer details are open. Budget remains deferred.
 
@@ -50,6 +54,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-**SER-007:** review Arace and PiShop replies for the two compatibility checks before final kit approval. No purchase or flashing approved.
+**SER-011:** owner tries the first preview and reviews the Home → Library → Deck → return flow, including unexpected-unplug recovery. Arace/PiShop replies remain the independent SER-007 hardware dependency; no purchase or flashing approved.
 
-Current verification: primary-source and document review only; no physical tests or owner architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.
+Current verification: source/document review, seven software-flow tests, browser journeys and home-render inspection; no Android build, physical tests or owner interaction/architecture acceptance. Records are published through connected GitHub tools; current local CLI fetch is blocked by the proxy connection. Preserve local files until Git history can be synchronized.

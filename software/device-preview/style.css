@@ -1,0 +1,59 @@
+:root { color-scheme: dark; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #eeece9; background: #111214; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 75% 40%, #232127 0, #111214 60%); }
+button { font: inherit; cursor: pointer; }
+button:disabled { opacity: .4; cursor: default; }
+button:focus-visible { outline: 3px solid #d6c5ed; outline-offset: 4px; }
+.workspace { max-width: 1050px; padding: 65px 50px; margin: 0 auto; display: grid; grid-template-columns: 1fr 365px; gap: 95px; align-items: center; }
+.eyebrow { color: #c6b3db; font-size: 11px; font-weight: 650; letter-spacing: .16em; }
+h1 { font-size: 54px; line-height: 1.07; letter-spacing: -.05em; font-weight: 550; margin: 27px 0 22px; }
+.description { color: #c5c3c8; line-height: 1.7; font-size: 15px; max-width: 365px; }
+.preview-label { font-size: 12px; color: #cdbddb; margin: 25px 0; display: flex; gap: 9px; align-items: center; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #cbb2df; }
+h2 { font-size: 14px; font-weight: 600; margin: 0 0 9px; }
+.explanation p, .simulator p { color: #b4b1ba; font-size: 13px; line-height: 1.6; margin-top: 0; }
+.explanation { border-top: 1px solid #323137; padding-top: 21px; margin-bottom: 24px; }
+.simulator { border: 1px solid #37333d; padding: 20px; border-radius: 16px; background: #1a191d; }
+.simulator button { width: 100%; padding: 11px; border: 1px solid #60516d; border-radius: 9px; color: #eee5f6; background: #42384c; font-size: 12px; margin-bottom: 9px; }
+.simulator button.secondary { background: transparent; border-color: #45404b; }
+.small { color: #99959f; font-size: 11px !important; line-height: 1.6; }
+.simulator .small { margin: 0; }
+.device { width: 335px; margin: auto; padding: 11px; background: linear-gradient(130deg, #424148, #151518 26%, #242329 85%, #5b5960); border: 1px solid #626067; border-radius: 28px; box-shadow: 0 30px 65px #0008, inset 0 0 0 3px #121214; }
+.screen { min-height: 525px; display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; background: #111114; }
+.device-header { display: flex; justify-content: space-between; align-items: center; padding: 24px 22px 17px; }
+.wordmark { font-size: 18px; letter-spacing: -.07em; }
+.device-mark { color: #c2adb5; font-size: 8px; letter-spacing: .16em; border: 1px solid #42353d; padding: 5px 6px; border-radius: 4px; }
+.content { padding: 8px 20px 18px; flex: 1; }
+.page-kicker { color: #aba3b6; font-size: 10px; text-transform: uppercase; letter-spacing: .13em; margin: 0 0 11px; }
+.page-title { font-size: 28px; letter-spacing: -.05em; font-weight: 500; margin: 0 0 11px; }
+.page-text { font-size: 12px; color: #aaa6b0; line-height: 1.65; margin: 0 0 21px; }
+.feature { width: 100%; text-align: left; padding: 19px; border: 1px solid #2b3630; border-radius: 13px; background: linear-gradient(125deg, #19352a, #17211d); color: #e7eee9; margin: 7px 0 13px; min-height: 112px; }
+.feature .symbol { display: block; color: #7ed5a2; font-size: 19px; margin-bottom: 12px; }
+.feature strong { display: block; font-size: 17px; font-weight: 500; }
+.feature small { display: block; font-size: 10px; color: #a0b7aa; margin-top: 6px; }
+.feature.library { border-color: #3a3045; background: linear-gradient(125deg, #30253e, #1c1922); }
+.feature.library .symbol { color: #d1b9eb; }
+.feature.library small { color: #b2a5c1; }
+.ownership { display: flex; align-items: center; gap: 7px; color: #aca6b4; font-size: 10px; margin: 16px 0 4px; }
+.ownership .dot { background: #9b81b0; width: 5px; height: 5px; }
+.tabs { display: flex; border-top: 1px solid #28252d; padding: 12px 13px 14px; gap: 7px; }
+.tabs button { display: flex; flex-direction: column; gap: 3px; align-items: center; flex: 1; background: transparent; border: 0; border-radius: 8px; color: #87828e; font-size: 9px; padding: 7px; }
+.tabs button span { font-size: 21px; line-height: 1; }
+.tabs button.active { background: #28212f; color: #e6d5f6; }
+.device-caption { color: #8e8796; text-align: center; font-size: 10px; line-height: 1.6; margin-top: 22px; }
+.track { display: flex; align-items: center; gap: 11px; margin: 11px 0; padding: 12px 0; border-bottom: 1px solid #27232e; cursor: pointer; }
+.track input { width: 18px; height: 18px; accent-color: #c5a8df; flex-shrink: 0; }
+.track .track-copy { min-width: 0; }
+.track strong { font-size: 12px; font-weight: 550; display: block; }
+.track small { font-size: 9px; color: #99909f; display: block; margin-top: 5px; }
+.primary { width: 100%; background: #d4bfe8; color: #221b2b; border: 0; border-radius: 10px; padding: 14px 10px; font-size: 12px; font-weight: 650; margin: 12px 0 0; min-height: 44px; }
+.quiet { width: 100%; border: 1px solid #48404f; color: #d2c8dc; background: transparent; border-radius: 10px; padding: 12px; font-size: 11px; margin-top: 12px; min-height: 44px; }
+.state-icon { width: 64px; height: 64px; border: 1px solid #51445f; background: #2a2134; border-radius: 19px; display: grid; place-items: center; color: #d8c1eb; font-size: 30px; margin: 22px 0; }
+.state-note { font-size: 11px; color: #c1b2cc; padding: 14px; border-radius: 10px; border: 1px solid #3f324b; line-height: 1.6; background: #201a27; }
+.returning .state-icon, .preparing .state-icon { animation: pulse 1s ease-in-out infinite alternate; }
+@keyframes pulse { to { opacity: .5; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+#notice { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); background: #e2d3ee; color: #261e2e; padding: 14px 20px; border-radius: 12px; font-size: 13px; line-height: 1.5; max-width: min(510px, 90vw); box-shadow: 0 5px 30px #0008; display: none; }
+#notice.visible { display: block; }
+@media (max-width: 800px) { .workspace { grid-template-columns: 1fr; padding: 35px 25px; gap: 35px; } .intro { max-width: 450px; margin: auto; } h1 { font-size: 40px; } .device-area { grid-row: 2; } }
+@media (max-width: 380px) { .workspace { padding: 25px 12px; } .device { width: 100%; max-width: 335px; } }

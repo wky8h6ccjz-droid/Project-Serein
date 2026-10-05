@@ -1,6 +1,6 @@
 # SER-007 — USB-storage-first architecture assessment
 
-Updated: 2026-10-05. Status: Display/power comparison delivered for review; ZERO 3W bench recommendation unaccepted. Research only; no Serein electronics selected, purchased or tested.
+Updated: 2026-10-05. Status: Concrete bench plan delivered; procurement/execution blocked by board/image and power checks; architecture unaccepted. Research only; no Serein electronics selected, purchased or tested.
 
 ## Current focus
 
@@ -37,6 +37,10 @@ Release-linked source review completed 2026-10-05: the ZERO 3 board recipe selec
 
 The [compact integration assessment](display-power-assessment.md) compares ZERO 3W, ZERO 2 Pro and CM3. Retain ZERO 3W for the source-backed USB bench experiment; CM3 is the stronger custom-pocket integration lead among these three because its manufacturer documents battery charging/monitoring and direct display interfaces. Neither is selected. Two reviewed 3.1-inch touch assemblies exceed the height target; smaller display leads still need complete dimensions and Android drivers. No endurance is measured. Owner authorized continuing this research under DEC-022.
 
+## Concrete kit and connection plan
+
+The [bench plan](usb-bench-plan.md), prepared under DEC-023, names board/card/accessory leads and staged pass criteria. CG-UCUSBPDB is a direct power/data injector lead; board plus injector is advertised at $158.28 before unquoted accessories/delivery. Its 5 V supply behavior for this board, upstream isolation and hub-free passthrough require confirmation. A powered hub is an alternative for computer tests only; the Gemini-authored manual prohibits hubs. Exact shipped wireless variant must match the reviewed Android image. These are blockers, not permission to buy or flash.
+
 ## Required evidence before selection
 
 1. Identify exact board/image/build and trace its kernel/configuration to the actual shipped Android image. Confirm USB device controller, configfs, storage function and a supported way to control the gadget. If unavailable, record the gap; do not treat a generic Linux config or app README as proof.
@@ -59,4 +63,4 @@ Sources for established app behavior: [Spotify supported devices](https://suppor
 
 Release-tag source trace and recommendation are complete; downloaded-image inspection, generated kernel configuration, live enumeration and physical tests are not. The build guide/download branch mismatch and exact pinned sources are recorded in zero3w-usb-evidence.md.
 
-**Single next action:** prepare a concrete ZERO 3W USB bench kit, documented power/data connection and bounded test plan for owner review. Resolve shared-port power before recommending purchases or wiring; no hardware, purchase or flashing approved.
+**Single next action:** close the exact board/image and 5 V power/passthrough checks before finalizing the bench kit for owner approval. No purchase or flashing approved.

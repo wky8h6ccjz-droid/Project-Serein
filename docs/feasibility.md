@@ -53,7 +53,11 @@ While the deck owns the exported storage, Serein must not concurrently modify th
 
 Owner approved the preliminary Gemini choice and continuing planning under DEC-020, then challenged the separate Spotify proof under DEC-021. The [revised assessment](prototype-architecture.md) prioritizes Android USB disk export. MSD supplies a source-backed privileged/configfs/kernel-dependent mechanism. On 2026-10-05, [ZERO 3W release-linked source review](zero3w-usb-evidence.md) established the board kernel recipe, enabled mass-storage function, configfs startup and developer build option. Recommend a new 2 GB board with microSD boot for a bounded USB-storage bench experiment, awaiting owner review. Downloaded-image equivalence, live privilege/export and deck behavior are unverified; no ready-made stock mass-storage switch is established. Separate USB-storage hardware is a fallback; battery, enclosure and power/port routing are unresolved. No firmware, USB enumeration or deck test occurred.
 
-Owner best-option follow-up (2026-10-05): bounded manufacturer-source comparison of Pi Zero 2 W, HiBy M300, CM3 and ZERO 2 Pro retained ZERO 3W as a defensible USB bench candidate, not a proven best final platform. Orange Pi primary pages were unavailable. Owner subsequently authorized continuing the comparison under DEC-022. The [display/power assessment](display-power-assessment.md) retains ZERO 3W for the USB bench and identifies CM3 as the stronger custom-pocket integration lead among these three. Two reviewed 3.1-inch touch assemblies exceed the target height; smaller-screen leads need complete touch dimensions and driver verification. Battery management documentation does not prove runtime or completed fit. No hardware selection or purchase approved. Next prepare the concrete bench kit/power/test plan. See zero3w-usb-evidence.md.
+Owner best-option follow-up (2026-10-05): bounded manufacturer-source comparison of Pi Zero 2 W, HiBy M300, CM3 and ZERO 2 Pro retained ZERO 3W as a defensible USB bench candidate, not a proven best final platform. Orange Pi primary pages were unavailable. Owner subsequently authorized continuing the comparison under DEC-022. The [display/power assessment](display-power-assessment.md) retains ZERO 3W for the USB bench and identifies CM3 as the stronger custom-pocket integration lead among these three. Two reviewed 3.1-inch touch assemblies exceed the target height; smaller-screen leads need complete touch dimensions and driver verification. Battery management documentation does not prove runtime or completed fit. No hardware selection or purchase approved. The [concrete bench plan](usb-bench-plan.md) is now delivered under DEC-023. Direct injector and computer-only hub leads, exact parts and test criteria are recorded; board/image and 5 V/isolation/passthrough evidence remain blockers before final kit approval. No physical tests. See zero3w-usb-evidence.md.
+
+### Bench connection evidence
+
+The new kit plan identifies the direct CG-UCUSBPDB injector and StarTech 311UE-USB-HUB computer-only alternative. A 5 V / 3 A PD profile or 15 W headline does not establish unnegotiated current for the exact board; isolation and USB topology remain checks. The Gemini-authored manual page 14 prohibits hubs, so a hub-connected computer result is not a Gemini test path. Current ZERO 3W wireless variants must be matched to the older Android release. Sources, accessory identities, cost limits and remaining questions are in usb-bench-plan.md.
 
 ## Gate 2: Physical fit
 
@@ -76,7 +80,7 @@ Test wired playback and connector access as well. Manufacturer headline playback
 - Preliminary player: Gemini MDJ-500 chosen under DEC-020; purchase/access and tests unverified.
 - Pioneer CDJ/XDJ test model/access: still unconfirmed.
 - Spotify device test: not performed.
-- USB mass-storage test: not performed.
+- USB mass-storage test: not performed; recoverable protocol and pass criteria in usb-bench-plan.md.
 - Library metadata test: not performed.
 - Battery test: not performed; illustrative energy calculations in display-power-assessment.md are assumptions, not measurements.
 - Mechanical fit: not performed.

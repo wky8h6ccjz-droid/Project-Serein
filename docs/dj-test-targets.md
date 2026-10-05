@@ -1,6 +1,6 @@
 # Serein DJ test targets
 
-Updated: 2026-10-04. Deliverable for SER-006; in progress, not yet accepted.
+Updated: 2026-10-05. Deliverable for SER-006; in progress, not yet accepted.
 
 ## Owner's current setup
 
@@ -52,6 +52,10 @@ Engineering implication: a Gemini could support a low-cost preliminary experimen
 
 Recommendation: MDJ-500 is a cheaper new option to consider if the owner also wants a basic personal player. For spending solely to establish Pioneer compatibility, prioritize borrowed/rented access to the actual target rather than assuming a Gemini test is equivalent. Rental costs/availability are unresearched. Subsequent approval of the preliminary Gemini choice is recorded below; no purchase or rental was executed.
 
+## USB hub restriction
+
+The Gemini-authored [MDJ-500 manual, page 14, mirrored by Cavalli Musica](https://www.cavallimusica.com/media/productattach/m/d/mdj-500_user_manual.pdf), reviewed 2026-10-05, prohibits USB hubs and describes E-1006 for too many devices. Its dimensions differ from the current product listing; verify the actual supplied manual/firmware and retain the restriction unless matching manufacturer evidence changes it. The proposed powered-hub computer experiment is not a Gemini connection plan. A direct, adequately powered connection remains necessary; details and blockers are in [usb-bench-plan.md](usb-bench-plan.md). No deck test occurred.
+
 ## Preliminary player choice accepted
 
 On 2026-10-04 the owner replied “that works - lets go to the next step!” to the new MDJ-500 option and its limited test role. Under DEC-020, Gemini MDJ-500 is the chosen preliminary basic player and architecture planning may proceed. Ownership, purchase, access, firmware and baseline USB playback are not verified. This accepts the preliminary choice, not SER-006's actual Pioneer target/access completion criteria or compatibility. A real CDJ/XDJ remains needed before accepting that gate.
@@ -62,4 +66,4 @@ Done means the owner confirms one standalone model and practical test access. Un
 
 ## Single next action
 
-Continue SER-007 USB-storage-first candidate verification in prototype-architecture.md under DEC-021. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.
+Continue SER-007 by closing the exact board/image and 5 V power/passthrough checks in usb-bench-plan.md before final kit approval. Collect actual Gemini/Pioneer access and firmware details before physical tests; do not repeat the accepted Gemini-choice question.

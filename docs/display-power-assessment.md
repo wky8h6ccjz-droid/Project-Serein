@@ -56,15 +56,17 @@ Calculation: nominal energy = 3.7 V × capacity in Ah; power allowance = nominal
 
 Comparison complete and awaiting owner review within SER-007. ZERO 3W remains a bench proposal; CM3 is a final-device research lead. No final electronics, screen, battery, cost, purchase, flashing or architecture acceptance is inferred from permission to continue research. Gemini access and actual Pioneer CDJ/XDJ validation remain open.
 
-**Single next action:** prepare a concrete ZERO 3W USB bench kit, documented power/data connection and bounded test plan for owner review. Resolve the shared-port power issue before recommending purchases or wiring; record any blocker instead of inventing a connection.
+The [bench plan](usb-bench-plan.md) is now delivered under DEC-023. Direct injector and computer-only hub candidates remain conditional; board/image and electrical checks block purchase/execution.
+
+**Single next action:** close the exact board/image and 5 V power/passthrough checks before finalizing the bench kit for owner approval. No purchase or flashing approved.
 
 Owner check: confirm the distinction between the immediate USB experiment and the future pocket hardware, and that no fit or 24-hour claim is being made.
 
 ```text
-Phase/status: Feasibility; SER-007 comparison delivered, architecture acceptance pending.
-Completed: Three-board display/power comparison, touchscreen geometry checks and illustrative 24-hour power budget.
-Decisions: Owner approved continuing comparison; ZERO 3W bench and CM3 pocket lead remain recommendations.
-Open: Safe USB power connection, live disk export, touch fit/drivers, measured battery life and deck compatibility.
-Next task: Prepare the ZERO 3W bench kit, power/data connection and test plan for review.
-Needed from owner: No purchase yet; equipment access and approval of the concrete plan before hardware work.
+Phase/status: SER-007 bench plan delivered; procurement/execution blocked by compatibility checks.
+Completed: Exact parts leads, direct/PC-only power routes, known $158.28 subtotal and recoverable USB test criteria.
+Decisions: Owner approved plan preparation; hardware, purchases and flashing remain unapproved.
+Open: Board/image match, 5 V supply behavior and host isolation/passthrough; delivered costs and hardware tests.
+Next task: Close board/image and power checks before final kit approval.
+Needed from owner: Country and laptop USB connectors; no purchase yet.
 ```

@@ -1,0 +1,7 @@
+Starting: Intent { cmp=dev.serein.player.debug/dev.serein.player.MainActivity }
+Status: ok
+Activity: dev.serein.player.debug/dev.serein.player.MainActivity
+ThisTime: 7454
+TotalTime: 7454
+WaitTime: 7863
+Complete

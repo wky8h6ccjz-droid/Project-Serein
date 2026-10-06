@@ -1,6 +1,6 @@
 {
   "task": "SER-014",
-  "status": "approved-first-build-implementation-in-progress",
+  "status": "approved-implementation-A-awaiting-owner-acceptance",
   "checked_date": "2026-10-06",
   "route": "native-android-kotlin-compose-media3-room",
   "android": {
@@ -82,9 +82,9 @@
     }
   ],
   "verification_limits": [
-    "Shell graph resolved and compiled; Media3/Room/KSP are not yet used or fully verified.",
-    "Debug APK built; emulator installation/runtime verification pending.",
-    "No API26/36 runtime, physical audio, Spotify-present or USB/deck proof.",
+    "Shell graph resolves/compiles; Media3/Room/KSP not yet used or fully verified.",
+    "Final shell installed/launched; all3 native shell tests passed on API26 with animations off.",
+    "API30 software emulator system crashes; no API36 runtime, physical audio, Spotify-present or USB/deck proof.",
     "No Serein INTERNET permission, cloud backend or Spotify SDK."
   ],
   "test_target": {
@@ -94,8 +94,11 @@
       36
     ],
     "minimum_api_before_compatibility_claim": 26,
-    "host_and_image_setup": "Local Android11/API30/default/x86_64 revision11; emulator37.2.12; software acceleration",
-    "hardware_acceleration_here": false
+    "host_and_image_setup": "Android8/API26/default/x86_64 revision1; emulator37.2.12; software mode, one CPU,540x960/dpi240",
+    "hardware_acceleration_here": false,
+    "observed_api_levels": [
+      26
+    ]
   },
   "approval": "DEC-039",
   "shell": {
@@ -105,7 +108,7 @@
     "test_runner": "1.7.0",
     "dependency_verification": "SHA256; metadata on; signatures off",
     "app_dependency_lockfile": "app/gradle.lockfile",
-    "apk_sha256": "b25ac3772eec14a27737968744630b178a8f547e8562f1438b984f8895bef59c"
+    "apk_sha256": "e6268592ee07233348a4f294486d5a1bb4fef75e19f256095d38d607e387864a"
   },
   "artifact_availability_checked_date": "2026-10-05"
 }

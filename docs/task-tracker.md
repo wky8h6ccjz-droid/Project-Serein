@@ -8,9 +8,9 @@ Updated: 2026-10-06. Assistant manages execution; owner approves consequential d
 
 Plain-language context: we are preparing a small desk experiment to establish that one Android music player can also act as a DJ music USB drive. The recommended path is in [build-plan.md](build-plan.md). Owner feedback under DEC-026 requires purpose, place in the plan, success and next decision before technical detail. No physical prototype exists yet.
 
-**Active item:** SER-014 native first app approved under DEC-039. SER-014A shell built; emulator system-service crashes block runtime verification. SER-011 accepted; SER-012 restart test and SER-013 whole-map acceptance remain open. SER-007 waits for replies.
+**Active item:** SER-014 native first app approved under DEC-039. SER-014A shell built; API26 installation/navigation verified; shell awaits owner review. SER-011 accepted; SER-012 restart test and SER-013 whole-map acceptance remain open. SER-007 waits for replies.
 
-**Single next task/action:** Complete SER-014A installation and native shell checks on a stable emulator. Owner review follows before SER-014B.
+**Single next task/action:** Review the SER-014A native Home and Library screens or test APK; report corrections before SER-014B ports the accepted Library/player experience.
 
 ## Status rules
 
@@ -148,7 +148,7 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Completion criteria:** clean Home; Library list with Play/Shuffle and full artwork player; create/edit/reorder/play playlists/setlists; Library taps play local audio with pause/seek; whole local-file library enters simulated handoff; playback/additions lock during handoff/deck/recovery; normal eject/recovery restores access. Spotify-managed downloads are excluded. Simulation boundaries remain explicit.
 - **Assistant verification (2026-10-05):** eleven tests passed (eight ownership, three queue/metadata); Chromium journeys passed on standalone and source routes for list Play/Shuffle, full/mini player, queue navigation/advance, embedded PNG/tag rendering, playlist create/membership edits and ordered setlist playback, both CC0 tracks, imported WAV playback, pause/resume/seek, full-library handoff/eject, recovery/failure/cancellation, escaped filenames, invalid audio and 360 px layout. No JS errors or external requests. Library, full player and setlist renders inspected. Embedded music byte hashes match pinned mirror; creator CC0 pages verified. Direct file navigation is blocked by environment browser policy. No Android or physical storage/deck tests.
 - **Owner acceptance:** owner confirmed the revised preview works great under DEC-034, after the DEC-032/033 Library/player/collection work.
-- **Open:** actual Android implementation/build, device storage scan/persistent library metadata, official Spotify launch, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. SER-012 now persists browser files/collections and starts interrupted handoff in locked recovery; native device behavior remains future work. Native deck playlist metadata support remains unverified. Companion remains deferred.
+- **Open:** native music implementation (the separate shell is installed/tested), device storage scan/persistent library metadata, Spotify-present launch/listening, privileged USB/backend acknowledgments, crash/reboot recovery and hardware validation. SER-012 now persists browser files/collections and starts interrupted handoff in locked recovery; native device behavior remains future work. Native deck playlist metadata support remains unverified. Companion remains deferred.
 
 ## SER-012 — Keep the local library after restarting
 
@@ -177,17 +177,17 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 - **Purpose:** move the accepted listening/library experience into an installable Android test app while suppliers reply.
 - **Dependencies:** DEC-039 approves the native first-build scope, following preparation DEC-037/038. Android persistence must be verified independently from SER-012. Physical USB integration separately requires SER-007/008 evidence and approval.
 - **Deliverable:** native source, checked wrapper/dependency records, debug APK and recorded install/runtime evidence in software/android/BUILD-EVIDENCE.md. Binary APK is local, outside source Git.
-- **Status:** In progress. SER-014A source/APK built; runtime verification blocked by emulator; whole app is not accepted.
+- **Status:** In progress. SER-014A source/APK installed and verified on API26; awaiting owner acceptance; whole app is not accepted.
 - **Approved scope:** accepted clean Home/Library/artwork player; file-picker import to saved local copies; ordered playlists/setlists; background playback/Android controls; installed official Spotify launch and absence handling. Deck unavailable pending physical proof.
 - **Implementation:** Kotlin/Compose, later Media3 service and Room/KSP; no server/accounts/Spotify SDK or companion activation. App-managed test storage is not a deck-exportable volume.
 - **Preparation evidence (2026-10-05):** primary Android guidance, seven candidate artifacts, Gradle checksum and Android packages checked. Owner chose emulator-first.
-- **SER-014A assistant verification (2026-10-06):** JDK17/SDK/wrapper ready; full shell dependencies resolved, checksum-recorded and version-locked; debug app/test APK compilation successful; lint no issues; APK v2 signature verified. Fresh source-only copy also compiles from cached dependencies. Runtime installation is blocked by emulator system-service crashes; reduced-profile retry underway; receipt in BUILD-EVIDENCE.md. Two deprecation warnings are nonblocking.
-- **Limits:** empty native library; disabled Add songs; no audio service, import, saved collections or actual Spotify listening. Activity recreation retains page/tab selection only. No physical device or API26/36 runtime evidence. Browser features remain separate.
-- **Owner test / single next action:** Complete SER-014A installation and native shell checks on a stable emulator. Owner review follows before SER-014B.
+- **SER-014A assistant verification (2026-10-06):** JDK17/SDK/wrapper ready; full shell dependencies resolved, checksum-recorded and version-locked; debug app/test APK compilation successful; lint no issues; APK v2 signature verified. Fresh source-only copy also compiles from cached dependencies. Final app installs/launches on API26; all3 native tests pass. System-bar contrast fixed and native screenshots inspected; receipt in BUILD-EVIDENCE.md. API30 software emulator remains unreliable. Two deprecation warnings are nonblocking.
+- **Limits:** empty native library; disabled Add songs; no audio service, import, saved collections or actual Spotify listening. Activity recreation retains page/tab selection only. No physical device or API30/36 runtime success. Browser features remain separate.
+- **Owner test / single next action:** Review the SER-014A native Home and Library screens or test APK; report corrections before SER-014B ports the accepted Library/player experience.
 
 | Subtask | Purpose and dependency | Deliverable / completion evidence | Status |
 | --- | --- | --- | --- |
-| SER-014A | Prepare build tools/native app shell | JDK/SDK/checked wrapper; dependency records; compiled APK and shell checks | In progress; runtime blocked by emulator |
+| SER-014A | Prepare build tools/native app shell | JDK/SDK/checked wrapper; dependency records; compiled APK and shell checks | Awaiting owner acceptance; API26 checks pass |
 | SER-014B | Port accepted screens/queue rules after A acceptance | Native UI parity, narrow layout/accessibility evidence | Approved scope; queued |
 | SER-014C | Import/store audio and lists after A/B | Offline local copies, restart/order and failed-import tests | Approved scope; queued |
 | SER-014D | Background playback/controls after B/C | Lock-screen/media controls, audio focus/headset results | Approved scope; queued |

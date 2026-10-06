@@ -50,6 +50,6 @@ SER-011's Library/player preview is accepted under DEC-034. It has local-song pl
 
 The owner approved native Android implementation under DEC-039. [The Android shell](../software/android/README.md) now compiles and has clean Home, empty Library tabs and an unavailable Deck screen. This establishes the installable foundation; local music, the artwork player, saved collections and background audio are the next increments. It does not replace the hardware compatibility gate.
 
-SER-014 has six subtasks: tools/app shell (A) → accepted screens (B) → saved local library (C) → background playback (D) → complete Spotify launch/Deck boundary (E) → full package/install/owner test (F). A source/APK is built but runtime checks are blocked by emulator system-service crashes; B–F are approved queued work.
+SER-014 has six subtasks: tools/app shell (A) → accepted screens (B) → saved local library (C) → background playback (D) → complete Spotify launch/Deck boundary (E) → full package/install/owner test (F). A source/APK is built, installed and verified on API26; owner acceptance pending. B–F are approved queued work.
 
-Shape/finish review and deck access remain parallel choices; discovery/remix companion stays deferred. **Single next action: complete SER-014A installation/runtime checks on a stable emulator.**
+Shape/finish review and deck access remain parallel choices; discovery/remix companion stays deferred. **Single next action: review the SER-014A native shell before SER-014B.**

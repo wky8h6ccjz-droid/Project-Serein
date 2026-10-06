@@ -109,7 +109,7 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 - **Owner instruction:** “yes go next”, in response to the concrete native Android first-build scope and request to proceed.
 - **Scope:** approves the DEC-038 Kotlin/Compose + Media3/Room route for this Android test app, accepted UI/local files/saved collections/background audio/official Spotify launch, with Deck unavailable pending hardware proof. Execute SER-014A first: build tools, checked wrapper and native app shell. Emulator-first was already selected under DEC-037.
 - **Limits:** does not accept the completed app or final electronics, activate companion work, authorize purchases/new supplier outreach, or establish real deck/storage/battery compatibility. Routine free local tool installation/build verification/publication falls within the approved software task.
-- **Implementation evidence (2026-10-06):** SER-014A native shell and checked toolchain compile; lint clean, debug signature verified and fresh source-only build succeeds from cached dependencies. Android11 software emulator has system-service crashes; runtime verification and owner acceptance remain open. See software/android/BUILD-EVIDENCE.md.
+- **Implementation evidence (2026-10-06):** SER-014A native shell and checked toolchain compile; lint clean, debug signature verified and fresh source-only build succeeds from cached dependencies. Android11 software emulator has system-service crashes. Final Android8/API26 installation/launch and all3 shell tests pass (animations off); inspected native screenshots and system-bar contrast fix are delivered. Owner acceptance remains open. See software/android/BUILD-EVIDENCE.md.
 
 ## Open proposals
 

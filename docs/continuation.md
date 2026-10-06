@@ -4,7 +4,7 @@ Updated: 2026-10-06. Read AGENTS.md and working-agreement.md first.
 
 ## Phase and current item
 
-Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-014 native implementation approved; SER-014A shell built; emulator system-service crashes block runtime verification. SER-011 preview accepted; SER-012 owner restart test and SER-013 whole-map acceptance remain open. SER-007 awaits replies.** DEC-023/024 authorize bench planning and compatibility research, not hardware selection or execution. DEC-027 separately authorizes the two initial supplier inquiries; both have been sent. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
+Product definition and feasibility. SER-005 handoff accepted under DEC-018. **SER-014 native implementation approved; SER-014A shell built; API26 installation/navigation verified; shell awaits owner review. SER-011 preview accepted; SER-012 owner restart test and SER-013 whole-map acceptance remain open. SER-007 awaits replies.** DEC-023/024 authorize bench planning and compatibility research, not hardware selection or execution. DEC-027 separately authorizes the two initial supplier inquiries; both have been sent. SER-006 actual Pioneer CDJ/XDJ target/access remains open; Gemini preliminary choice accepted.
 
 The assistant is CTO and project manager. The human is project owner, approving consequential decisions and final acceptance. Follow the ten-guideline rhythm; ask one focused question at a time. Under DEC-025, show concise evidence, assumptions, tradeoffs, recommendation and what would change it in this chat as well as GitHub, so the owner can challenge proposals.
 
@@ -26,7 +26,7 @@ The preview retains clean Home, real local-song playback, Play/Shuffle, artwork 
 
 ## Android build implementation
 
-Under DEC-039, the owner approved native Kotlin/Compose + Media3/Room for the first Android test app and emulator-first testing. SER-014A now has a full JDK17/SDK, checksum-checked Gradle wrapper, dependency verification/locks, and a compiled native navigation shell. Debug app and instrumentation APKs build; lint reports no issues. Android11/API30 runs here in software mode without KVM. Initial installation attempts failed because Android system services crash (`Lost network stack`). A reduced one-CPU/540×960 emulator retry is in progress; see software/android/BUILD-EVIDENCE.md for the runtime receipt. The shell has Home, empty Songs/Playlists/Setlists, absent-Spotify messaging and an unavailable Deck screen. It does not yet import, save or play music. SER-014B–F remain approved queued implementation increments, subject to the owner acceptance gates. No final electronics, physical USB/deck support or battery result is established. No new supplier search/outreach occurred.
+Under DEC-039, the owner approved native Kotlin/Compose + Media3/Room for the first Android test app and emulator-first testing. SER-014A now has a full JDK17/SDK, checksum-checked Gradle wrapper, dependency verification/locks, and a compiled native navigation shell. Debug app and instrumentation APKs build; lint reports no issues. Emulators run here in software mode without KVM. The shell installs/launches on Android8/API26; all three final navigation/recreation/absent-Spotify tests pass with animations off. API30 software images had Android system-service crashes; no API30/36 runtime success is claimed. See software/android/BUILD-EVIDENCE.md for receipts and inspected native screenshots. The shell has Home, empty Songs/Playlists/Setlists, absent-Spotify messaging and an unavailable Deck screen. It does not yet import, save or play music. SER-014B–F remain approved queued implementation increments, subject to the owner acceptance gates. No final electronics, physical USB/deck support or battery result is established. No new supplier search/outreach occurred.
 
 ## Work already done
 
@@ -60,6 +60,6 @@ A prior cloud session verified repository/image access and a Git-proxy push dry 
 
 ## Single next action
 
-Complete SER-014A installation and native shell checks on a stable emulator. Owner review follows before SER-014B.
+Review the SER-014A native Home and Library screens or test APK; report corrections before SER-014B ports the accepted Library/player experience.
 
 Public task-completion publication is authorized. Preserve local working files while synchronizing Git history. Hardware replies remain independent; no new purchases/outreach.

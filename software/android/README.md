@@ -1,6 +1,6 @@
 # First Serein Android test app
 
-SER-014 · updated 2026-10-06 · native first-build scope approved under DEC-039. SER-014A shell built; runtime blocked by emulator system-service crashes.
+SER-014 · updated 2026-10-06 · native first-build scope approved under DEC-039. SER-014A shell built/installed/verified on API26; awaiting owner acceptance.
 
 We are carrying the accepted browser listening experience onto Android while hardware inquiries are pending. The first increment supplies the tools and installable app foundation; it does not select the final pocket electronics.
 
@@ -8,11 +8,17 @@ We are carrying the accepted browser listening experience onto Android while har
 
 A native Kotlin/Compose navigation shell: clean Home with Spotify/Library tiles, empty Songs/Playlists/Setlists tabs, a disabled Add songs button, a dismissible absent-Spotify message, and an unavailable Deck screen. Page/tab selection survives Activity recreation; this is not song/list persistence. The launcher icon is a temporary test asset.
 
-The debug app and test APK compile. Lint reports no issues. Three instrumentation tests are written for navigation, Activity recreation and absent Spotify; runtime results are recorded separately in [BUILD-EVIDENCE.md](BUILD-EVIDENCE.md). Music import, full player, saved collections and background playback are not implemented yet. Real Spotify-present launch/listening and physical deck support remain untested.
+The debug app and test APK compile. Lint reports no issues. Three final instrumentation tests pass on Android8/API26 for navigation, Activity recreation and absent Spotify; runtime receipts are recorded separately in [BUILD-EVIDENCE.md](BUILD-EVIDENCE.md). Music import, full player, saved collections and background playback are not implemented yet. Real Spotify-present launch/listening and physical deck support remain untested.
 
 Debug APK: `work/android-artifacts/serein-app-shell-0.1.0.apk` in the current workspace, outside Git. Source and build evidence are published; this is not a GitHub release download or Play Store app. Debug signing is for testing, not production identity.
 
-**Owner review:** inspect native screenshots when available, or install on your own test Android. Check Home → Library → Songs/Playlists/Setlists → Deck → Home. With Spotify absent, its tile should show a dismissible message. Confirm the foundation or report corrections before SER-014B.
+**Owner review:** inspect the native screenshots below, or install on your own test Android. Check Home → Library → Songs/Playlists/Setlists → Deck → Home. With Spotify absent, its tile should show a dismissible message. Confirm the foundation or report corrections before SER-014B.
+
+## Native screens
+
+![Native Android Home](evidence/native-home.png)
+
+[Library screenshot](evidence/native-library.png) · [Deck screenshot](evidence/native-deck.png) · [Build/runtime receipt](BUILD-EVIDENCE.md)
 
 ## What the first build will do
 
@@ -25,7 +31,7 @@ Debug APK: `work/android-artifacts/serein-app-shell-0.1.0.apk` in the current wo
 | Spotify | Spotify tile pauses Serein's local playback and opens the installed official app; missing app gives a clear message | Test both installed and absent cases; real Spotify listening checked on a compatible target with owner login inside Spotify |
 | Deck | Keep a simple unavailable state until the storage backend and physical compatibility are proven | App never claims a deck is connected or storage is exported; simulation remains in the browser preview |
 
-Start with the existing two CC0 demo recordings and their provenance. Owner-selected music and artwork remain local and out of GitHub. The first owner test is simple: install, import a song, make a setlist, lock the screen, then reopen offline and find/play that setlist.
+Start with the existing two CC0 demo recordings and their provenance. Owner-selected music and artwork remain local and out of GitHub. The full-app owner test at SER-014F is: install, import a song, make a setlist, lock the screen, then reopen offline and find/play that setlist.
 
 ## Approved route and recorded tradeoff
 
@@ -82,7 +88,7 @@ Minimum Android 8/API 26 is a test-app compatibility proposal; it covers the pro
 
 ## Build and test
 
-JDK17 (runtime + compiler), Android SDK platform36, Build Tools36.0.0 and platform-tools are installed in the ignored workspace tool directory. All six readiness prerequisites pass. The checked Gradle8.13 wrapper is committed. No KVM is available; the local Android11/API30 emulator uses software mode. See [the evidence receipt](BUILD-EVIDENCE.md) for exact versions, checksums, results and limitations.
+JDK17 (runtime + compiler), Android SDK platform36, Build Tools36.0.0 and platform-tools are installed in the ignored workspace tool directory. All six readiness prerequisites pass. The checked Gradle8.13 wrapper is committed. No KVM is available; emulators use software mode. Android8/API26 successfully ran the final shell tests; Android11/API30 suffered system-service crashes. See [the evidence receipt](BUILD-EVIDENCE.md) for exact versions, checksums, results and limitations.
 
 On a workstation, install the matching SDK/JDK using Android Studio or official command-line tools. Set `JAVA_HOME` and `ANDROID_HOME` for your installation, or supply SDK path via ignored `local.properties`. Preserve configured proxy and CA trust; do not disable TLS. The ignored `work/android-toolchain/toolchain.env` sets paths for this workspace only.
 
@@ -91,7 +97,7 @@ python3 software/android/check-readiness.py --json
 software/android/gradlew -p software/android --no-daemon lintDebug assembleDebug assembleDebugAndroidTest
 ```
 
-The readiness checker is read-only; tool presence does not prove a working app. The build above was run successfully in this workspace. A source-only copy also compiled with all37 assemble tasks executed; no separate fresh-host rebuild is claimed. Initial dependency checksums were recorded from official Google/Maven/Gradle repositories over verified TLS; signatures are not independently verified. Future resolution checks those committed hashes. Inspect any dependency-update diff rather than silently replacing verification metadata.
+The readiness checker is read-only; tool presence does not prove a working app. The build above was run successfully in this workspace. The final source-only copy also compiled with all37 assemble tasks executed; no separate fresh-host rebuild is claimed. Initial dependency checksums were recorded from official Google/Maven/Gradle repositories over verified TLS; signatures are not independently verified. Future resolution checks those committed hashes. Inspect any dependency-update diff rather than silently replacing verification metadata.
 
 For an owner-selected test target with normal ADB:
 
@@ -100,7 +106,7 @@ adb install -r software/android/app/build/outputs/apk/debug/app-debug.apk
 software/android/gradlew -p software/android connectedDebugAndroidTest
 ```
 
-Select a serial using `adb -s`/`ANDROID_SERIAL` when several targets are connected. Here native adb37 cannot create its default folder on the read-only host. The local-only emulator fallback uses standard ADB TCP through a separately installed Python client; it checks boot and emulator identity before installing. It never targets a physical device or changes authentication:
+Select a serial using `adb -s`/`ANDROID_SERIAL` when several targets are connected. Here native adb37 cannot create its default folder on the read-only host. The local-only emulator fallback uses standard ADB TCP through a separately installed Python client; it checks boot, service readiness and emulator identity before installing, turns emulator animations off and records launch/screens/tests. It never targets a physical device or changes authentication:
 
 ```sh
 python3 -m pip install --target work/android-toolchain/adb-python adb-shell==0.4.4
@@ -134,4 +140,4 @@ Checked 2026-10-05:
 - [Room releases](https://developer.android.com/jetpack/androidx/releases/room): 2.8.5 patch and Kotlin KSP guidance; [Compose BOM mapping](https://developer.android.com/develop/ui/compose/bom/bom-mapping).
 - Official POM/repository/checksum URLs and observed versions are listed in build-spec.json. Those initial receipts prove artifact availability; later shell build/runtime evidence is recorded separately.
 
-**Single next action:** complete SER-014A installation/runtime checks on a stable emulator. Owner review follows before SER-014B ports the accepted screens. Native implementation is approved; owner acceptance of the shell and full app remains separate.
+**Single next action:** review the verified SER-014A native shell before SER-014B ports the accepted screens. Native implementation is approved; owner acceptance of the shell and full app remains separate.

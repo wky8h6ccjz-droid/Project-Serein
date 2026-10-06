@@ -23,7 +23,7 @@ def main():
     if not apk.is_file() or not tests.is_file():
         parser.error('Build both app and instrumentation APKs first.')
     args.output.mkdir(parents=True, exist_ok=True)
-    device = AdbDeviceTcp('127.0.0.1', args.port, default_transport_timeout_s=60)
+    device = AdbDeviceTcp('127.0.0.1', args.port, default_transport_timeout_s=180)
     try:
         device.connect(auth_timeout_s=10)
         boot = device.shell('getprop sys.boot_completed', read_timeout_s=60).strip()
@@ -39,12 +39,25 @@ def main():
             if not status.endswith(': found'):
                 raise RuntimeError('Emulator service not ready: ' + status + '; retry after startup settles.')
         print(f'Ready: Android {version}, API {api}, local emulator.', flush=True)
+        # Match the Gradle connected-test configuration on this owned emulator.
+        for setting in ['window_animation_scale', 'transition_animation_scale', 'animator_duration_scale']:
+            device.shell('settings put global ' + setting + ' 0', read_timeout_s=120)
         for source, remote in [(apk, '/data/local/tmp/serein-shell.apk'), (tests, '/data/local/tmp/serein-shell-tests.apk')]:
-            device.push(str(source), remote, read_timeout_s=120)
-            result = device.shell('pm install -r ' + remote, read_timeout_s=180)
+            print("Uploading " + source.name, flush=True)
+            device.push(str(source), remote, st_mode=0o100644, transport_timeout_s=180, read_timeout_s=180)
+            print('Installing ' + source.name, flush=True)
+            result = device.shell('pm install -r ' + remote, transport_timeout_s=300, read_timeout_s=300)
             if 'Success' not in result:
                 raise RuntimeError('Install failed: ' + result)
             print('Installed ' + source.name, flush=True)
+        device.shell('am force-stop dev.serein.player.debug', read_timeout_s=120)
+        launch = device.shell('am start -W -n dev.serein.player.debug/dev.serein.player.MainActivity', read_timeout_s=120)
+        (args.output / 'launch.txt').write_text(launch)
+        if 'Status: ok' not in launch:
+            raise RuntimeError('App launch did not report success.')
+        device.shell('screencap -p /data/local/tmp/serein-home.png', read_timeout_s=60)
+        device.pull('/data/local/tmp/serein-home.png', str(args.output / 'native-home.png'), read_timeout_s=120)
+        print('Launched app and captured native Home screenshot.', flush=True)
         command = 'am instrument -w dev.serein.player.debug.test/androidx.test.runner.AndroidJUnitRunner'
         chunks = []
         with (args.output / 'instrumentation.txt').open('w') as log:
@@ -55,13 +68,6 @@ def main():
                 or re.search(r'INSTRUMENTATION_STATUS_CODE: -(?:3|4)\b', result)):
             raise RuntimeError('Instrumentation did not pass all 3 tests; see instrumentation.txt.')
         print('Passed 3 native shell instrumentation tests.', flush=True)
-        launch = device.shell('am start -W -n dev.serein.player.debug/dev.serein.player.MainActivity', read_timeout_s=120)
-        (args.output / 'launch.txt').write_text(launch)
-        if 'Status: ok' not in launch:
-            raise RuntimeError('App launch did not report success.')
-        device.shell('screencap -p /data/local/tmp/serein-home.png', read_timeout_s=60)
-        device.pull('/data/local/tmp/serein-home.png', str(args.output / 'native-home.png'), read_timeout_s=120)
-        print('Captured native Home screenshot.', flush=True)
     finally:
         device.close()
 

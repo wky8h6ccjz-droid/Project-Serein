@@ -59,6 +59,6 @@ A dedicated DJ library on microSD, exposed through a USB storage mode, is a cand
 
 CDJ compatibility must be stated per tested model; no blanket claim covering all CDJs has been approved.
 
-## First Android test app preparation
+## First Android test app
 
-Owner authorized preparing the app build under DEC-037. The proposed first-build behavior and native framework recommendation are in [software/android/README.md](../software/android/README.md), awaiting approval under DEC-038. Preserve accepted Library/player styling; use locally saved file copies and ordered collections, background audio/Android controls and launch the official Spotify app. No actual deck export in this first app. These boundaries are a scope proposal rather than a final platform/storage decision. Existing device/CDJ/Spotify requirements remain authoritative.
+DEC-039 approves the DEC-038 native Kotlin/Compose + Media3/Room route for the first Android test app. Preserve accepted Library/player styling; locally saved file copies and ordered collections, background audio/Android controls and official Spotify launch. Deck remains unavailable until actual backend/hardware proof. This does not choose final pocket electronics or deck-export storage. SER-014A supplies a compiled navigation shell; remaining behavior is approved queued work, not present functionality or owner acceptance. See [Android build](../software/android/README.md).

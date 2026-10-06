@@ -1,7 +1,7 @@
 {
   "task": "SER-014",
-  "status": "proposal-awaiting-owner-approval",
-  "checked_date": "2026-10-05",
+  "status": "approved-first-build-implementation-in-progress",
+  "checked_date": "2026-10-06",
   "route": "native-android-kotlin-compose-media3-room",
   "android": {
     "application_id": "dev.serein.player.debug",
@@ -82,10 +82,10 @@
     }
   ],
   "verification_limits": [
-    "Pinned top-level artifacts exist; full graph not resolved or compiled.",
-    "No APK, install, emulator or real-device results.",
-    "Current workspace lacks full JDK17/SDK; emulator host/image not configured.",
-    "No Serein network permission, cloud backend or Spotify SDK proposed."
+    "Shell graph resolved and compiled; Media3/Room/KSP are not yet used or fully verified.",
+    "Debug APK built; emulator installation/runtime verification pending.",
+    "No API26/36 runtime, physical audio, Spotify-present or USB/deck proof.",
+    "No Serein INTERNET permission, cloud backend or Spotify SDK."
   ],
   "test_target": {
     "owner_choice": "emulator-first",
@@ -94,7 +94,18 @@
       36
     ],
     "minimum_api_before_compatibility_claim": 26,
-    "host_and_image_setup": "not configured",
+    "host_and_image_setup": "Local Android11/API30/default/x86_64 revision11; emulator37.2.12; software acceleration",
     "hardware_acceleration_here": false
-  }
+  },
+  "approval": "DEC-039",
+  "shell": {
+    "version_name": "0.1.0-shell",
+    "activity_compose": "1.11.0",
+    "test_junit": "1.3.0",
+    "test_runner": "1.7.0",
+    "dependency_verification": "SHA256; metadata on; signatures off",
+    "app_dependency_lockfile": "app/gradle.lockfile",
+    "apk_sha256": "b25ac3772eec14a27737968744630b178a8f547e8562f1438b984f8895bef59c"
+  },
+  "artifact_availability_checked_date": "2026-10-05"
 }

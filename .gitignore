@@ -6,3 +6,8 @@ work/
 __pycache__/
 *.pyc
 node_modules/
+software/android/.gradle/
+software/android/**/build/
+software/android/local.properties
+software/android/*.jks
+software/android/*.keystore

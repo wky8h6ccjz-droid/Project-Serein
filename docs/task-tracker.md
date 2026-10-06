@@ -1,6 +1,6 @@
 # Serein task tracker
 
-Updated: 2026-10-05. Assistant manages execution; owner approves consequential decisions and acceptance.
+Updated: 2026-10-06. Assistant manages execution; owner approves consequential decisions and acceptance.
 
 ## Current phase and single next task
 
@@ -8,9 +8,9 @@ Updated: 2026-10-05. Assistant manages execution; owner approves consequential d
 
 Plain-language context: we are preparing a small desk experiment to establish that one Android music player can also act as a DJ music USB drive. The recommended path is in [build-plan.md](build-plan.md). Owner feedback under DEC-026 requires purpose, place in the plan, success and next decision before technical detail. No physical prototype exists yet.
 
-**Active item:** SER-014 Android build preparation delivered under DEC-037. Owner selected this next focus; the native route/first-build scope recommendation is awaiting approval under DEC-038. SER-011 preview remains accepted; SER-012 restart test and SER-013 whole-map acceptance remain open. SER-007 still waits for supplier replies.
+**Active item:** SER-014 native first app approved under DEC-039. SER-014A shell built; emulator system-service crashes block runtime verification. SER-011 accepted; SER-012 restart test and SER-013 whole-map acceptance remain open. SER-007 waits for replies.
 
-**Single next task/action:** owner approves or revises the [prepared first Android build scope/native route](../software/android/README.md), then execute SER-014A. No purchases, physical USB integration or final electronics selection included.
+**Single next task/action:** Complete SER-014A installation and native shell checks on a stable emulator. Owner review follows before SER-014B.
 
 ## Status rules
 
@@ -175,23 +175,24 @@ Accepted requires completion criteria, verification evidence, and owner confirma
 ## SER-014 — Prepare and deliver the first Android app build
 
 - **Purpose:** move the accepted listening/library experience into an installable Android test app while suppliers reply.
-- **Dependencies:** owner authorized preparation under DEC-037. Native route/scope needs owner approval under DEC-038 before app implementation; JDK/SDK, dependency resolution and recorded test target needed. SER-012's browser owner test remains open; Android persistence must be verified independently. Physical USB integration separately requires SER-007/008 evidence and approval.
-- **Deliverable:** preparation packet at software/android/README.md, candidate dependency spec and read-only readiness checker now delivered. Debug APK and runtime evidence are later deliverables, not present results.
-- **Status:** Awaiting owner approval of prepared first-build scope/native route; preparation completed and verified, app implementation unstarted.
-- **Proposed scope:** preserve accepted clean Home/Library/artwork player; file-picker import to saved local copies; ordered playlists/setlists; background playback/Android controls; launch installed official Spotify and handle absence. Deck displays unavailable; no simulation presented as physical USB behavior.
-- **Proposed implementation:** Kotlin/Compose, Media3 service, Room/KSP; local-only imported files/metadata, app-managed test storage with a repository boundary for later exportable storage. No server/accounts/Spotify SDK or companion activation.
-- **Preparation verification (2026-10-05):** primary Android guidance reviewed; all seven proposed library/tool plugin POMs returned expected versions; Gradle distribution checksum and platform 36/Build Tools 36.0.0 availability verified. Readiness check reports missing full JDK17/SDK/tools as expected. No full dependency resolution, compile/install, emulator or real-device evidence. Candidate versions are a supported baseline, not a latest-release claim. Python syntax, record/link/pin alignment and updated map details checked.
-- **Workspace:** Java runtime 21, no javac/Gradle/SDK/adb/emulator; no /dev/kvm. Tool installation/license steps belong to A after scope approval. Owner chose emulator-first; runnable host/image setup remains open, with real audio/Spotify checks on suitable equipment later.
-- **Owner test / single next action:** read the behavior table/route tradeoff and approve or revise the proposal. App acceptance later requires independent install/import/setlist/screen-off/offline-reopen journey.
+- **Dependencies:** DEC-039 approves the native first-build scope, following preparation DEC-037/038. Android persistence must be verified independently from SER-012. Physical USB integration separately requires SER-007/008 evidence and approval.
+- **Deliverable:** native source, checked wrapper/dependency records, debug APK and recorded install/runtime evidence in software/android/BUILD-EVIDENCE.md. Binary APK is local, outside source Git.
+- **Status:** In progress. SER-014A source/APK built; runtime verification blocked by emulator; whole app is not accepted.
+- **Approved scope:** accepted clean Home/Library/artwork player; file-picker import to saved local copies; ordered playlists/setlists; background playback/Android controls; installed official Spotify launch and absence handling. Deck unavailable pending physical proof.
+- **Implementation:** Kotlin/Compose, later Media3 service and Room/KSP; no server/accounts/Spotify SDK or companion activation. App-managed test storage is not a deck-exportable volume.
+- **Preparation evidence (2026-10-05):** primary Android guidance, seven candidate artifacts, Gradle checksum and Android packages checked. Owner chose emulator-first.
+- **SER-014A assistant verification (2026-10-06):** JDK17/SDK/wrapper ready; full shell dependencies resolved, checksum-recorded and version-locked; debug app/test APK compilation successful; lint no issues; APK v2 signature verified. Fresh source-only copy also compiles from cached dependencies. Runtime installation is blocked by emulator system-service crashes; reduced-profile retry underway; receipt in BUILD-EVIDENCE.md. Two deprecation warnings are nonblocking.
+- **Limits:** empty native library; disabled Add songs; no audio service, import, saved collections or actual Spotify listening. Activity recreation retains page/tab selection only. No physical device or API26/36 runtime evidence. Browser features remain separate.
+- **Owner test / single next action:** Complete SER-014A installation and native shell checks on a stable emulator. Owner review follows before SER-014B.
 
 | Subtask | Purpose and dependency | Deliverable / completion evidence | Status |
 | --- | --- | --- | --- |
-| SER-014A | Prepare build tools/app shell after route/scope approval | Checked JDK/SDK/wrapper; clean debug APK compile log | Proposed; parent approval required |
-| SER-014B | Port accepted screens/queue rules after A | Native UI parity, narrow layout/accessibility evidence | Proposed |
-| SER-014C | Import/store audio and lists after A/B | Offline local copies, restart/order and failed-import tests | Proposed |
-| SER-014D | Background playback/controls after B/C | Lock-screen/media controls, audio focus/headset results | Proposed |
-| SER-014E | Spotify launch and unavailable Deck after B/D | Present/absent launch paths; no fake storage export | Proposed |
-| SER-014F | Package/install/owner test after A–E | APK hash, target record and independent owner acceptance | Proposed |
+| SER-014A | Prepare build tools/native app shell | JDK/SDK/checked wrapper; dependency records; compiled APK and shell checks | In progress; runtime blocked by emulator |
+| SER-014B | Port accepted screens/queue rules after A acceptance | Native UI parity, narrow layout/accessibility evidence | Approved scope; queued |
+| SER-014C | Import/store audio and lists after A/B | Offline local copies, restart/order and failed-import tests | Approved scope; queued |
+| SER-014D | Background playback/controls after B/C | Lock-screen/media controls, audio focus/headset results | Approved scope; queued |
+| SER-014E | Complete Spotify launch and Deck boundary after B/D | Present/absent paths; local player pauses; no fake export | Approved scope; queued (absence/Deck shell begun) |
+| SER-014F | Full package/install/owner test after A–E | APK hash, target and independent whole-app acceptance | Approved scope; queued |
 
 ## Unresolved items
 

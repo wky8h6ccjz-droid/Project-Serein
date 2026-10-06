@@ -28,9 +28,9 @@ Serein is a pocket music player that brings everyday listening and a portable DJ
 
 ## Current task and next action
 
-**Current task: Android build preparation (SER-014), chosen by the owner.** The [first-build packet](software/android/README.md) contains proposed behavior, native/browser route comparison, candidate dependency pins, readiness checks and six implementation steps. The [visual map](docs/project-map.html) reflects this focus. **Next action: approve or revise the first-build scope/native route**, then prepare tools and app shell (SER-014A). No app or APK has been built yet.
+**Current task: native Android first build (SER-014), approved under DEC-039.** The [Android app shell](software/android/README.md) now compiles with a checked wrapper and locked dependencies. It provides clean Home/Library/Deck navigation; music import/playback comes in the following increments. [Build evidence](software/android/BUILD-EVIDENCE.md) records the APK and current checks. **Next action:** complete SER-014A installation/runtime checks on a stable emulator. Android services currently crash in this software emulator; owner review follows verified installation.
 
-The [Library/player preview](software/device-preview/README.md) is accepted (SER-011). Local songs, artwork, playlists and ordered setlists now save in this browser across reopening (SER-012, awaiting owner restart test). Eleven unit checks and Chromium interaction/persistence/map journeys passed. No uploads or original-file changes; browser/site data removal can remove saved copies. Android implementation, official Spotify launch and real USB/deck integration remain open. Decks use only the full local-file library, never Spotify downloads. Companion software stays deferred.
+The [Library/player preview](software/device-preview/README.md) is accepted (SER-011). Local songs, artwork, playlists and ordered setlists now save in this browser across reopening (SER-012, awaiting owner restart test). Eleven unit checks and Chromium interaction/persistence/map journeys passed. No uploads or original-file changes; browser/site data removal can remove saved copies. Native music implementation, Spotify-present launch/listening and real USB/deck integration remain open. Decks use only the full local-file library, never Spotify downloads. Companion software stays deferred.
 
 Hardware context:
 
@@ -42,4 +42,4 @@ Budget discussion is deferred until the technical and physical direction is clea
 
 ## Repository scope
 
-This repository is the shared record for research, decisions, concepts, and future hardware/software development. It contains project records, concept art, the interactive project map and a hardware-independent software preview with build scripts and automated checks. No Android build or physical device exists yet.
+This repository is the shared record for research, decisions, concepts, and future hardware/software development. It contains project records, concept art, the interactive project map and a hardware-independent software preview with build scripts and automated checks. Native Android shell source and build evidence are included; no physical Serein device exists yet.

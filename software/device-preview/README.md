@@ -1,6 +1,6 @@
 # Serein device software preview
 
-SER-011, updated 2026-10-05. Clean Home, a familiar library list, full player, playlists/setlists and a simulated deck handoff. SER-011 UI/interaction accepted; SER-012 local saving awaits owner restart test. Android implementation and real USB/deck integration remain future work.
+SER-011, updated 2026-10-05. Clean Home, a familiar library list, full player, playlists/setlists and a simulated deck handoff. SER-011 UI/interaction accepted; SER-012 local saving awaits owner restart test. A separate Android shell now builds; native music and real USB/deck integration remain future work.
 
 ## Try it
 
@@ -49,4 +49,4 @@ No Android APK, device filesystem scan, real Spotify launch, USB mass-storage ex
 
 SER-012 persistence journeys passed: audio/list order after reopening, offline playback, handoff reload recovery, aborted transaction, injected save failure, cross-tab lockout and confirmed/canceled clear. Updated interaction journeys passed on source and generated standalone routes. Direct file navigation is blocked by the environment policy, so local-file storage behavior is not claimed verified.
 
-**Owner restart test for SER-012:** import a song, make a setlist, close/reopen the same browser/origin and play it offline. **Project next action:** approve or revise [the prepared Android first-build scope/native route](../android/README.md). Publication is delivery, not acceptance.
+**Owner restart test for SER-012:** import a song, make a setlist, close/reopen the same browser/origin and play it offline. **Project next action:** complete [native Android shell](../android/README.md) installation/runtime checks on a stable emulator; owner review follows. Publication is delivery, not acceptance.

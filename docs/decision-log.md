@@ -98,10 +98,18 @@ Captured from the project conversation on 2026-10-03. IDs are stable; capture da
 ## DEC-038 — Native Android first-build recommendation
 
 - **Date:** 2026-10-05.
-- **Status:** Proposed; awaiting owner approval of the concrete scope/route.
+- **Status:** Approved for the first Android test app under DEC-039; implementation and independent acceptance remain separate.
 - **Recommendation:** Kotlin/Compose + Media3 playback service + Room/KSP, retaining accepted UI and collections. First test app copies selected music locally, restores lists across restart, supports background playback and opens official Spotify. Deck is unavailable pending backend/hardware proof.
 - **Tradeoff:** native implementation requires rebuilding screens but avoids browser/native bridges for file access and background playback. Browser remains reference; cross-platform runtime is not justified by current Android-only scope. Reconsider for an explicit multi-platform or visual-only priority.
-- **Limits:** candidate pins have verified artifact availability, not full compile/runtime compatibility. Toolchain and recorded test target are needed. No cloud backend/network permission, Spotify SDK, final electronics, USB export or real-deck approval included. Approval would cover the first Android test app rather than permanent hardware selection.
+- **Limits:** candidate artifact availability was verified during preparation. SER-014A shell compilation now passes (2026-10-06); Media3/Room/KSP and full-app runtime compatibility remain unverified. No cloud backend/network permission, Spotify SDK, final electronics, USB export or real-deck approval included. Approval would cover the first Android test app rather than permanent hardware selection.
+
+## DEC-039 — Approve the native Android first-build scope
+
+- **Date:** 2026-10-05.
+- **Owner instruction:** “yes go next”, in response to the concrete native Android first-build scope and request to proceed.
+- **Scope:** approves the DEC-038 Kotlin/Compose + Media3/Room route for this Android test app, accepted UI/local files/saved collections/background audio/official Spotify launch, with Deck unavailable pending hardware proof. Execute SER-014A first: build tools, checked wrapper and native app shell. Emulator-first was already selected under DEC-037.
+- **Limits:** does not accept the completed app or final electronics, activate companion work, authorize purchases/new supplier outreach, or establish real deck/storage/battery compatibility. Routine free local tool installation/build verification/publication falls within the approved software task.
+- **Implementation evidence (2026-10-06):** SER-014A native shell and checked toolchain compile; lint clean, debug signature verified and fresh source-only build succeeds from cached dependencies. Android11 software emulator has system-service crashes; runtime verification and owner acceptance remain open. See software/android/BUILD-EVIDENCE.md.
 
 ## Open proposals
 

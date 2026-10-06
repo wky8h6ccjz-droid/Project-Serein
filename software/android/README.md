@@ -1,12 +1,22 @@
-# First Serein Android build — preparation
+# First Serein Android test app
 
-SER-014 · prepared 2026-10-05 · scope/framework proposal awaiting owner approval. No Android app sources or APK exist yet.
+SER-014 · updated 2026-10-06 · native first-build scope approved under DEC-039. SER-014A shell built; runtime blocked by emulator system-service crashes.
 
-The next useful result is an app we can install and use to listen to local songs, keep playlists/setlists, and open official Spotify. It carries the accepted preview onto Android while hardware inquiries are pending. This preparation contains the build specification, dependency pins, readiness check and acceptance plan; it does not select the final pocket electronics.
+We are carrying the accepted browser listening experience onto Android while hardware inquiries are pending. The first increment supplies the tools and installable app foundation; it does not select the final pocket electronics.
+
+## What exists now — SER-014A
+
+A native Kotlin/Compose navigation shell: clean Home with Spotify/Library tiles, empty Songs/Playlists/Setlists tabs, a disabled Add songs button, a dismissible absent-Spotify message, and an unavailable Deck screen. Page/tab selection survives Activity recreation; this is not song/list persistence. The launcher icon is a temporary test asset.
+
+The debug app and test APK compile. Lint reports no issues. Three instrumentation tests are written for navigation, Activity recreation and absent Spotify; runtime results are recorded separately in [BUILD-EVIDENCE.md](BUILD-EVIDENCE.md). Music import, full player, saved collections and background playback are not implemented yet. Real Spotify-present launch/listening and physical deck support remain untested.
+
+Debug APK: `work/android-artifacts/serein-app-shell-0.1.0.apk` in the current workspace, outside Git. Source and build evidence are published; this is not a GitHub release download or Play Store app. Debug signing is for testing, not production identity.
+
+**Owner review:** inspect native screenshots when available, or install on your own test Android. Check Home → Library → Songs/Playlists/Setlists → Deck → Home. With Spotify absent, its tile should show a dismissible message. Confirm the foundation or report corrections before SER-014B.
 
 ## What the first build will do
 
-| Area | Proposed first-build behavior | How we know it works |
+| Area | Approved first-build behavior (B–F; future) | How we know it works |
 | --- | --- | --- |
 | Home and Library | Keep the clean Home, Songs/Playlists/Setlists, top Play/Shuffle and artwork player already accepted | Repeat the accepted preview journeys on Android, including narrow layout and large text |
 | Local music | Add songs using Android's file picker; copy completed imports onto the device for reliable offline use | Import, remove access to the source, switch offline, reopen and play the copied song |
@@ -17,9 +27,9 @@ The next useful result is an app we can install and use to listen to local songs
 
 Start with the existing two CC0 demo recordings and their provenance. Owner-selected music and artwork remain local and out of GitHub. The first owner test is simple: install, import a song, make a setlist, lock the screen, then reopen offline and find/play that setlist.
 
-## Recommended route and the tradeoff
+## Approved route and recorded tradeoff
 
-**Recommendation: Kotlin + Jetpack Compose for the app, Android Media3 for playback, Room for saved metadata.** Kotlin is the app language; Compose builds the screens; Media3 runs playback and Android media controls; Room keeps song/list records across reopening.
+**Approved under DEC-039: Kotlin + Jetpack Compose, Android Media3 for playback, Room for saved metadata.** Kotlin is the app language; Compose builds the screens; Media3 runs playback and Android media controls; Room keeps song/list records across reopening.
 
 | Route | Benefit | Cost / limitation | Recommendation |
 | --- | --- | --- | --- |
@@ -27,9 +37,9 @@ Start with the existing two CC0 demo recordings and their provenance. Owner-sele
 | Native Android | Direct platform file access, playback service and media controls; good fit for an Android-only device | Rebuild screens and port queue/library rules; verify parity rather than assuming the browser tests prove Android behavior | Use for this first test app |
 | Cross-platform framework | Useful if a second mobile platform is required | Extra runtime/tooling and platform integration without an approved iOS target | Reconsider if platform scope changes |
 
-This is engineering judgment based on Serein's Android-only listening requirement and background/offline use. It would change if the owner prioritizes a rapid visual-only install over functional audio, or requests another platform. Approval would cover this first Android test app, not permanent hardware/platform selection or a completed-device claim.
+This is engineering judgment based on Serein's Android-only listening requirement and background/offline use. It would change if the owner prioritizes a rapid visual-only install over functional audio, or requests another platform. Approval covers this first Android test app, not permanent hardware/platform selection or a completed-device claim. Media3/Room/KSP are queued for C/D and are not part of the shell dependency graph.
 
-## Proposed implementation boundaries
+## Approved implementation boundaries (remaining work)
 
 - One Android app module; keep UI, library repository, playback service and Spotify launch separate inside it. No server, account system, analytics or OpenAI/API credentials are needed.
 - Use the system audio-file picker, with read access only. Copy bytes to an app-managed library, then commit metadata; originals remain untouched. A picker provider may fetch a cloud-hosted source on the user's instruction; offline availability starts only after the local copy finishes. Don't assume a provider URI is a hard-downloaded file.
@@ -37,26 +47,26 @@ This is engineering judgment based on Serein's Android-only listening requiremen
 - Stage imports to temporary files, close/sync and rename completed copies, then commit metadata transactionally. File copies and database transactions are not one atomic transaction: on startup remove abandoned temporary/orphan copies, retain prior valid records and show missing-file errors. Partial/failed import must not replace the existing library. Do not use destructive database migration.
 - Playback lives in a MediaSessionService, with the screen using its controller. Handle audio focus and unplugged headphones. Reopen restores saved library/list data without automatically starting audio after a reboot.
 - The Spotify tile uses an explicit launch intent; catch the missing-activity case and scope package visibility only if needed. No Spotify SDK/OAuth is required merely to open its official app. Spotify caching/offline rights stay inside Spotify.
-- Proposed manifest has playback foreground-service permissions; no broad file-management permission and no Serein network permission for this local-player/launch scope. Disable app backup and exclude imported music/metadata from cloud/device-transfer backup under supported Android controls; verify on the test target before claiming no automatic OS backup. Uninstall/clear-app-data removes app copies; originals stay intact.
+- The future player manifest will add playback foreground-service permissions; no broad file-management permission and no Serein network permission for this local-player/launch scope. Disable app backup and exclude imported music/metadata from cloud/device-transfer backup under supported Android controls; verify on the test target before claiming no automatic OS backup. Uninstall/clear-app-data removes app copies; originals stay intact.
 - App-managed storage is for this test build. It is not the later deck-exportable volume. A library repository boundary must permit migration to approved storage hardware without mixing Spotify data or claiming USB support.
 - Do not silently migrate the browser's IndexedDB collection. Owner imports through Android; a separate future migration/export feature needs a bounded plan.
 
 ## Build steps and acceptance
 
-| Subtask | Proposed work | Depends on | Completion evidence |
+| Subtask | Approved work | Depends on | Completion evidence |
 | --- | --- | --- | --- |
-| SER-014A | Prepare full JDK, SDK and checked Gradle wrapper; create app shell | Owner approves route/scope; tools reachable | Readiness report passes; clean checkout compiles a debug APK and recorded dependency set |
+| SER-014A | Prepare full JDK, SDK and checked Gradle wrapper; create app shell | DEC-039; tools reachable | Readiness passes; debug app/test APKs compile with recorded checksums/locks; fresh source-only copy compiles from cached dependencies |
 | SER-014B | Port accepted Home/Library/player screens and queue rules | A | List and full-player interactions match the preview; narrow layout and accessibility check |
 | SER-014C | Native import, metadata, saved audio and collections | A/B | Local copies play offline after process restart/reboot; exact collection order; failed-copy/DB rollback checks |
 | SER-014D | Background player and Android controls | B/C | Real decoding/seek/advance; lock-screen/media controls; audio focus/headset tests on recorded target |
 | SER-014E | Official Spotify launch and unavailable Deck state | B/D | Absent/present launch journeys, local playback pauses, no fake export/connection result |
 | SER-014F | Package, install, owner test and evidence | A–E | APK SHA-256, build log, target OS/model, passed/failed test list and owner acceptance |
 
-Implement in these small increments after approval. Build artifacts stay out of source Git; arrange an authorized project artifact location when the APK exists. Never call compilation alone an installed/working app. Reopen reported failures and retain the separate real-deck gate.
+A is built for verification/review; B–F are approved queued work after the preceding acceptance gate. Build artifacts stay out of source Git; the test APK is available locally. Never call compilation alone an installed/working app. Reopen reported failures and retain the separate real-deck gate.
 
 ## Candidate dependency pins
 
-See [build-spec.json](build-spec.json). These are a bounded supported baseline, **not a claim to be the latest releases**. Artifact existence was checked on 2026-10-05; the full dependency graph has not been resolved, compiled or runtime-tested. Add remaining UI/test support versions, dependency verification/locks and wrapper JAR/checksum during A, then verify the entire graph.
+See [build-spec.json](build-spec.json). These are a bounded supported baseline, **not a claim to be the latest releases**. Artifact existence was checked on 2026-10-05. The shell graph is resolved/compiled with checksums and app version locks. Media3/Room/KSP require full build/runtime verification when added.
 
 | Tool / library | Candidate pin |
 | --- | --- |
@@ -70,34 +80,34 @@ See [build-spec.json](build-spec.json). These are a bounded supported baseline, 
 
 Minimum Android 8/API 26 is a test-app compatibility proposal; it covers the proposed Android 11 bench image without proving that image's services/drivers. Compile/target API 36 is a pinned development baseline. Recheck actual device OS and current distribution rules before shipping; no Play Store release is part of this work.
 
-## Current workspace readiness
+## Build and test
 
-The read-only check on 2026-10-05 found Java runtime 21, no `javac`, Gradle, Android SDK, `sdkmanager`, `adb` or emulator. `/dev/kvm` is absent, so accelerated emulator tests are unavailable here. No tools were installed or license acceptance performed by this preparation.
+JDK17 (runtime + compiler), Android SDK platform36, Build Tools36.0.0 and platform-tools are installed in the ignored workspace tool directory. All six readiness prerequisites pass. The checked Gradle8.13 wrapper is committed. No KVM is available; the local Android11/API30 emulator uses software mode. See [the evidence receipt](BUILD-EVIDENCE.md) for exact versions, checksums, results and limitations.
 
-Direct repository access was verified through the configured proxy with task network permission: Google Android repository and all pinned Maven POMs returned valid content; Gradle's published SHA-256 was read. Git fetch also succeeded with that permission; local dirty files were preserved.
-
-Run the repeatable local readiness report:
+On a workstation, install the matching SDK/JDK using Android Studio or official command-line tools. Set `JAVA_HOME` and `ANDROID_HOME` for your installation, or supply SDK path via ignored `local.properties`. Preserve configured proxy and CA trust; do not disable TLS. The ignored `work/android-toolchain/toolchain.env` sets paths for this workspace only.
 
 ```sh
-python3 software/android/check-readiness.py
 python3 software/android/check-readiness.py --json
+software/android/gradlew -p software/android --no-daemon lintDebug assembleDebug assembleDebugAndroidTest
 ```
 
-Exit code 1 means missing build prerequisites; it does not mean an app build was attempted. The checker performs no installs, network requests, destructive operations or device access. Emulator availability is advisory and never establishes a running target.
+The readiness checker is read-only; tool presence does not prove a working app. The build above was run successfully in this workspace. A source-only copy also compiled with all37 assemble tasks executed; no separate fresh-host rebuild is claimed. Initial dependency checksums were recorded from official Google/Maven/Gradle repositories over verified TLS; signatures are not independently verified. Future resolution checks those committed hashes. Inspect any dependency-update diff rather than silently replacing verification metadata.
 
-During A, install a full JDK 17 and Android command-line tools into a writable tool directory, preserve the environment's proxy/CA settings, and follow official SDK license/install steps. Install `platforms;android-36`, `build-tools;36.0.0` and `platform-tools`. Create the Gradle wrapper with the version/checksum in the spec, then run the readiness check. Android Studio's bundled JDK/SDK on an existing workstation is an alternative if this environment cannot provide a test target.
-
-After the app project exists, intended commands from `software/android` are:
+For an owner-selected test target with normal ADB:
 
 ```sh
-./gradlew --no-daemon testDebugUnitTest lintDebug assembleDebug
-# Only with an explicitly authorized, connected test target:
-adb install -r app/build/outputs/apk/debug/app-debug.apk
-# Select a target with -s when several are connected.
-./gradlew connectedDebugAndroidTest
+adb install -r software/android/app/build/outputs/apk/debug/app-debug.apk
+software/android/gradlew -p software/android connectedDebugAndroidTest
 ```
 
-These commands have **not** been run; `gradlew` and `app` do not exist yet. Owner chose emulator-first testing on 2026-10-05. No emulator is currently installed/running; this workspace lacks KVM, so choose an actual runnable host/image during A and record it. Emulator tests can cover import/persistence/UI and local playback. Bluetooth/headphone behavior, actual Spotify listening and final hardware/USB/power behavior require appropriate real equipment. No generic repeat of “Spotify works on Android” is planned.
+Select a serial using `adb -s`/`ANDROID_SERIAL` when several targets are connected. Here native adb37 cannot create its default folder on the read-only host. The local-only emulator fallback uses standard ADB TCP through a separately installed Python client; it checks boot and emulator identity before installing. It never targets a physical device or changes authentication:
+
+```sh
+python3 -m pip install --target work/android-toolchain/adb-python adb-shell==0.4.4
+PYTHONPATH=work/android-toolchain/adb-python python3 software/android/tools/test-emulator.py --output work/android-artifacts/emulator
+```
+
+Start an owned API30 emulator first. No emulator image or credentials are committed. Bluetooth/headphones, actual Spotify listening and final hardware/USB/power require suitable real equipment. There is no generic repeat of “Spotify works on Android.”
 
 ## First-build test checklist
 
@@ -122,6 +132,6 @@ Checked 2026-10-05:
 - [Package visibility use cases](https://developer.android.com/training/package-visibility/use-cases): launching another app must handle unavailable activities; package queries need only cover the chosen detection path.
 - [AGP 8.13 compatibility](https://developer.android.com/build/releases/agp-8-13-0-release-notes): Gradle 8.13/JDK 17 and API 36 compatibility baseline. API 36.0 is within the supported maximum; Build Tools 36.0.0 is an explicit candidate pin rather than the documented default 35.0.0.
 - [Room releases](https://developer.android.com/jetpack/androidx/releases/room): 2.8.5 patch and Kotlin KSP guidance; [Compose BOM mapping](https://developer.android.com/develop/ui/compose/bom/bom-mapping).
-- Official POM/repository/checksum URLs and observed versions are listed in build-spec.json. Receipt proves availability, not complete dependency compatibility or a successful build.
+- Official POM/repository/checksum URLs and observed versions are listed in build-spec.json. Those initial receipts prove artifact availability; later shell build/runtime evidence is recorded separately.
 
-**Single next action:** owner reviews and approves or revises this first-build scope/native route. Then execute SER-014A. Preparation is delivered; framework selection and implementation are not yet accepted.
+**Single next action:** complete SER-014A installation/runtime checks on a stable emulator. Owner review follows before SER-014B ports the accepted screens. Native implementation is approved; owner acceptance of the shell and full app remains separate.
